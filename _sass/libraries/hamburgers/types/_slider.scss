@@ -27,7 +27,8 @@
         transform: translate3d(0, $y-offset, 0) rotate(45deg);
 
         &::before {
-          transform: rotate(-45deg) translate3d(math.div($hamburger-layer-width, -7), $hamburger-layer-spacing * -1, 0);
+          // transform: rotate(-45deg) translate3d(math.div($hamburger-layer-width, -7), $hamburger-layer-spacing * -1, 0);
+          transform: rotate(-45deg) translate3d(calc($hamburger-layer-width * -0.14285714), $hamburger-layer-spacing * -1, 0);
           opacity: 0;
         }
 

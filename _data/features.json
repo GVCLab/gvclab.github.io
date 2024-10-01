@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Human-Centric Visual Content Generation & Editing",
+    "description": "How to digitize the human in the virtual environment and animation.",
+    "image": {
+      "url": "images/features/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Multi-modality Video Understanding and Generation",
+    "description": "How to understand/generate the video to/from the text?",
+    "image": {
+      "url": "images/features/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Visual Content Generation & Editing",
+    "description": "How AIGC model can be controlled and used by real creators?",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+]

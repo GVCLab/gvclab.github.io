@@ -1,0 +1,52 @@
+baseurl: '/'
+permalink: pretty
+title: 'GVC Lab'
+
+logo:
+  mobile: "images/logo/logo.png"
+  mobile_height: "32px"
+  mobile_width: "32px"
+  desktop: "images/logo/logo.png"
+  desktop_height: "32px"
+  desktop_width: "480px"
+
+home: 
+  limit_services: 3
+  limit_news: 6
+
+collections:
+  researches:
+    output: true
+    sort_by: weight
+  team:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "researches"
+    values:
+      layout: "research"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md

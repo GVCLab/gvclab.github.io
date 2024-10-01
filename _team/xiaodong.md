@@ -6,5 +6,6 @@ jobtitle: "Assistant Professor"
 promoted: true
 personal_url: http://vinthony.github.io
 github_url: http://github.com/vinthony
+scholar_url: https://scholar.google.com/citations?user=p42qwXcAAAAJ&hl=zh-CN
 weight: 1
 ---

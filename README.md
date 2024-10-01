@@ -1,4 +1,6 @@
-# Jekyll Serif Theme
+# The homepage of GVC Lab: [gvclab.github.io](http://gvclab.github.io)
+
+This website is modified from [Jekyll Serif Theme](https://github.com/zerostaticthemes/jekyll-serif-theme)
 
 Serif is a modern business theme for Jekyll. It contains multiple content types for a typical brochure/marketing website. The theme is fully responsive, blazing fast and artfully illustrated.
 

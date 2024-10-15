@@ -10,4 +10,4 @@ intro_image_hide_on_mobile: true
 
 # 🚧 Still Under contstruction.
 
-# you may refer to the <a href='https://scholar.google.com/citations?user=p42qwXcAAAAJ&hl=zh-CN'> Google Scholar page </a> of Dr. Xiaodong. Cun
+# you may refer to the <a href='https://scholar.google.com/citations?user=p42qwXcAAAAJ&hl=zh-CN'> Google Scholar page </a> of Dr. Xiaodong Cun

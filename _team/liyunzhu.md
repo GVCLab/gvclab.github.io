@@ -2,7 +2,7 @@
 title: "Liyun Zhu"
 date: 2018-12-20T13:44:55+10:00
 image: "https://tom-roujiang.github.io/liyun_zhu//images/profile.jpg"
-jobtitle: "Visiting master from ANU"
+jobtitle: "Master student from ANU"
 promoted: false
 class: visiting
 personal_url: https://tom-roujiang.github.io/liyun_zhu/

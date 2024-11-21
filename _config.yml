@@ -20,6 +20,8 @@ collections:
     sort_by: weight
   team:
     output: true
+  seminar:
+    output: true
 
 defaults:
   - scope:
@@ -32,6 +34,11 @@ defaults:
       type: "team"
     values:
       layout: "team"
+  - scope:
+      path: ""
+      type: "seminar"
+    values:
+      layout: "seminar"
 
 sass:
   style: compressed # possible values: nested expanded compact compressed

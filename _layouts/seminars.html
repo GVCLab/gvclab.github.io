@@ -1,0 +1,27 @@
+---
+layout: default
+bodyClass: "page-seminars"
+---
+
+
+<div class="container pt-6 pb-6">
+    <div class="row">
+        <p> Every two weeks, GVC Open Seminar invites the first author in the top conference and the senior PhD student for sharing their paper and thoughts. </p>
+        <br>
+        <br>
+        <hr>
+        
+        <h3>Upcoming Seminar</h3>
+        <div class="col-12 col-md-12 mb-2">
+            {% for seminar in site.seminar %}
+            <p style="margin-bottom: 0px;"> 🌟 {{seminar.time}},  <b>“{{ seminar.title }}”</b>, {{ seminar.author }}, {{seminar.info}}
+            {% if seminar.personal_url %}
+            <a target="_blank" href="{{ seminar.personal_url }}" rel="noreferrer"> 
+                <i class="fa fa-home" style="font-size:24px"></i></a>
+            {% endif %}
+        </p>
+        {% endfor %}
+        </div>
+    </div>
+   
+</div>

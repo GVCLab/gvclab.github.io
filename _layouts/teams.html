@@ -47,9 +47,9 @@ bodyClass: "page-teams"
 </style>
 
 <div class="container pt-6 pb-6">
+    <h2>Offline Members</h2>
     <div class="row">
         {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
-        <!-- <h2>Principal Investigator (PI)</h2> -->
         {% for team in promoted_teams %}
         <div style="display: contents;">
             <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
@@ -61,6 +61,7 @@ bodyClass: "page-teams"
                     <div class="team-meta" style="display: inline-block;">
                         <h2 class="team-name">{{ team.title }}</h2>
                         <p class="team-description">{{ team.jobtitle }}</p>
+                        <p class="team-description">Principal Investigator</p>
                         {% if team.personal_url %}
                         <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
                             <i class="fa fa-home" style="font-size:24px"></i></a>

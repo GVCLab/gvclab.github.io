@@ -5,13 +5,19 @@ bodyClass: "page-teams"
 <style>
     .gvc-team{
         transform: skewX(-10deg); 
-        width:123px !important; 
-        height:350px !important; 
+        width:130px !important; 
+        height:320px !important; 
         padding:0 !important; 
-        margin: 0 5px;
+        margin: 10px 10px 0 0;
         overflow: hidden !important; 
-        border: 1px solid #333; 
+        border: 3px solid #fff; 
         display: inline-block !important;
+    }
+
+    .gvc-team:hover{
+        transition-duration: 0.2s;
+        width: 140px !important;
+        border: 3px solid orange;
     }
 
     .gvc-team .team-name{
@@ -40,7 +46,7 @@ bodyClass: "page-teams"
 <div class="container pt-6 pb-6">
     <div class="row">
         {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
-        <h2>Principal Investigator (PI)</h2>
+        <!-- <h2>Principal Investigator (PI)</h2> -->
         {% for team in promoted_teams %}
         <div style="display: contents;">
             <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
@@ -73,12 +79,9 @@ bodyClass: "page-teams"
             <!-- </div> -->
         </div>
         {% endfor %}
-    </div>
-    <br>
 
-    <div class="row">
         {% assign teams = site.team | where: "promoted", false | where: "class", "phd" | sort: "weight" %}
-        <h2>Our Rising Stars ⬇️</h2>
+        <!-- <h2>Our Rising Stars ⬇️</h2> -->
         {% for team in teams %}
         <div style="display: contents">
                 <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->

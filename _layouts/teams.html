@@ -2,72 +2,98 @@
 layout: default
 bodyClass: "page-teams"
 ---
+<style>
+    .gvc-team{
+        transform: skewX(-10deg); 
+        width:123px !important; 
+        height:350px !important; 
+        padding:0 !important; 
+        margin: 0 5px;
+        overflow: hidden !important; 
+        border: 1px solid #333; 
+        display: inline-block !important;
+    }
 
-<!-- <div class="intro">
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-                {{ content }}
-            </div>
-            {% if page.intro_image %}
-            <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-                <img alt={{ page.title }} class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
-            </div>
-            {% endif %}
-        </div>
-    </div>
-</div> -->
+    .gvc-team .team-name{
+        font-size: large !important;
+
+    }
+    .gvc-team .team-meta{
+        padding: 0 5px;
+    }
+
+    .gvc-team-master{
+        background-color: rgba(178, 143, 206, 0.3) !important;
+    }
+
+    .gvc-team-phd{
+        background-color:cornsilk !important;
+    }
+
+    .gvc-team-visiting{
+        background-color: #FEDFE1 !important;
+
+    }
+
+</style>
 
 <div class="container pt-6 pb-6">
     <div class="row">
         {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
         <h2>Principal Investigator (PI)</h2>
         {% for team in promoted_teams %}
-        <div class="col-12 col-md-4 mb-2">
-            <div class="team team-summary team-summary-large">
-                {% if team.image %}
-                <div class="team-image">
-                    <img width="90" height="90" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
+        <div style="display: contents;">
+            <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                <div class="team team-summary team-summary-large gvc-team">
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <div class="team-meta" style="display: inline-block;">
+                        <h2 class="team-name">{{ team.title }}</h2>
+                        <p class="team-description">{{ team.jobtitle }}</p>
+                        {% if team.personal_url %}
+                        <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
+                            <i class="fa fa-home" style="font-size:24px"></i></a>
+                        {% endif %}
+                        {% if team.github_url %}
+                        <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
+                            <i class="fa fa-github" style="font-size:24px"></i></a>
+                        {% endif %}
+                        {% if team.scholar_url %}
+                        <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
+                            <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg>
+                        </span>
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
                 </div>
-                {% endif %}
-                <div class="team-meta">
-                    <h2 class="team-name">{{ team.title }}</h2>
-                    <p class="team-description">{{ team.jobtitle }}</p>
-                    {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
-                    {% endif %}
-                </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
-            </div>
+            <!-- </div> -->
         </div>
         {% endfor %}
-        
     </div>
     <br>
+
     <div class="row">
         {% assign teams = site.team | where: "promoted", false | where: "class", "phd" | sort: "weight" %}
-        <h2>PhD Students</h2>
+        <h2>Our Rising Stars ⬇️</h2>
         {% for team in teams %}
-        <div class="col-12 col-md-4 mb-2">
-            <div class="team team-summary team-summary-large" style="background-color: #ecf7ed;">
-                {% if team.image %}
-                <div class="team-image">
-                    <img width="90" height="90" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
-                </div>
-                {% endif %}
-                <div class="team-meta">
+        <div style="display: contents">
+                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                    <div class="team team-summary team-summary-large gvc-team gvc-team-phd" >
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                
+                <!-- </div> -->
+                <div class="team-meta" style="display: inline-block;">
                     <h2 class="team-name">{{ team.title }}</h2>
                     <p class="team-description">{{ team.jobtitle }}</p>
+                    <p class="team-description">{{ team.from }}</p>
                     {% if team.personal_url %}
                     <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
                         <i class="fa fa-home" style="font-size:24px"></i></a>
@@ -79,29 +105,30 @@ bodyClass: "page-teams"
                     {% if team.scholar_url %}
                     <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
                         <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
-                    {% endif %}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
+                        {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
             </div>
         </div>
         {% endfor %}
-    </div>
-    <br>
-    <div class="row">
-        {% assign promoted_teams = site.team | where: "promoted", false | where: "class", "master" | sort: "weight" %}
-        <h2>Master Students</h2>
-        {% for team in promoted_teams %}
-        <div class="col-12 col-md-4 mb-2">
-            <div class="team team-summary team-summary-large"  style="background-color: #EFF2FF;" >
-                {% if team.image %}
-                <div class="team-image">
-                    <img width="90" height="90" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
-                </div>
-                {% endif %}
-                <div class="team-meta">
+
+        {% assign teams = site.team | where: "promoted", false | where: "class", "master" | sort: "weight" %}
+        {% for team in teams %}
+        <div style="display: contents;">
+                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                    <div class="team team-summary team-summary-large gvc-team gvc-team-master" >
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                
+                <!-- </div> -->
+                <div class="team-meta" style="display: inline-block;">
                     <h2 class="team-name">{{ team.title }}</h2>
                     <p class="team-description">{{ team.jobtitle }}</p>
+                    <p class="team-description">{{ team.from }}</p>
                     {% if team.personal_url %}
                     <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
                         <i class="fa fa-home" style="font-size:24px"></i></a>
@@ -113,29 +140,30 @@ bodyClass: "page-teams"
                     {% if team.scholar_url %}
                     <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
                         <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
-                    {% endif %}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
+                        {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
             </div>
         </div>
         {% endfor %}
-    </div>
-    <br>
-    <div class="row">
-        {% assign promoted_teams = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
-        <h2>Visiting Students</h2>
-        {% for team in promoted_teams %}
-        <div class="col-12 col-md-4 mb-2">
-            <div class="team team-summary team-summary-large" style="background-color: #efefef;">
-                {% if team.image %}
-                <div class="team-image">
-                    <img width="90" height="90" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
-                </div>
-                {% endif %}
-                <div class="team-meta">
+
+        {% assign teams = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
+        {% for team in teams %}
+        <div  style="display: contents;">
+                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                    <div class="team team-summary team-summary-large gvc-team gvc-team-visiting" >
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                
+                <!-- </div> -->
+                <div class="team-meta" style="display: inline-block;">
                     <h2 class="team-name">{{ team.title }}</h2>
                     <p class="team-description">{{ team.jobtitle }}</p>
+                    <p class="team-description">Visiting Student</p>
                     {% if team.personal_url %}
                     <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
                         <i class="fa fa-home" style="font-size:24px"></i></a>
@@ -147,13 +175,14 @@ bodyClass: "page-teams"
                     {% if team.scholar_url %}
                     <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
                         <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></a>
-                    {% endif %}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
+                        {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
             </div>
         </div>
         {% endfor %}
+
     </div>
-    </div>
+
 </div>

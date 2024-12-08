@@ -14,7 +14,7 @@ bodyClass: "page-seminars"
         <h3>Upcoming Seminar</h3>
         <div class="col-12 col-md-12 mb-2">
             {% for seminar in site.seminar %}
-            <p style="margin-bottom: 0px;"> 🌟 {{seminar.time}},  <b>“{{ seminar.title }}”</b>, {{ seminar.author }}, {{seminar.info}}
+            <p style="margin-bottom: 5px;"> Vol.{{seminar.vol}}. [{{seminar.time}}]  <b>“{{ seminar.title }}”</b>, {{ seminar.author }}, {{seminar.info}}
             {% if seminar.personal_url %}
             <a target="_blank" href="{{ seminar.personal_url }}" rel="noreferrer"> 
                 <i class="fa fa-home" style="font-size:24px"></i></a>

@@ -13,6 +13,9 @@ bodyClass: "page-teams"
         border: 3px solid #fff; 
         display: inline-block !important;
     }
+    .gvc-team img{
+        height:200px;
+    }
 
     .gvc-team:hover{
         transition-duration: 0.2s;
@@ -52,7 +55,7 @@ bodyClass: "page-teams"
             <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
                 <div class="team team-summary team-summary-large gvc-team">
                     {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                        <img alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
                     {% endif %}
                     <!---->
                     <div class="team-meta" style="display: inline-block;">

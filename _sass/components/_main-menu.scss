@@ -24,6 +24,9 @@
         > a {
           font-weight: bold;
           text-decoration: none;
+          color: white;
+          background-color: $primary;
+          transform: skewX(-10deg);
           &:hover {
             text-decoration: none;
             transition: all 225ms ease-in 0s;

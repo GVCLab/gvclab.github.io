@@ -8,7 +8,7 @@ bodyClass: "page-teams"
         width:130px !important; 
         height:320px !important; 
         padding:0 !important; 
-        margin: 10px 10px 0 0;
+        margin: 5px 5px 0 0;
         overflow: hidden !important; 
         border: 3px solid #fff; 
         display: inline-block !important;
@@ -44,10 +44,15 @@ bodyClass: "page-teams"
 
     }
 
+    .title-of-team{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
 </style>
 
 <div class="container pt-6 pb-6">
-    <h2>Offline Members</h2>
+    <h2 class="title-of-team">Current Research Members</h2>
     <div class="row">
         {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
         {% for team in promoted_teams %}
@@ -83,7 +88,6 @@ bodyClass: "page-teams"
             <!-- </div> -->
         </div>
         {% endfor %}
-
         {% assign teams = site.team | where: "promoted", false | where: "class", "phd" | sort: "weight" %}
         <!-- <h2>Our Rising Stars ⬇️</h2> -->
         {% for team in teams %}
@@ -120,6 +124,43 @@ bodyClass: "page-teams"
         </div>
         {% endfor %}
 
+
+        {% assign teams = site.team | where: "promoted", false | where: "class", "ra" | sort: "weight" %}
+        {% for team in teams %}
+        <div style="display: contents;">
+                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                    <div class="team team-summary team-summary-large gvc-team gvc-team-ra" >
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                
+                <!-- </div> -->
+                <div class="team-meta" style="display: inline-block;">
+                    <h2 class="team-name">{{ team.title }}</h2>
+                    <p class="team-description">{{ team.jobtitle }}</p>
+                    <p class="team-description">{{ team.from }}</p>
+                    {% if team.personal_url %}
+                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
+                        <i class="fa fa-home" style="font-size:24px"></i></a>
+                    {% endif %}
+                    {% if team.github_url %}
+                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
+                        <i class="fa fa-github" style="font-size:24px"></i></a>
+                    {% endif %}
+                    {% if team.scholar_url %}
+                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
+                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
+                        {% endif %}
+                </div>
+                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- <h2 class="title-of-team">Master Student and Visiting</h2> -->
         {% assign teams = site.team | where: "promoted", false | where: "class", "master" | sort: "weight" %}
         {% for team in teams %}
         <div style="display: contents;">
@@ -155,6 +196,7 @@ bodyClass: "page-teams"
         </div>
         {% endfor %}
 
+
         {% assign teams = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
         {% for team in teams %}
         <div  style="display: contents;">
@@ -171,6 +213,42 @@ bodyClass: "page-teams"
                     <h2 class="team-name">{{ team.title }}</h2>
                     <p class="team-description">{{ team.jobtitle }}</p>
                     <p class="team-description">Visiting Student</p>
+                    {% if team.personal_url %}
+                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
+                        <i class="fa fa-home" style="font-size:24px"></i></a>
+                    {% endif %}
+                    {% if team.github_url %}
+                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
+                        <i class="fa fa-github" style="font-size:24px"></i></a>
+                    {% endif %}
+                    {% if team.scholar_url %}
+                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
+                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e37133" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
+                        {% endif %}
+                </div>
+                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+            </div>
+        </div>
+        {% endfor %}
+
+        <h2 class="title-of-team">Alumni</h2>
+        {% assign teams = site.team | where: "promoted", false | where: "class", "alumni" | sort: "weight" %}
+        {% for team in teams %}
+        <div style="display: contents;">
+                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
+                    <div class="team team-summary team-summary-large gvc-team gvc-team-alumni" >
+                    {% if team.image %}
+                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                    {% endif %}
+                    <!---->
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
+                
+                <!-- </div> -->
+                <div class="team-meta" style="display: inline-block;">
+                    <h2 class="team-name">{{ team.title }}</h2>
+                    <p class="team-description">{{ team.jobtitle }}</p>
+                    <p class="team-description">{{ team.from }}</p>
                     {% if team.personal_url %}
                     <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
                         <i class="fa fa-home" style="font-size:24px"></i></a>

@@ -6,4 +6,5 @@ jobtitle: "MS from SCU"
 promoted: false
 class: alumni
 weight: 1
+from: "(2024.11 - 2025.7)"
 ---

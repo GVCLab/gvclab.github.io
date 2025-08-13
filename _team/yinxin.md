@@ -7,5 +7,6 @@ from: "UM(w/ Chi-Man Pun)"
 promoted: false
 class: phd
 weight: 2
+personal_url: https://flow0314.github.io/
 scholar_url: https://scholar.google.com/citations?user=bo0YGokAAAAJ&hl=zh-CN
 ---

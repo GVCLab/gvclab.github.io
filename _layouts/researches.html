@@ -3,34 +3,60 @@ layout: default
 bodyClass: "page-researches"
 ---
 
-<div class="intro">
-  <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        {{ content }}
-      </div>
-      {% if page.intro_image %}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt={{ page.title }} class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</div>
-
-<div class="container pt-6 pb-6">
+<div class="container pt-12 pb-12">
+  <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" >[Google Scholar] </a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author) </span>
   <div class="row">
-    {% for service in site.researches %}
-    <div class="col-12 col-md-6 mb-3">
-      <div class="service service-summary">
-        <div class="service-content">
-          <h2 class="service-title">
-            <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
-          </h2>
-          <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
-        </div>
+      {% assign sorted_items = site.researches | group_by: "year" | reverse %}
+      {% assign counter = site.researches | size %}
+      <div class="col-12">
+      {% for coll in sorted_items %}
+        {% assign my_integer_number = coll.name | to_integer %}
+        {% if my_integer_number > 2021 %}
+          <h2 style="font: 700;">{{coll.name}}</h2>
+          {% assign sorted_ser = coll.items | sort: "date" | reverse %}
+          {% for service in sorted_ser %}
+              <div class="service service-summary" style="padding-bottom: 15px;">
+                <div class="service-content">
+                  <div> 
+                    <a style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> 
+                    <span>{{ service.authors ｜ truncate: 100 }}</span> <br> 
+                    {{ service.publication}}, {{service.year}}. {% if service.code%}
+                    <div style="display: inline;" class="xcode">
+                    <a href="{{post.code}}"><img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/></a>
+                    </div>
+                    {% endif %}
+                    <br>
+                    {{service.highlight_reason}} 
+                  </div>
+                </div>
+              </div>
+              {% assign counter = counter | minus:1 %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+      <h2 style="font: 700;">Before 2021</h2>
+      {% for coll in sorted_items %}
+        {% assign my_integer_number = coll.name | to_integer %}
+        {% if my_integer_number < 2022 %}
+          {% assign sorted_ser = coll.items | sort: "date" | reverse %}
+          {% for service in sorted_ser %}
+              <div class="service service-summary" style="padding-bottom: 15px;">
+                <div class="service-content">
+                  <!-- <img src="{{service.image}}"> -->
+                  <div> <a style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> {{ service.publication}}, {{service.year}}. {% if service.code%}
+                    <div style="display: inline;" class="xcode">
+                    <a href="{{post.code}}"><img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/></a>
+                    </div>
+                    {% endif %}
+                    <br>
+                    {{service.highlight_reason}} </div>
+                </div>
+              </div>
+              {% assign counter = counter | minus:1 %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
       </div>
-    </div>
-    {% endfor %}
   </div>
 </div>

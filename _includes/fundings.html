@@ -1,0 +1,20 @@
+<div class="news">
+  <div class="call-box-top">
+  <h1>Reserach Grant </h1>
+    <ul>
+      {% assign limit = site.home.limit_news | default: 6 %}
+      {% for new_info in site.data.fundings limit: limit %}
+      <li>
+        {% if new_info.description %}
+            {{ new_info.description }} 
+        {% endif %}
+        <span style="float: right;">
+          {% if new_info.time %}
+          {{ new_info.time }} 
+          {% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

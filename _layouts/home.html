@@ -13,10 +13,24 @@ bodyClass: "page-home"
         {% if page.show_news %}
           {% include news.html show_button=true %}
         {% endif %}
+        <br>
+        {% if page.show_fundings %}
+          {% include fundings.html show_button=true %}
+        {% endif %}
+
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="intro">
+  <div class="container"  style="margin-top: -100px;">
+    
+    </div>
+  </div>
+</div>
+
 
 <!-- 
 {% if site.data.features %}
@@ -44,25 +58,6 @@ bodyClass: "page-home"
 
 <div class="strip">
   <div class="container pt-6 pb-6 pb-md-10">
-    <div class="row justify-content-start">
-      {% assign limit = site.home.limit_services | default: 6 %}
-      {% for service in site.researches limit: limit %}
-      <div class="col-12 col-md-4 mb-1">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
-            </h2>
-            <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{ "research" | relative_url }}">View All Research</a>
-      </div>
-    </div>
+   
   </div>
 </div>

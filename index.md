@@ -7,6 +7,7 @@ intro_image_absolute: true
 intro_image_hide_on_mobile: true
 show_call_box: false
 show_news: true
+show_fundings: true
 ---
 
 <!-- ## Generative & intelligent Visual Computing (GVC) Lab @ Great Bay University -->

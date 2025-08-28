@@ -15,12 +15,13 @@ bodyClass: "page-researches"
   color: #e37133
 }
 
-
-
 </style>
 
-<div class="container pt-12 pb-12 researches">
-  <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" >[Google Scholar] </a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author) </span>
+<div class="intro">
+<div class="container pt-12 pb-12 researches"  style="margin-top: -130px;">
+  <b>Full list can be founded at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author) </span>
+  <br>
+   <br>
   <div class="row">
       {% assign sorted_items = site.researches | group_by: "year" | reverse %}
       {% assign counter = site.researches | size %}
@@ -28,7 +29,8 @@ bodyClass: "page-researches"
       {% for coll in sorted_items %}
         {% assign my_integer_number = coll.name | to_integer %}
         {% if my_integer_number > 2021 %}
-          <h2 style="font: 700;">{{coll.name}}</h2>
+          <div  style="font-size: 30px; font-weight: 400;"> Year {{coll.name}}</div>
+          <hr>
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}
           {% for service in sorted_ser %}
               <div class="service service-summary" style="padding-bottom: 15px;">
@@ -51,7 +53,8 @@ bodyClass: "page-researches"
         {% endif %}
       {% endfor %}
 
-      <h2 style="font: 700;">Before 2021</h2>
+      <div style="font-size: 30px; font-weight: 400;">Before 2021</div>
+      <hr>
       {% for coll in sorted_items %}
         {% assign my_integer_number = coll.name | to_integer %}
         {% if my_integer_number < 2022 %}
@@ -75,4 +78,5 @@ bodyClass: "page-researches"
       {% endfor %}
       </div>
   </div>
+</div>
 </div>

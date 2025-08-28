@@ -13,7 +13,7 @@ project: https://vvictoryuki.github.io/animatezero.github.io/
 teaser: ./images/animatezero.gif
 is_show: True
 authors: Jiwen Yu, <b>Xiaodong Cun 📮</b>, Chenyang Qi, Yong Zhang,  <a href='https://xinntao.github.io/'>Xintao Wang</a>, Ying Shan, Jian Zhang
-publication: ArXiv
+publication: Preprint
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

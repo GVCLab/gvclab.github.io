@@ -8,7 +8,7 @@
 <div>
   <div class="news_div">
   <h1 style="margin-bottom: 0px;"> Recent News</h1>
-    <ul style="line-height: 1.5em;">
+    <ul style="line-height: 1.5em; margin-left: 20px;">
       {% assign limit = site.home.limit_news | default: 10 %}
       {% for new_info in site.data.news limit: limit %}
       <li>

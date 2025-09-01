@@ -4,8 +4,8 @@ title: 'GVC Lab'
 
 logo:
   mobile: "images/logo/gbugvc.png"
-  mobile_height: "32px"
-  mobile_width: "32px"
+  mobile_width: "300px"
+  mobile_height: "48px"
   desktop: "images/logo/gbugvc.png"
   desktop_height: "48px"
 

@@ -1,8 +1,34 @@
 [
+
+  {
+    "time": "2025/08",
+    "link": "gvclab.github.io",
+    "description": "A proposal is granted by <b>NSFC</b>."
+  },
+  {
+    "time": "2025/08",
+    "link": "gvclab.github.io",
+    "description": "Three papers are accepted by <b>SIGGRAPH Asia 2025</b>"
+  },
+  {
+    "time": "2025/07",
+    "link": "gvclab.github.io",
+    "description": "A paper is accepted by <b>ACM MultiMedia 2025</b>"
+  },
+   {
+    "time": "2025/02",
+    "link": "gvclab.github.io",
+    "description": "A paper is accepted by <b>SIGGRAPH 2025</b>"
+  },
+   {
+    "time": "2025/07",
+    "link": "gvclab.github.io",
+    "description": "Three papers are accepted by <b>CVPR 2025.</b>"
+  },
   {
     "time": "25Fall/Anytime",
     "link": "gvclab.github.io",
-    "description": "We are actively looking for prospective labmates. See <a href='./opening/'>here</a> for more information."
+    "description": "We are actively looking for prospective labmates. See <b><a href='./opening/'>here</a></b> for more information."
   },
   {
     "time": "2024/10/01",
@@ -22,7 +48,7 @@
   {
     "time": "2024/07/02",
     "link": "gvclab.github.io",
-    "description": "A longer opening position description in Chinese is presented at <a href='https://zhuanlan.zhihu.com/p/717800037'>Zhihu</a>."
+    "description": "A longer opening position description in Chinese is presented at <b><a href='https://zhuanlan.zhihu.com/p/717800037'>Zhihu</a></b>."
   },
   {
     "time": "2024/07/02",

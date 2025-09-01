@@ -2,10 +2,11 @@
 layout: default
 bodyClass: "page-home"
 ---
-<div class="intro">
-  <div class="container"  style="margin-top: -130px;">
+<div >
+  <div class="container" >
     <div class="row justify-content-start">
       <div class="col-12">
+        <br>
         {{ content }}
         <br></br>
       <img alt="{{ page.title }}" class="intro-image  {% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
@@ -22,15 +23,6 @@ bodyClass: "page-home"
     </div>
   </div>
 </div>
-
-
-<div class="intro">
-  <div class="container"  style="margin-top: -100px;">
-    
-    </div>
-  </div>
-</div>
-
 
 <!-- 
 {% if site.data.features %}
@@ -54,10 +46,3 @@ bodyClass: "page-home"
   </div>
 </div>
 {% endif %} -->
-
-
-<div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
-   
-  </div>
-</div>

@@ -7,4 +7,5 @@ from: "UM(w/ Chi-Man Pun)"
 promoted: false
 class: master
 weight: 1
+personal_url: https://ddxsg24.github.io/
 ---

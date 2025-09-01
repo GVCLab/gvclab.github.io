@@ -11,7 +11,7 @@ logo:
 
 home: 
   limit_services: 3
-  limit_news: 6
+  limit_news: 10
 
 collections:
   researches:
@@ -38,6 +38,7 @@ defaults:
       type: "seminar"
     values:
       layout: "seminar"
+
 
 sass:
   style: compressed # possible values: nested expanded compact compressed

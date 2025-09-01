@@ -1,7 +1,7 @@
-<div class="news">
-  <div class="call-box-top">
-  <h1>Reserach Grants </h1>
-    <ul>
+<div>
+  <div  class="news_div">
+  <h1 style="margin-bottom: 0px;">Reserach Grants </h1>
+    <ul style="line-height: 1.5em;">
       {% assign limit = site.home.limit_news | default: 6 %}
       {% for new_info in site.data.fundings limit: limit %}
       <li>

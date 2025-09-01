@@ -2,7 +2,7 @@ main:
   - name: "Home"
     url: "/"
     weight: 1
-  - name: "Research"
+  - name: "Publication"
     url: "/research/"
     weight: 2
   - name: "Team🔥"
@@ -15,7 +15,10 @@ main:
     url: "/opening/"
     weight: 5
   - name: "Contact"
-    url: "/contact/"
+    url: "https://vinthony.github.io/academic/"
+    weight: 6
+  - name: "Github"
+    url: "https://github.com/GVCLab"
     weight: 6
 
 footer:

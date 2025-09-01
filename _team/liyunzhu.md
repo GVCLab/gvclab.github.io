@@ -5,6 +5,7 @@ image: "https://tom-roujiang.github.io/liyun_zhu//images/profile.jpg"
 jobtitle: "MS from ANU"
 promoted: false
 class: alumni
+type: Visiting student
 personal_url: https://tom-roujiang.github.io/liyun_zhu/
 github_url: https://github.com/Tom-roujiang
 scholar_url: https://scholar.google.com/citations?user=3PmmHjUAAAAJ

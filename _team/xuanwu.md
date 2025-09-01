@@ -5,6 +5,7 @@ image: "https://robohash.org/xuanwu?bgset=bg1"
 jobtitle: "MS from SCU"
 promoted: false
 class: alumni
+type: Visiting student
 weight: 1
 from: "(2024.11 - 2025.7)"
 ---

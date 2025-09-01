@@ -1,8 +1,15 @@
-<div class="news">
-  <div class="call-box-top">
-  <h1>News </h1>
-    <ul>
-      {% assign limit = site.home.limit_news | default: 6 %}
+<style>
+  .news_div b{
+    color:#0d00b2;
+  }
+</style>
+
+
+<div>
+  <div class="news_div">
+  <h1 style="margin-bottom: 0px;"> Recent News</h1>
+    <ul style="line-height: 1.5em;">
+      {% assign limit = site.home.limit_news | default: 10 %}
       {% for new_info in site.data.news limit: limit %}
       <li>
         {% if new_info.description %}

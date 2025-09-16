@@ -39,7 +39,7 @@ bodyClass: "page-researches"
                     <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> {{ service.publication}}, {{service.year}}. 
                     {% if service.code%}
                           <div style="display: inline;" class="xcode">
-                                <a href="{{post.code}}">
+                                <a href="{{service.code}}">
                                   <img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/>
                                 </a>
                           </div>

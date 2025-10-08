@@ -1,7 +1,7 @@
 ---
 title: "Zhiyuan Li"
 date: 2018-12-20T13:44:55+10:00
-image: "https://robohash.org/yinxin?bgset=bg1"
+image: "images/team/zhiyuan.png"
 jobtitle: "PHD (2025.9 - )"
 from: "UM(w/ Chi-Man Pun)"
 promoted: false

@@ -4,31 +4,25 @@ bodyClass: "page-teams"
 ---
 <style>
     .gvc-team{
-        transform: skewX(-10deg); 
-        width:133px !important; 
-        height:320px !important; 
+        /* transform: skewX(-10deg);  */
+        width:175px !important; 
         padding:0 !important; 
-        margin: 5px 5px 0 0;
+        margin: 10px 10px 0 0;
         overflow: hidden !important; 
-        border: 3px solid #fff; 
+        box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
         display: inline-block !important;
+        border-radius: 10%;
     }
     .gvc-team img{
-        height:200px;
+        width:175px;
+        height:175px;
     }
-
-    .gvc-team:hover{
-        transition-duration: 0.2s;
-        width: 140px !important;
-        border: 3px solid orange;
-    }
-
     .gvc-team .team-name{
         font-size: large !important;
 
     }
     .gvc-team .team-meta{
-        padding: 0 5px;
+        padding:10px;
     }
 
     .gvc-team-master{
@@ -43,6 +37,9 @@ bodyClass: "page-teams"
         background-color: #FEDFE1 !important;
 
     }
+    .gvc-team-alumni{
+        background-color: #FEDFE1 !important;
+    }
 
     .team-meta .fa-home{
         color: #e37133;
@@ -56,11 +53,14 @@ bodyClass: "page-teams"
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .team-description{
+        line-height: 1.4em;
+    }
 
 </style>
 
 <div class="container">
-    <div class="row" style="padding-left: 25px;">
+    <div class="row">
         <h2 class="title-of-team">Current Members</h2>
         {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
         {% for team in promoted_teams %}
@@ -68,7 +68,7 @@ bodyClass: "page-teams"
             <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
                 <div class="team team-summary team-summary-large gvc-team">
                     {% if team.image %}
-                        <img alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                        <img alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
                     {% endif %}
                     <!---->
                     <div class="team-meta" style="display: inline-block;">
@@ -91,7 +91,7 @@ bodyClass: "page-teams"
                         </a>
                         {% endif %}
                     </div>
-                    <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
                 </div>
             <!-- </div> -->
         </div>
@@ -103,7 +103,7 @@ bodyClass: "page-teams"
                 <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
                     <div class="team team-summary team-summary-large gvc-team gvc-team-phd" >
                     {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                        <img height="200" alt="{{ team.title }}" src="{{ team.image | relative_url }}" />
                     {% endif %}
                     <!---->
                     <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
@@ -127,7 +127,7 @@ bodyClass: "page-teams"
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
                         {% endif %}
                 </div>
-                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
@@ -139,7 +139,7 @@ bodyClass: "page-teams"
                 <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
                     <div class="team team-summary team-summary-large gvc-team gvc-team-ra" >
                     {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                        <img height="200" alt="{{ team.title }}" src="{{ team.image | relative_url }}" />
                     {% endif %}
                     <!---->
                     <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
@@ -163,7 +163,7 @@ bodyClass: "page-teams"
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
                         {% endif %}
                 </div>
-                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
@@ -175,7 +175,7 @@ bodyClass: "page-teams"
                 <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
                     <div class="team team-summary team-summary-large gvc-team gvc-team-master" >
                     {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
+                        <img height="200" alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
                     {% endif %}
                     <!---->
                     <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
@@ -199,7 +199,7 @@ bodyClass: "page-teams"
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
                         {% endif %}
                 </div>
-                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
@@ -235,7 +235,7 @@ bodyClass: "page-teams"
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
                         {% endif %}
                 </div>
-                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
@@ -243,14 +243,14 @@ bodyClass: "page-teams"
         <h2 class="title-of-team">Alumni</h2>
         {% assign teams = site.team | where: "promoted", false | where: "class", "alumni" | sort: "weight" %}
         {% for team in teams %}
-        <div>
-                <div class="team team-summary gvc-team-alumni" style="margin-left: 20px;">
+        <div style="display: inline-block; width:400px; margin:10px 10px 0 0 ">
+                <div class="team team-summary gvc-team-alumni">
                     {% if team.image %}
                         <img width="68px" height="68px" alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
                     {% endif %}
                 
                 <!-- </div> -->
-                <div class="team-meta" style="display: block;padding: 2px 10px 0 10px">
+                <div class="team-meta" style="display: inline-block; padding: 2px 10px 0 10px">
                     <span class="team-name"> <b>{{ team.title }}</b>, <i>{{ team.jobtitle }}</i> </span>
                     <br>
                     <span>{{team.type}} {{ team.from }}</span>
@@ -269,7 +269,7 @@ bodyClass: "page-teams"
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
                         {% endif %}
                 </div>
-                <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> 
+                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}

@@ -1,5 +1,9 @@
 [
-
+   {
+    "time": "2025/10",
+    "link": "gvclab.github.io",
+    "description": "<a href='https://arxiv.org/abs/2305.18476'>EVPv2</a> is accecpted by <b>TPAMI</b>. Congratulations to <a href='https://scholar.google.com/citations?user=As9gQZ0AAAAJ&hl=zh-CN'>Weihuang</a>!"
+  },
   {
     "time": "2025/08",
     "link": "gvclab.github.io",
@@ -54,5 +58,5 @@
     "time": "2024/07/02",
     "link": "gvclab.github.io",
     "description": "Three Papers are accepted by <b>ECCV 2024</b>."
-  },
+  }
 ]

@@ -1,7 +1,7 @@
 ---
 title: "Yudian Zheng"
 date: 2018-12-20T13:44:55+10:00
-image: "https://robohash.org/yudianzheng?bgset=bg1"
+image: "images/team/yudian.png"
 jobtitle: "PHD (2025.1 - )"
 from: "UM(w/ Chi-Man Pun)"
 promoted: false

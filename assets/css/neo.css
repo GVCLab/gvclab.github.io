@@ -1,0 +1,179 @@
+/* assets/css/neo.css */
+
+/* =========================================
+   1. 核心变量与全局重置 (Core & Reset)
+   ========================================= */
+:root {
+    --neo-bg: #f0f0f0;          /* 浅灰背景，比纯白更有质感 */
+    --neo-black: #1a1a1a;       /* 接近纯黑 */
+    --neo-accent: #FF3333;      /* 警示红 (强调色) */
+    --neo-highlight: #CCFF00;   /* 酸性绿 (高亮色) */
+    --neo-border: 3px solid var(--neo-black);
+    --neo-shadow: 6px 6px 0px 0px var(--neo-black);
+}
+
+/* 暴力去除所有圆角 */
+* {
+    border-radius: 0 !important;
+}
+
+body {
+    background-color: var(--neo-bg) !important;
+    color: var(--neo-black) !important;
+    font-family: var(--neo-font-mono) !important; /* 全局等宽字体，极客感 */
+    font-weight: 500;
+}
+
+/* =========================================
+   2. 导航栏 (Navbar)
+   ========================================= */
+.navbar {
+    background-color: #fff !important;
+    border-bottom: var(--neo-border) !important;
+    box-shadow: 0 4px 0 0 var(--neo-black);
+    padding: 1rem !important;
+}
+
+.navbar-brand {
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    background: var(--neo-black);
+    color: #fff !important;
+    padding: 5px 10px !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: var(--neo-black) !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    margin: 0 5px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: var(--neo-highlight);
+    border: 2px solid var(--neo-black);
+    color: var(--neo-black) !important;
+}
+
+/* =========================================
+   3. 首页与个人信息 (Profile & Intro)
+   ========================================= */
+/* 头像强制变方，加粗框 */
+.profile-img img {
+    border: var(--neo-border) !important;
+    box-shadow: var(--neo-shadow) !important;
+    filter: grayscale(100%); /* 黑白头像 */
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+.profile-img img:hover {
+    filter: grayscale(0%); /* 悬停恢复彩色 */
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 0 var(--neo-black) !important;
+}
+
+/* 名字标题 */
+h1.font-weight-bold {
+    background: var(--neo-black);
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    transform: rotate(-1deg); /* 微微倾斜 */
+}
+
+/* =========================================
+   4. 新闻列表 (News)
+   ========================================= */
+/* 表格变卡片 */
+.news table, .table {
+    background: #fff;
+    border: var(--neo-border) !important;
+    box-shadow: var(--neo-shadow);
+}
+
+.news table td, .news table th {
+    border-bottom: 2px solid var(--neo-black) !important;
+    border-top: none !important;
+    padding: 15px !important;
+}
+
+/* 日期高亮 */
+.news-date {
+    font-weight: bold;
+    background-color: var(--neo-highlight);
+    display: inline-block;
+    padding: 2px 5px;
+    border: 1px solid var(--neo-black);
+}
+
+/* =========================================
+   5. 论文列表按钮 (Publications Buttons)
+   ========================================= */
+/* al-folio 的按钮通常是 a.btn */
+.publications a.btn, 
+.repositories a.btn,
+a.btn {
+    background-color: #fff !important;
+    color: var(--neo-black) !important;
+    border: 2px solid var(--neo-black) !important;
+    box-shadow: 4px 4px 0 0 var(--neo-black) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    margin-right: 8px !important;
+    margin-bottom: 5px !important;
+    padding: 5px 15px !important;
+    transition: all 0.1s ease !important;
+}
+
+.publications a.btn:hover,
+a.btn:hover {
+    background-color: var(--neo-accent) !important; /* 悬停变红 */
+    color: #fff !important;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--neo-black) !important;
+}
+
+/* =========================================
+   6. 项目卡片 (Projects / Grid)
+   ========================================= */
+.grid-item .card {
+    border: var(--neo-border) !important;
+    box-shadow: var(--neo-shadow) !important;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.grid-item .card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 0 var(--neo-black) !important;
+}
+
+.card-title {
+    background: var(--neo-black);
+    color: #fff;
+    padding: 5px;
+    display: inline-block;
+}
+
+/* =========================================
+   7. 其他细节
+   ========================================= */
+/* 链接样式 */
+a {
+    color: var(--neo-black) !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+}
+
+a:hover {
+    background-color: var(--neo-highlight);
+    text-decoration: none !important;
+}
+
+/* 进度条（如果有） */
+progress {
+    border: 2px solid black;
+    height: 20px;
+}

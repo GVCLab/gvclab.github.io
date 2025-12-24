@@ -117,3 +117,25 @@ body {
     line-height: 1.3;
   }
 }
+
+/* 在 assets/css/style.scss 的最末尾添加 */
+
+/* 强制全局去圆角 */
+* {
+  border-radius: 0 !important;
+}
+
+/* 强制按钮风格 */
+.btn, button, input[type="submit"] {
+  background: #fff !important;
+  color: #000 !important;
+  border: 3px solid #000 !important;
+  box-shadow: 4px 4px 0 0 #000 !important;
+  transition: all 0.2s !important;
+}
+
+/* 强制按钮点击效果 */
+.btn:active, button:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 0 #000 !important;
+}

@@ -64,7 +64,7 @@ bodyClass: "page-researches"
           <hr>
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}
           {% for service in sorted_ser %}
-              {% if service.publication == 'Preprint' %}
+              {% if service.publication == 'selected-preprint' %}
               {% else %}
               <div class="service service-summary" style="padding-bottom: 15px;">
                 <div class="service-content">
@@ -96,7 +96,7 @@ bodyClass: "page-researches"
         {% if my_integer_number < 2022 %}
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}
           {% for service in sorted_ser %}
-              {% if service.publication == 'Preprint' %}
+              {% if service.publication == 'selected-preprint' %}
               {% else %}
               <div class="service service-summary" style="padding-bottom: 15px;">
                 <div class="service-content">

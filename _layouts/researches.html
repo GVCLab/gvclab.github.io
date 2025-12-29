@@ -15,6 +15,15 @@ bodyClass: "page-researches"
   color: #e37133
 }
 
+.researches b.member{
+  color: #333
+}
+
+.highlighted {
+    background-color: antiquewhite;
+    border-right: 14px solid orangered;
+}
+
 </style>
 
 <div >
@@ -32,7 +41,12 @@ bodyClass: "page-researches"
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' %}
-              <div class="service service-summary" style="padding-bottom: 15px;">
+              {% if service.highlight_reason %}
+                <div class="service service-summary highlighted" style="padding: 8px;">
+              {% else %}
+                <div class="service service-summary" style="padding: 8px;">
+              {% endif %}
+
                 <div class="service-content">
                   <!-- <img src="{{service.image}}"> -->
                   <div> 
@@ -55,7 +69,7 @@ bodyClass: "page-researches"
       {% endfor %}
     </div>
      
-      <div class="col-12">
+    <div class="row">
       {% for coll in sorted_items %}
         {% assign my_integer_number = coll.name | to_integer %}
         {% if my_integer_number > 2021 %}
@@ -66,7 +80,11 @@ bodyClass: "page-researches"
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
               {% else %}
-              <div class="service service-summary" style="padding-bottom: 15px;">
+              {% if service.highlight_reason %}
+                <div class="service service-summary highlighted" style="padding: 8px;">
+              {% else %}
+                <div class="service service-summary" style="padding: 8px;">
+              {% endif %}
                 <div class="service-content">
                   <div> 
                     <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> 
@@ -89,6 +107,7 @@ bodyClass: "page-researches"
       {% endfor %}
       </div>
       
+      <div class="row">
       <div style="font-size: 30px; font-weight: 400;">Before 2021</div>
       <hr>
       {% for coll in sorted_items %}
@@ -98,7 +117,7 @@ bodyClass: "page-researches"
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
               {% else %}
-              <div class="service service-summary" style="padding-bottom: 15px;">
+              <div class="service service-summary" style="padding: 8px;">
                 <div class="service-content">
                   <!-- <img src="{{service.image}}"> -->
                   <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> {{ service.publication}}, {{service.year}}. {% if service.code%}

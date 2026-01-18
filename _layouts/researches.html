@@ -29,7 +29,7 @@ bodyClass: "page-researches"
 <div >
 <div class="container pt-12 pb-12 researches" >
   <br>
-  <b>Full list can be founded at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author) </span>
+  <b>Full list can be founded at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author, <b style="color:#333">BOLD NAME :</b> Working done at GVC Lab) </span>
   <br>
   <div class="row">
       {% assign sorted_items = site.researches | group_by: "year" | reverse %}
@@ -38,7 +38,7 @@ bodyClass: "page-researches"
       <hr>
       {% for coll in sorted_items %}
           {% assign my_integer_number = coll.name | to_integer %}
-          {% assign sorted_ser = coll.items | sort: "date" | reverse %}
+          {% assign sorted_ser = coll.items | sort: "date" | reverse %}   
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' %}
               {% if service.highlight_reason %}

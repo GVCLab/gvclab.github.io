@@ -2,278 +2,462 @@
 layout: default
 bodyClass: "page-teams"
 ---
+
+
 <style>
-    .gvc-team{
-        /* transform: skewX(-10deg);  */
-        width:175px !important; 
-        padding:0 !important; 
-        margin: 10px 10px 0 0;
-        overflow: hidden !important; 
-        box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-        display: inline-block !important;
-        border-radius: 10%;
-    }
-    .gvc-team img{
-        width:175px;
-        height:175px;
-    }
-    .gvc-team .team-name{
-        font-size: large !important;
+:root {
+    /* 核心配色定义 */
+    --gvc-orange: #e37133;   /* 活力橙 (International Orange) */
+    --gvc-blue: #002F6C;     /* 深邃蓝 (Oxford Blue) - 高亮用 */
+    --gvc-green: #7BA23F;
+    --gvc-white: #ffffff;
+    --gvc-bg: #fdfdfd;       /* 极浅的灰白，护眼 */
+    --gvc-text: #1a1a1a;
+}
 
-    }
-    .gvc-team .team-meta{
-        padding:10px;
-    }
+body {
+    background-color: var(--gvc-bg);
+    color: var(--gvc-text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 瑞士风格标配 */
+}
 
-    .gvc-team-master{
-        background-color: rgba(178, 143, 206, 0.3) !important;
-    }
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
 
-    .gvc-team-phd{
-        background-color:cornsilk !important;
-    }
+/* =========================================
+   1. 头部设计：极繁排版 (Maximalist Header)
+   ========================================= */
+.page-header {
+    margin-bottom: 80px;
+    border-bottom: 4px solid var(--gvc-blue); /* 粗线条分割 */
+    padding-bottom: 20px;
+}
 
-    .gvc-team-visiting{
-        background-color: #FEDFE1 !important;
+.big-title {
+    font-size: 6rem; /* 超大标题 */
+    font-weight: 800;
+    line-height: 0.85;
+    color: var(--gvc-orange);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -2px;
+}
 
-    }
-    .gvc-team-alumni{
-        background-color: #FEDFE1 !important;
-    }
+.big-title span {
+    display: block;
+    color: var(--gvc-blue); /* 第二行用深蓝色 */
+}
 
-    .team-meta .fa-home{
-        color: #e37133;
-    }
+.header-meta {
+    margin-top: 20px;
+    font-weight: 700;
+    color: var(--gvc-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-    .team-meta .fa-github{
-        color: black;
-    }
+/* =========================================
+   2. 艺术卡片：错层几何风格 (Offset Geometry)
+   ========================================= */
+.pop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 50px; /* 宽间距 */
+    margin-bottom: 100px;
+}
 
-    .title-of-team{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .team-description{
-        line-height: 1.4em;
-    }
+.pop-grid-alumni {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 50px; /* 宽间距 */
+    margin-bottom: 100px;
+}
 
+.pop-card {
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    z-index: 1;
+}
+
+/* 照片容器 */
+.photo-frame, .photo-frame-phd, .photo-frame-ms, .photo-frame-alumni, .photo-frame-ra {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.1; /* 稍微竖长一点 */
+    margin-bottom: 25px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gvc-orange);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-phd::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gvc-blue);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+
+
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-ms::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gvc-green);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-ra::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #B5495B;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-alumni::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #77428D;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+
+/* 照片本体 */
+.pop-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--gvc-text); /* 黑色描边，增加插画感 */
+    background: var(--gvc-white);
+    display: block;
+    filter: grayscale(0%); /* 保持彩色 */
+}
+
+/* 悬停交互：错位复原 + 颜色突变 */
+.pop-card:hover .photo-frame, .pop-card:hover .photo-frame-phd, .pop-card:hover .photo-frame-ms {
+    transform: translate(5px, 5px); /* 照片向右下移动 */
+}
+
+.pop-card:hover .photo-frame::after , .pop-card:hover .photo-frame-phd::after, .pop-card:hover .photo-frame-ms::after {
+    transform: translate(-15px, -15px); /* 背景向左上移动 */
+    background-color: var(--gvc-blue); /* 橙色变深蓝 */
+}
+
+/* =========================================
+   3. 文本排版：粗犷与细腻
+   ========================================= */
+.info-box {
+    position: relative;
+    padding-left: 15px;
+    border-left: 3px solid var(--gvc-orange); /* 左侧橙色线条 */
+    transition: border-color 0.3s;
+}
+
+.pop-card:hover .info-box {
+    border-left-color: var(--gvc-blue); /* 悬停变蓝 */
+}
+
+.pop-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--gvc-text);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.pop-grid-alumni .pop-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gvc-text);
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.pop-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gvc-blue); /* 职位用深蓝色 */
+    margin-bottom: 10px;
+    display: inline-block;
+    background: rgba(0, 47, 108, 0.05); /* 淡淡的蓝色背景 */
+    padding: 2px 6px;
+}
+
+.pop-desc {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 社交图标：大圆块 */
+.pop-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-dot {
+    width: 30px;
+    height: 30px;
+    background: var(--gvc-text);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    transition: background 0.2s;
+}
+
+.social-dot:hover {
+    background: var(--gvc-orange);
+}
+
+/* =========================================
+   4. 分类标题装饰
+   ========================================= */
+.category-header {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gvc-blue);
+    margin: 0px 0 40px 0;
+    display: inline-block;
+    background: var(--gvc-orange);
+    color: #fff;
+    padding: 5px 20px;
+    transform: skewX(-10deg); /* 倾斜的标签 */
+}
+
+.category-header span {
+    display: inline-block;
+    transform: skewX(10deg); /* 文字正回来 */
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .big-title { font-size: 3.5rem; }
+    .pop-grid { gap: 40px; }
+    .photo-frame::after { top: 10px; left: 10px; }
+}
 </style>
 
-<div class="container">
-    <div class="row">
-        <h2 class="title-of-team">Current Members</h2>
-        {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
-        {% for team in promoted_teams %}
-        <div style="display: contents;">
-            <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
-                <div class="team team-summary team-summary-large gvc-team">
-                    {% if team.image %}
-                        <img alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                    <!---->
-                    <div class="team-meta" style="display: inline-block;">
-                        <h2 class="team-name">{{ team.title }}</h2>
-                        <p class="team-description">{{ team.jobtitle }}</p>
-                        <p class="team-description">Principal Investigator</p>
-                        {% if team.personal_url %}
-                        <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                            <i class="fa fa-home" style="font-size:24px"></i></a>
-                        {% endif %}
-                        {% if team.github_url %}
-                        <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                            <i class="fa fa-github" style="font-size:24px"></i></a>
-                        {% endif %}
-                        {% if team.scholar_url %}
-                        <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                            <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg>
-                        </span>
+<div class="team-container">
+
+    {% assign promoted = site.team | where: "promoted", true | sort: "weight" %}
+    {% if promoted.size > 0 %}
+    <div class="pop-grid">
+        {% for team in promoted %}
+        <div class="pop-card">
+            <div class="photo-frame">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% else %}
+                    <div class="pop-photo" style="background:#eee;"></div>
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">Principal Investigator</div>
+                <div class="pop-desc">{{ team.jobtitle }}</div>
+                
+                <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
+                    {% if team.scholar_url %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
                         </a>
-                        {% endif %}
-                    </div>
-                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
+                    {% endif %}
                 </div>
-            <!-- </div> -->
-        </div>
-        {% endfor %}
-        {% assign teams = site.team | where: "promoted", false | where: "class", "phd" | sort: "weight" %}
-        <!-- <h2>Our Rising Stars ⬇️</h2> -->
-        {% for team in teams %}
-        <div style="display: contents">
-                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
-                    <div class="team team-summary team-summary-large gvc-team gvc-team-phd" >
-                    {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                    <!---->
-                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
-                
-                <!-- </div> -->
-                <div class="team-meta" style="display: inline-block;">
-                    <h2 class="team-name">{{ team.title }}</h2>
-                    <p class="team-description">{{ team.jobtitle }}</p>
-                    <p class="team-description">{{ team.from }}</p>
-                    {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
-                        {% endif %}
-                </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
+    {% endif %}
 
-
-        {% assign teams = site.team | where: "promoted", false | where: "class", "ra" | sort: "weight" %}
-        {% for team in teams %}
-        <div style="display: contents;">
-                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
-                    <div class="team team-summary team-summary-large gvc-team gvc-team-ra" >
-                    {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                    <!---->
-                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
-                
-                <!-- </div> -->
-                <div class="team-meta" style="display: inline-block;">
-                    <h2 class="team-name">{{ team.title }}</h2>
-                    <p class="team-description">{{ team.jobtitle }}</p>
-                    <p class="team-description">{{ team.from }}</p>
-                    {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
+    {% assign phds = site.team | where: "promoted", false | where: "class", "phd" | sort: "weight" %}
+    {% if phds.size > 0 %}
+        {% for team in phds %}
+        <div class="pop-card">
+            <div class="photo-frame-phd">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">{{ team.jobtitle }}</div>
+                <div class="pop-desc">{{ team.from }}</div>
+                <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
                     {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
-                        {% endif %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
+                        </a>
+                    {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
+    {% endif %}
 
-        <!-- <h2 class="title-of-team">Master Student and Visiting</h2> -->
-        {% assign teams = site.team | where: "promoted", false | where: "class", "master" | sort: "weight" %}
-        {% for team in teams %}
-        <div style="display: contents;">
-                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
-                    <div class="team team-summary team-summary-large gvc-team gvc-team-master" >
-                    {% if team.image %}
-                        <img height="200" alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                    <!---->
-                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
-                
-                <!-- </div> -->
-                <div class="team-meta" style="display: inline-block;">
-                    <h2 class="team-name">{{ team.title }}</h2>
-                    <p class="team-description">{{ team.jobtitle }}</p>
-                    <p class="team-description">{{ team.from }}</p>
-                    {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
+    {% assign ras = site.team | where: "promoted", false | where: "class", "ra" | sort: "weight" %}
+    {% if ras.size > 0 %}
+        {% for team in ras %}
+        <div class="pop-card">
+            <div class="photo-frame-ra">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">{{ team.jobtitle }}</div>
+                <div class="pop-desc">{{ team.from }}</div>
+                <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
                     {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
-                        {% endif %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
+                        </a>
+                    {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
+    {% endif %}
 
-
-        {% assign teams = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
-        {% for team in teams %}
-        <div  style="display: contents;">
-                <!-- <div style="background: url({{ team.image | relative_url }}) no-repeat center; background-size: 300px, auto; display:block;height:300px;width: "> -->
-                    <div class="team team-summary team-summary-large gvc-team gvc-team-visiting" >
-                    {% if team.image %}
-                        <img height="200" alt="{{ team.title }}" style="transform: skewX(10deg); position: relative; left:-30%; " src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                    <!---->
-                    <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div> -->
-                
-                <!-- </div> -->
-                <div class="team-meta" style="display: inline-block;">
-                    <h2 class="team-name">{{ team.title }}</h2>
-                    <p class="team-description">{{ team.jobtitle }}</p>
-                    <p class="team-description">Visiting Student</p>
-                    {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
+    {% assign masters = site.team | where: "promoted", false | where: "class", "master" | sort: "weight" %}
+    {% if masters.size > 0 %}
+        {% for team in masters %}
+        <div class="pop-card">
+            <div class="photo-frame-ms">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">{{ team.jobtitle }}</div>
+                <div class="pop-desc">{{ team.from }}</div>
+                <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
                     {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
-                        {% endif %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
+                        </a>
+                    {% endif %}
                 </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
             </div>
         </div>
         {% endfor %}
-
-        <h2 class="title-of-team">Alumni</h2>
-        {% assign teams = site.team | where: "promoted", false | where: "class", "alumni" | sort: "weight" %}
-        {% for team in teams %}
-        <div style="display: inline-block; width:400px; margin:10px 10px 0 0 ">
-                <div class="team team-summary gvc-team-alumni">
-                    {% if team.image %}
-                        <img width="68px" height="68px" alt="{{ team.title }}"  src="{{ team.image | relative_url }}" />
-                    {% endif %}
-                
-                <!-- </div> -->
-                <div class="team-meta" style="display: inline-block; padding: 2px 10px 0 10px">
-                    <span class="team-name"> <b>{{ team.title }}</b>, <i>{{ team.jobtitle }}</i> </span>
-                    <br>
-                    <span>{{team.type}} {{ team.from }}</span>
-                    <br>
-                     {% if team.personal_url %}
-                    <a target="_blank" href="{{ team.personal_url }}" rel="noreferrer"> 
-                        <i class="fa fa-home" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.github_url %}
-                    <a target="_blank" href="{{ team.github_url }}" rel="noreferrer">
-                        <i class="fa fa-github" style="font-size:24px"></i></a>
-                    {% endif %}
-                    {% if team.scholar_url %}
-                    <a target="_blank" href="{{ team.scholar_url }}" rel="noreferrer">
-                        <span style="width:22px; height:22px; display: inline-block; vertical-align: top;">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4285F4" d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z"/></svg></span></a>
-                        {% endif %}
-                </div>
-                <!-- <div class="team-content">{{ team.excerpt | truncate: 120 }}</div>  -->
-            </div>
-        </div>
-        {% endfor %}
-
+    {% endif %}
     </div>
+     {% assign visitors = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
+    {% if visitors.size > 0 %}
+    <div class="category-header"><span>Visiting Students</span></div>
+    <div class="pop-grid">
+        {% for team in visitors %}
+        <div class="pop-card">
+            <div class="photo-frame">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">{{ team.jobtitle }}</div>
+                <div class="pop-desc">{{ team.from }}</div>
+                 <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
+                    {% if team.scholar_url %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg> 
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
+    {% assign alumni = site.team | where: "promoted", false | where: "class", "alumni" | sort: "weight" %}
+    {% if alumni.size > 0 %}
+    <div class="category-header"><span>Alumni</span></div>
+     <div class="pop-grid-alumni">
+        {% for team in alumni %}
+        <div class="pop-card">
+            <div class="photo-frame-alumni">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            <div class="info-box">
+                <h3 class="pop-name">{{ team.title }}</h3>
+                <div class="pop-role">{{ team.jobtitle }}</div>
+                <div class="pop-desc">{{ team.from }}</div>
+                 <div class="pop-social">
+                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
+                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
+                    {% if team.scholar_url %}
+                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <br><br>
 </div>

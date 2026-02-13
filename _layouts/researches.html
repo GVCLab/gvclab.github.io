@@ -34,6 +34,7 @@ bodyClass: "page-researches"
   <div class="row">
       {% assign sorted_items = site.researches | group_by: "year" | reverse %}
       {% assign counter = site.researches | size %}
+      {% assign counter = counter | minus:4 %}
       <div style="font-size: 30px; font-weight: 400;">Selected Preprint</div>
       <hr>
       {% for coll in sorted_items %}

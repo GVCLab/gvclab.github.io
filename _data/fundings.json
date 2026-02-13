@@ -1,8 +1,19 @@
 [
+
+   {
+    "time": "2026-01-04 to 2027-12-31",
+    "link": "gvclab.github.io",
+    "description": "Agent Project with Company T (PI), <b>XXX RMB</b>."
+  },
   {
     "time": "2026-01-01 to 2028-12-31",
     "link": "gvclab.github.io",
-    "description": " ‘Empowerment‘ Action Plan (Guangxi Key Research and Development Program) (Co-PI), <b>400k RMB</b>."
+    "description": "Video Generation Coorperation Project with Company V (PI), <b>XXX RMB</b>."
+  },
+  {
+    "time": "2026-01-01 to 2028-12-31",
+    "link": "gvclab.github.io",
+    "description": " 'Empowerment' Action Plan (Guangxi Key Research and Development Program) (Co-PI), <b>400k RMB</b>."
   },
   {
     "time": "2026-01-01 to 2028-12-31",
@@ -10,7 +21,7 @@
     "description": "Young Scientists Fund (Type C) of the Natural Science Foundation of China (PI), <b>300k RMB</b>."
   },
   {
-    "time": "2025-01-01 to 2028-12-31",
+    "time": "2025-01-01 to 2027-12-31",
     "link": "gvclab.github.io",
     "description": "Guangdong Provincial Regional Joint Fund, Youth Fund Project (PI), <b>100k RMB</b>."
   },

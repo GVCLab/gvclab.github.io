@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/MOFAVIDEO
 excerpt: 'TODO'
 date: 2026-06-01
-year: 2025
+year: 2026
 venue: 'ArXiv'
 arxiv: 2512.21865
 is_show: Ture

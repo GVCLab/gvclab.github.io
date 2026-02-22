@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/personalive
 excerpt: 'TODO'
 date: 2024-06-01
-year: 2025
+year: 2026
 venue: 'ArXiv'
 arxiv: 2512.11253
 is_show: Ture

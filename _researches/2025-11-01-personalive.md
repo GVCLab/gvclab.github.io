@@ -3,7 +3,7 @@ title: "PersonaLive! Expressive Portrait Image Animation for Live Streaming"
 collection: publications
 permalink: /publication/personalive
 excerpt: 'TODO'
-date: 2024-06-01
+date: 2026-06-01
 year: 2026
 venue: 'ArXiv'
 arxiv: 2512.11253

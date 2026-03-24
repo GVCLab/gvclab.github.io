@@ -2,48 +2,158 @@
 layout: default
 bodyClass: "page-home"
 ---
-<div >
-  <div class="container" >
-    <div class="row justify-content-start">
-      <div class="col-12">
-        <br>
-        {{ content }}
-        <br></br>
-      <img alt="{{ page.title }}" class="intro-image  {% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
-      <br></br>
-        {% if page.show_news %}
-          {% include news.html show_button=true %}
-        {% endif %}
-        <br>
-        {% if page.show_fundings %}
-          {% include fundings.html show_button=true %}
-        {% endif %}
 
-      </div>
+<style>
+  /* Hero */
+  .home-hero {
+    padding: 2.5rem 0 1.5rem;
+  }
+  .home-hero h3 {
+    font-size: 1.45rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+  }
+  .home-intro-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    display: block;
+  }
+
+  /* Section headings */
+  .home-section {
+    margin-bottom: 2.5rem;
+  }
+  .home-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #222;
+    border-bottom: 2px solid #e8572a;
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-bottom: 1rem;
+  }
+
+  /* News list */
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .news-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    gap: 1rem;
+  }
+  .news-list li:last-child {
+    border-bottom: none;
+  }
+  .news-list .news-desc {
+    flex: 1;
+    color: #333;
+  }
+  .news-list .news-desc b {
+    color: #0d00b2;
+  }
+  .news-list .news-time {
+    white-space: nowrap;
+    color: #999;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  /* Fundings list */
+  .fundings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .fundings-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    gap: 1rem;
+  }
+  .fundings-list li:last-child {
+    border-bottom: none;
+  }
+  .fundings-list .grant-desc {
+    flex: 1;
+    color: #333;
+  }
+  .fundings-list .grant-time {
+    white-space: nowrap;
+    color: #999;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  /* Two-column layout for news + grants */
+  @media (min-width: 768px) {
+    .home-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>
+
+<div class="container home-hero">
+
+  {{ content }}
+
+  {% if page.intro_image %}
+  <img alt="{{ page.title }}"
+       class="intro-image home-intro-img {% if page.intro_image_hide_on_mobile %}intro-image-hide-mobile{% endif %}"
+       src="{{ page.intro_image | relURL }}" />
+  {% endif %}
+
+  <div class="home-two-col">
+
+    {% if page.show_news %}
+    <div class="home-section">
+      <div class="home-section-title">Recent News</div>
+      <ul class="news-list">
+        {% assign limit = site.home.limit_news | default: 10 %}
+        {% for item in site.data.news limit: limit %}
+        <li>
+          <span class="news-desc">{{ item.description }}</span>
+          {% if item.time %}<span class="news-time">{{ item.time }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-  </div>
-</div>
+    {% endif %}
 
-<!-- 
-{% if site.data.features %}
-<div class="intro">
-  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
-    <h1 style="text-align: center;"> Our Research Interest </h1>
-    <div class="row justify-content-center">
-      {% for feature in site.data.features %}
-      <div class="col-12 col-md-6 col-lg-4 mb-2">
-        <div class="feature">
-          {% if feature.image %}
-          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
-          {% endif %}
-          <h2 class="feature-title">{{ feature.title }}</h2>
-          <div class="feature-content">{{ feature.description }}</div>
-        </div>
-      </div>
-      {% endfor %}
-
+    {% if page.show_fundings %}
+    <div class="home-section">
+      <div class="home-section-title">Research Grants</div>
+      <ul class="fundings-list">
+        {% assign flimit = site.home.limit_fundings | default: 10 %}
+        {% for item in site.data.fundings limit: flimit %}
+        <li>
+          <span class="grant-desc">{{ item.description }}</span>
+          {% if item.time %}<span class="grant-time">{{ item.time }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
+    {% endif %}
+
   </div>
+
 </div>
-{% endif %} -->
-<br>

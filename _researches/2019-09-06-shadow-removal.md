@@ -16,6 +16,7 @@ code: https://github.com/vinthony/ghost-free-shadow-removal
 <!-- project: https://vinthony.github.io/academicpages.github.io/projects/tbd -->
 authors: <b>Xiaodong Cun</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun</a>, Cheng Shi
 publication: AAAI Conference on Artificial Intelligence (<b>AAAI</b>)
+ccf: A
 ---
 
 

@@ -13,6 +13,7 @@ project: https://yuzhou914.github.io/SmartEdit/
 is_show: True
 authors: Yuzhou Huang, Liangbin Xie, Xintao Wang, Ziyang Yuan, <b>Xiaodong Cun</b>, Yixiao Ge, Jiantao Zhou, Chao Dong, Rui Huang, Ruimao Zhang, Ying Shan. 
 publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
+ccf: A
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

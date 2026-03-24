@@ -14,4 +14,5 @@ project: https://doubiiu.github.io/projects/Make-Your-Video
 teaser: ./images/mofavideo.gif
 authors: Jinbo Xing, Menghan Xia, Yuxin Liu, Yuechen Zhang, Yong Zhang, Yingqing He, Hanyuan Liu, Haoxin Chen, <b>Xiaodong Cun</b>, Xintao Wang, Ying Shan, Tien-Tsin Wong
 publication: IEEE Transactions on Visualization and Computer Graphic (<b>TVCG</b>)
+ccf: A
 ---

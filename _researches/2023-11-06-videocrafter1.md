@@ -14,5 +14,6 @@ project: https://ailab-cvc.github.io/videocrafter2/
 teaser: ./images/videocrafter.gif
 authors: <a href='https://scholar.google.com/citations?user=6UPJSvwAAAAJ&hl=zh-CN'>Haoxin Chen 🧑‍💻</a>, Menghan Xia 🧑‍💻, <a href='https://yzhang2016.github.io/'>Yong Zhang 🧑‍💻</a>,  <b>Xiaodong Cun🧑‍💻</b>,<a href='https://xinntao.github.io/'>Xintao Wang</a>, <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank">Ying Shan</a>
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>) & Technical report
+ccf: A
 highlight_reason: <b style='color:red'> PaperDigest Most Influential Papers of ArXiv 24 (<a href='https://www.paperdigest.org/2024/10/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2024-10/'>paperdigest.org</a>).</b>
 ---

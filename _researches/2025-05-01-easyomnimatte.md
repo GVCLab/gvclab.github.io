@@ -14,5 +14,6 @@ project: https://github.com/GVCLab/EasyOmnimatte
 teaser: ./images/mofavideo.gif
 authors: <b class='member'>Yihan Hu</b>, Xuelin Chen, <b>Xiaodong Cun</b>📮
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
+ccf: A
 ---
 

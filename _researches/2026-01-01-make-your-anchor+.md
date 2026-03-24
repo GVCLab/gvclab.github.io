@@ -14,5 +14,6 @@ project: https://github.com/ICTMCG/Make-Your-Anchor
 teaser: ./images/pusav1.gif
 authors: Ziyao Huang, Fan Tang, Juan Cao, Yong Zhang, <b>Xiaodong Cun</b>, Yihang Bo, Jintao Li, Tong-Yee Lee
 publication: IEEE Transactions on Visualization and Computer Graphics (<b>TVCG</b>)
+ccf: A
 ---
 

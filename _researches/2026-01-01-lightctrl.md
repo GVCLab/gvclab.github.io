@@ -14,5 +14,6 @@ project: https://github.com/GVCLab/LightCtrl
 teaser: ./images/personalive.gif
 authors: <b class='member'>Yizuo Peng</b>, Xuelin Chen, Kai Zhang, <b>Xiaodong Cun</b>📮
 publication: International Conference on Learning Representations  (<b>ICLR</b>)
+ccf: A
 ---
 

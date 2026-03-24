@@ -14,5 +14,6 @@ project: https://depthcrafter.github.io/
 teaser: ./images/ditctrl.gif
 authors: Wenbo Hu, Xiangjun Gao, Xiaoyu Li, Sijie Zhao, <b>Xiaodong Cun</b>, Yong Zhang, Long Quan, Ying Shan.
 publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
+ccf: A
 highlight_reason: <b style='color:red'> Best Paper at PixFoundation workshop of CVPR 25.</b>
 ---

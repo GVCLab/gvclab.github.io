@@ -16,6 +16,7 @@ code: https://github.com/vinthony/s2am
 <!-- project: https://vinthony.github.io/academicpages.github.io/projects/rasc.html -->
 authors: <b>Xiaodong Cun</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun</a>
 publication: IEEE Trans. on Image Processing (<b>TIP</b>)
+ccf: A
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

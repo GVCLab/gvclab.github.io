@@ -14,6 +14,7 @@ demo: https://colab.research.google.com/drive/1Vy69w2q2d-Hg19F-KibqG0FRdpSj3L4O?
 teaser: ./images/t2m.gif
 authors: Jianrong Zhang 🧑‍💻, Yangsong Zhang 🧑‍💻, <b>Xiaodong Cun</b>, <a href='https://scholar.google.com/citations?user=o31BPFsAAAAJ&hl=en'>Shaoli Huang</a>, <a href='https://yzhang2016.github.io/'>Yong Zhang</a>, Hongwei Zhao, Hongtao Lu, <a href='https://xishen0220.github.io/'>Xi Shen 📮</a>
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
+ccf: A
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

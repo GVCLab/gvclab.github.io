@@ -6,9 +6,9 @@ excerpt: 'TODO'
 date: 2024-06-01
 year: 2026
 venue: 'ArXiv'
-arxiv: 2512.11253
+arxiv: 2603.27083
 is_show: Ture
-arxiv_url: https://www.arxiv.org/abs/2512.11253
+arxiv_url: https://arxiv.org/abs/2603.27083
 code: https://github.com/GVCLab/LightCtrl
 project: https://github.com/GVCLab/LightCtrl
 teaser: ./images/personalive.gif

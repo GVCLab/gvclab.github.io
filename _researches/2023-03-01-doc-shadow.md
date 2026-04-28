@@ -16,6 +16,8 @@ teaser: ./images/docshadow.png
 authors: <a href='https://zinuoli.github.io/'>Zinuo Li 🧑‍💻</a>, <a href='https://cxh.netlify.app/'>Xuhang Chen 🧑‍💻</a>, <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun 📮</a>, <b>Xiaodong Cun 📮</b>
 publication: International Conference on Computer Vision (<b>ICCV</b>)
 ccf: A
+scholar_citations: 66
+github_stars: 208
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

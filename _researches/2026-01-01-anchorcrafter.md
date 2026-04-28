@@ -15,5 +15,7 @@ teaser: ./images/pusav1.gif
 authors: Ziyi Xu, Ziyao Huang, Juan Cao, Yong Zhang, <b>Xiaodong Cun</b>, Qing Shuai, Yuchen Wang, Linchao Bao, Jintao Li, Fan Tang
 publication: IEEE Transactions on Visualization and Computer Graphics (<b>TVCG</b>)
 ccf: A
+scholar_citations: 20
+github_stars: 662
 ---
 

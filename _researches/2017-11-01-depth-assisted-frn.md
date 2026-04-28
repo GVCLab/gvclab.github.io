@@ -15,6 +15,8 @@ ccf: C
 journal: IEEE CG&A
 authors: <b>Xiaodong Cun</b>, <a href="http://xufeng.site/">Feng Xu</a>, <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun</a>, <a href='https://scholar.google.com/citations?user=hMBA1REAAAAJ&hl=zh-CN'>Hao Gao</a>
 citation: 'Xiaodong Cun, Feng Xu, Chi-Man Pun, Hao Gao(2017). &quot;Depth Assisted Full Resolution Network for Single Image based View Synthesis&quot; <i>, ArXiv</i>.'
+scholar_citations: 12
+github_stars: 0
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

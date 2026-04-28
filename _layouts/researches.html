@@ -38,34 +38,43 @@ bodyClass: "page-researches"
 .ccf-A { background-color: #c0392b; }
 .ccf-B { background-color: #2980b9; }
 
+.sort-metric {
+  display: inline-block;
+  font-size: 12px;
+  color: #888;
+  margin-left: 6px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 </style>
 
 <div >
 <div class="container pt-12 pb-12 researches" >
   <br>
-  <b>Full list can be founded at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first Author, 📮 Corresponding Author, <b style="color:#333">BOLD NAME :</b> Working done at GVC Lab) </span>
-  <br>
-  <div class="row">
-      {% assign sorted_items = site.researches | group_by: "year" | reverse %}
-      {% assign counter = site.researches | size %}
-      {% assign counter = counter | minus:4 %}
-      <div style="font-size: 30px; font-weight: 400;">Selected Preprint</div>
-      <hr>
+  <b>Full list can be found at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first, 📮 Corresponding, <b style="color:#333">BOLD NAME :</b> Working done at GVC Lab) </span> <span style="font-size: 14px; font-weight: 600; color: #333; font-family: Helvetica, Arial, sans-serif; margin-left: 8px;">Sort by:</span> <select id="sort-select" style="font-size: 14px; font-family: Helvetica, Arial, sans-serif; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #333; cursor: pointer; vertical-align: middle;"><option value="default">Default (by Year)</option><option value="citations">Google Scholar Citations</option><option value="stars">GitHub Stars</option></select>
+
+  {% assign sorted_items = site.researches | group_by: "year" | reverse %}
+  {% assign counter = site.researches | size %}
+  {% assign counter = counter | minus:4 %}
+
+  <div id="research-list">
+    <!-- Selected Preprint section -->
+    <div class="row year-section" data-section="preprint">
+      <div class="year-header" style="font-size: 30px; font-weight: 400;">Selected Preprint</div>
+      <hr class="year-header">
       {% for coll in sorted_items %}
-          {% assign my_integer_number = coll.name | to_integer %}
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}   
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' %}
-              {% if service.highlight_reason %}
-                <div class="service service-summary highlighted" style="padding: 8px;">
-              {% else %}
-                <div class="service service-summary" style="padding: 8px;">
-              {% endif %}
-
+              <div class="service service-summary paper-item {% if service.highlight_reason %}highlighted{% endif %}" style="padding: 8px;"
+                   data-citations="{{ service.scholar_citations | default: 0 }}"
+                   data-stars="{{ service.github_stars | default: 0 }}"
+                   data-year="{{ service.year }}"
+                   data-date="{{ service.date | date: '%Y%m%d' }}"
+                   data-index="{{ counter }}">
                 <div class="service-content">
-                  <!-- <img src="{{service.image}}"> -->
                   <div> 
-                    <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> Preprint, {{service.year}}. 
+                    <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> Preprint, {{service.year}}. 
                     {% if service.ccf == 'A' %}
                       <span class="ccf-badge ccf-A">CCF-A</span>
                     {% elsif service.ccf == 'B' %}
@@ -88,26 +97,28 @@ bodyClass: "page-researches"
           {% endfor %}
       {% endfor %}
     </div>
-     
-    <div class="row">
-      {% for coll in sorted_items %}
-        {% assign my_integer_number = coll.name | to_integer %}
-        {% if my_integer_number > 2021 %}
+
+    <!-- Year sections (2022+) -->
+    {% for coll in sorted_items %}
+      {% assign my_integer_number = coll.name | to_integer %}
+      {% if my_integer_number > 2021 %}
+        <div class="row year-section" data-section="year-{{coll.name}}">
           <br>
-          <div  style="font-size: 30px; font-weight: 400;"> Year {{coll.name}}</div>
-          <hr>
+          <div class="year-header" style="font-size: 30px; font-weight: 400;"> Year {{coll.name}}</div>
+          <hr class="year-header">
           {% assign sorted_ser = coll.items | sort: "date" | reverse %}
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
               {% else %}
-              {% if service.highlight_reason %}
-                <div class="service service-summary highlighted" style="padding: 8px;">
-              {% else %}
-                <div class="service service-summary" style="padding: 8px;">
-              {% endif %}
+              <div class="service service-summary paper-item {% if service.highlight_reason %}highlighted{% endif %}" style="padding: 8px;"
+                   data-citations="{{ service.scholar_citations | default: 0 }}"
+                   data-stars="{{ service.github_stars | default: 0 }}"
+                   data-year="{{ service.year }}"
+                   data-date="{{ service.date | date: '%Y%m%d' }}"
+                   data-index="{{ counter }}">
                 <div class="service-content">
                   <div> 
-                    <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> 
+                    <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> 
                     <span>{{ service.authors ｜ truncate: 100 }}</span> <br> 
                     {{ service.publication}}, {{service.year}}.
                     {% if service.ccf == 'A' %}
@@ -128,13 +139,14 @@ bodyClass: "page-researches"
               {% assign counter = counter | minus:1 %}
               {% endif %}
           {% endfor %}
-        {% endif %}
-      {% endfor %}
-      </div>
-      
-      <div class="row">
-      <div style="font-size: 30px; font-weight: 400;">Before 2021</div>
-      <hr>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Before 2021 section -->
+    <div class="row year-section" data-section="before-2021">
+      <div class="year-header" style="font-size: 30px; font-weight: 400;">Before 2021</div>
+      <hr class="year-header">
       {% for coll in sorted_items %}
         {% assign my_integer_number = coll.name | to_integer %}
         {% if my_integer_number < 2022 %}
@@ -142,10 +154,14 @@ bodyClass: "page-researches"
           {% for service in sorted_ser %}
               {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
               {% else %}
-              <div class="service service-summary" style="padding: 8px;">
+              <div class="service service-summary paper-item" style="padding: 8px;"
+                   data-citations="{{ service.scholar_citations | default: 0 }}"
+                   data-stars="{{ service.github_stars | default: 0 }}"
+                   data-year="{{ service.year }}"
+                   data-date="{{ service.date | date: '%Y%m%d' }}"
+                   data-index="{{ counter }}">
                 <div class="service-content">
-                  <!-- <img src="{{service.image}}"> -->
-                  <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}">{{counter}}. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> {{ service.publication}}, {{service.year}}.
+                  <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> {{ service.authors ｜ truncate: 100 }}<br> {{ service.publication}}, {{service.year}}.
                     {% if service.ccf == 'A' %}
                       <span class="ccf-badge ccf-A">CCF-A</span>
                     {% elsif service.ccf == 'B' %}
@@ -165,7 +181,10 @@ bodyClass: "page-researches"
           {% endfor %}
         {% endif %}
       {% endfor %}
-      </div>
+    </div>
   </div>
+
 </div>
 </div>
+
+<script src="/assets/js/research-sort.js"></script>

@@ -14,6 +14,8 @@ is_show: True
 authors: Ziyao Huang, Fan Tang, Yong Zhang, <b>Xiaodong Cun</b>, Juan Cao, Jintao Li, Tong-yee Lee. 
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
+scholar_citations: 34
+github_stars: 358
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

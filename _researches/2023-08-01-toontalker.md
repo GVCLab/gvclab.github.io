@@ -13,6 +13,8 @@ teaser: ./images/toontalker.gif
 authors: <a href='https://github.com/yuanygong'>Yuan Gong</a>, <a href='https://yzhang2016.github.io'>Yong Zhang</a>, <b>Xiaodong Cun</b>, <a href='https://feiiyin.github.io/'>Fei Yin</a>, <a href='https://sites.google.com/site/yanbofan0124/'>Yanbo Fan</a>, <a href='https://xuanwangvc.github.io/'>Xuan Wang</a>, Baoyuan Wu, and Yujiu Yang
 publication: International Conference on Computer Vision (<b>ICCV</b>)
 ccf: A
+scholar_citations: 14
+github_stars: 127
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

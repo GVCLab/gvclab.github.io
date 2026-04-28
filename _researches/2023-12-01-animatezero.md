@@ -15,6 +15,8 @@ is_show: True
 authors: Jiwen Yu, <b>Xiaodong Cun 📮</b>, Chenyang Qi, Yong Zhang,  <a href='https://xinntao.github.io/'>Xintao Wang</a>, Ying Shan, Jian Zhang
 publication: Preprint
 ccf: Preprint
+scholar_citations: 21
+github_stars: 357
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

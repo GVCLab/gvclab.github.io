@@ -15,6 +15,8 @@ arxiv_url: https://arxiv.org/abs/2510.07190
 authors: Yihao Zhi, Chenghong Li, Hongjie Liao, Xihe Yang, Zhengwentai Sun, Jiahao Chang, <b>Xiaodong Cun</b>, Wensen Feng, Xiaoguang Han
 publication:  <b>SIGGRAPH Asia </b> (Conference Track)  
 ccf: A
+scholar_citations: 4
+github_stars: 40
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

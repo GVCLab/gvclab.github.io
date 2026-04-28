@@ -16,7 +16,8 @@ authors: Kun Cheng 🧑‍💻, <b>Xiaodong Cun 🧑‍💻📮</b>, <a href='ht
 publication: <b>SIGGRAPH Asia</b> (Conference Track)
 ccf: A
 highlight_reason: <b style='color:red'> Top 10 Most Github Star SIGGRAPH paper (<a href='https://github.com/search?q=SIGGRAPH&type=repositories&s=stars&o=desc'>github.com</a>).</b>
-
+scholar_citations: 164
+github_stars: 7200
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

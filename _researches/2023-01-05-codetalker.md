@@ -14,6 +14,8 @@ teaser: ./images/codetalker.gif
 authors: <a href='https://doubiiu.github.io/'>Jinbo Xing</a>, <a href='https://menghanxia.github.io/'>Menghan Xia</a>, <a href='https://julianjuaner.github.io/'>Yuechen Zhang</a>, <b>Xiaodong Cun</b>, <a href='https://juewang725.github.io/'>Jue Wang</a>, <a href='https://www.cse.cuhk.edu.hk/~ttwong/myself.html'>Tien-Tsin Wong</a>
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
+scholar_citations: 224
+github_stars: 616
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

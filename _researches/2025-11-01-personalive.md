@@ -16,5 +16,7 @@ authors: <b class='member'>Zhiyuan Li</b>, Chi-Man Pun📮, Chen Fang, Jue Wang,
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
 highlight_reason: <b style='color:red'>Github 1k Star Club.</b>
+scholar_citations: 1
+github_stars: 2600
 ---
 

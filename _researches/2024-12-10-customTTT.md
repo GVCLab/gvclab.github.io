@@ -15,4 +15,6 @@ teaser: ./images/customttt.gif
 authors: Xiuli Bi, Jian Lu, Bo Liu, <b>Xiaodong Cun 📮</b>, <a href='https://yzhang2016.github.io/'>Yong Zhang</a>, Weisheng Li, Bin Xiao
 publication: AAAI Conference on Artificial Intelligence (<b>AAAI</b>)
 ccf: A
+scholar_citations: 12
+github_stars: 5
 ---

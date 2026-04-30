@@ -15,6 +15,6 @@ teaser: ./images/mofavideo.gif
 authors: <a href='https://myniuuu.github.io/'>Muyao Niu</a>,  <b>Xiaodong Cun 📮</b>, <a href='https://xinntao.github.io/'>Xintao Wang</a>, <a href='https://yzhang2016.github.io/'>Yong Zhang</a>, <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank">Ying Shan</a>, <a href='https://scholar.google.com/citations?user=JD-5DKcAAAAJ&hl=en'>Yinqiang Zheng 📮</a>
 publication: European Conference on Computer Vision (<b>ECCV</b>)
 ccf: B
-scholar_citations: 85
+scholar_citations: 86
 github_stars: 767
 ---

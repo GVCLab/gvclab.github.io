@@ -15,7 +15,7 @@ teaser: ./images/t2m.gif
 authors: Jianrong Zhang 🧑‍💻, Yangsong Zhang 🧑‍💻, <b>Xiaodong Cun</b>, <a href='https://scholar.google.com/citations?user=o31BPFsAAAAJ&hl=en'>Shaoli Huang</a>, <a href='https://yzhang2016.github.io/'>Yong Zhang</a>, Hongwei Zhao, Hongtao Lu, <a href='https://xishen0220.github.io/'>Xi Shen 📮</a>
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
-scholar_citations: 634
+scholar_citations: 636
 github_stars: 757
 ---
 

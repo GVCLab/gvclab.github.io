@@ -16,6 +16,6 @@ authors: <a href='https://scholar.google.com/citations?user=6UPJSvwAAAAJ&hl=zh-C
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>) & Technical report
 ccf: A
 highlight_reason: <b style='color:red'> PaperDigest Most Influential Papers of ArXiv 24 (<a href='https://www.paperdigest.org/2024/10/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2024-10/'>paperdigest.org</a>).</b>
-scholar_citations: 540
-github_stars: 5055
+scholar_citations: 541
+github_stars: 5052
 ---

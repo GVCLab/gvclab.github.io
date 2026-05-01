@@ -3,7 +3,7 @@ title: "MagicStick🪄: Controllable Video Editing via Control Handle Transforma
 collection: publications
 permalink: /publication/magicstick
 excerpt: 'TODO.'
-date: 2023-12-01
+date: 2025-01-01
 year: 2025
 venue: 'ArXiv'
 arxiv: 2312.03047

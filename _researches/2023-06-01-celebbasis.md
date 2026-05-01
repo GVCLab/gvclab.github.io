@@ -3,7 +3,7 @@ title: "Inserting Anybody in Diffusion Models via Celeb Basis"
 collection: publications
 permalink: /publication/celebbasis
 excerpt: 'TODO.'
-date: 2023-06-01
+date: 2023-12-01
 year: 2023
 venue: 'ArXiv'
 is_show: True

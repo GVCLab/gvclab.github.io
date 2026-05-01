@@ -3,7 +3,7 @@ title: "AnchorCrafter: Animate CyberAnchors Saling Your Products via Human-Objec
 collection: publications
 permalink: /publication/AnchorCrafter
 excerpt: 'TODO'
-date: 2024-09-01
+date: 2026-06-01
 year: 2026
 venue: 'ArXiv'
 arxiv: 2411.17383

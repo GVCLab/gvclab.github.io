@@ -3,7 +3,7 @@ title: "MV-Performer: Taming Video Diffusion Model for Faithful and Synchronized
 collection: publications
 permalink: /publication/mv-performer
 excerpt: 'TODO.'
-date: 2025-09-09
+date: 2025-12-01
 year: 2025
 venue: 'ArXiv'
 arxiv: 2510.07190

@@ -3,7 +3,7 @@ title: "CoordFill: Efficient High-Resolution Image Inpainting via Parameterized 
 collection: publications
 permalink: /publication/coordfill
 excerpt: 'TODO.'
-date: 2022-11-19
+date: 2023-02-01
 year: 2023
 venue: 'ArXiv'
 arxiv: 2303.08524

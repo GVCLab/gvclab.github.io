@@ -3,7 +3,7 @@ title: "Make-Your-Anchor: A Diffusion-based 2D Avatar Generation Framework."
 collection: publications
 permalink: /publication/xadapter
 excerpt: 'TODO.'
-date: 2023-12-01
+date: 2024-06-01
 year: 2024
 venue: 'ArXiv'
 arxiv: 2403.16510

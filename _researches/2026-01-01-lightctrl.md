@@ -3,7 +3,7 @@ title: "LightCtrl: Training-free Controllable Video Relighting"
 collection: publications
 permalink: /publication/personalive
 excerpt: 'TODO'
-date: 2024-06-01
+date: 2026-05-01
 year: 2026
 venue: 'ArXiv'
 arxiv: 2603.27083

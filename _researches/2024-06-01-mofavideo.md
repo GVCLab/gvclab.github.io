@@ -3,7 +3,7 @@ title: "MOFA-Video: Controllable Image Animation via Generative Motion Field Ada
 collection: publications
 permalink: /publication/MOFAVIDEO
 excerpt: 'TODO'
-date: 2024-06-01
+date: 2024-10-01
 year: 2024
 venue: 'ArXiv'
 arxiv: 2405.20222

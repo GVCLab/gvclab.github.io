@@ -3,7 +3,7 @@ title: "VideoReTalking: Audio-based Lip Synchronization for Talking Head Video E
 collection: publications
 permalink: /publication/VideoReTalking
 excerpt: 'TODO.'
-date: 2022-08-04
+date: 2022-12-01
 year: 2022
 venue: 'ArXiv'
 arxiv: 2211.14758

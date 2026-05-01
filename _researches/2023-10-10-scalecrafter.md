@@ -3,7 +3,7 @@ title: "ScaleCrafter: Tuning-free Higher-Resolution Visual Generation with Diffu
 collection: publications
 permalink: /publication/ScaleCrafter
 excerpt: 'TODO.'
-date: 2023-10-10
+date: 2024-05-01
 year: 2024
 venue: 'ArXiv'
 arxiv: 2310.07702

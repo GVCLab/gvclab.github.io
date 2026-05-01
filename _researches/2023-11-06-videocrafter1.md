@@ -3,7 +3,7 @@ title: "VideoCrafter1 & VideoCrafter2"
 collection: publications
 permalink: /publication/VideoCrafter
 excerpt: 'TODO.'
-date: 2023-12-19
+date: 2024-06-01
 year: 2024
 venue: 'ArXiv'
 arxiv: 2310.19512

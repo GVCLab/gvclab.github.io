@@ -3,7 +3,7 @@ title: "TaleCrafter: Interactive Story Visualization with Multiple Characters"
 collection: publications
 permalink: /publication/talecrafter
 excerpt: 'TODO.'
-date: 2023-06-01
+date: 2023-12-01
 year: 2023
 venue: 'ArXiv'
 arxiv: 2305.18247

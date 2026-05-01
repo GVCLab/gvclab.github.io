@@ -3,7 +3,7 @@ title: "CodeTalker: Speech-Driven 3D Facial Animation with Discrete Motion Prior
 collection: publications
 permalink: /publication/CodeTalker
 excerpt: 'TODO.'
-date: 2022-11-23
+date: 2023-06-01
 year: 2023
 venue: 'ArXiv'
 arxiv: 2301.02379

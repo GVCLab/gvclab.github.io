@@ -3,7 +3,7 @@ title: "T2M-GPT: Generating Human Motion from Textual Descriptions with Discrete
 collection: publications
 permalink: /publication/motionGPT
 excerpt: 'TODO.'
-date: 2023-01-17
+date: 2023-06-01
 year: 2023
 venue: 'ArXiv'
 arxiv: 2301.06052

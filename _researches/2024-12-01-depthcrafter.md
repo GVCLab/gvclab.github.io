@@ -3,7 +3,7 @@ title: "DepthCrafter: Generating Consistent Long Depth Sequences for Open-world 
 collection: publications
 permalink: /publication/ditctrl
 excerpt: 'TODO'
-date: 2024-12-10
+date: 2025-06-01
 year: 2025
 venue: 'ArXiv'
 arxiv: 2409.02095

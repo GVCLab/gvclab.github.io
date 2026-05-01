@@ -3,7 +3,7 @@ title: "Towards Ghost-free Shadow Removal via Dual Hierarchical Aggregation Netw
 collection: publications
 permalink: /publication/shadow-removal
 excerpt: 'TODO.'
-date: 2019-09-06
+date: 2020-02-01
 year: 2020
 order: 1
 is_show: Ture

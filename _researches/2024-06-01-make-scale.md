@@ -3,7 +3,7 @@ title: "Make a Cheap Scaling: A Self-Cascade Diffusion Model for Higher-Resoluti
 collection: publications
 permalink: /publication/MOFAVIDEO
 excerpt: 'TODO'
-date: 2024-06-01
+date: 2024-10-01
 year: 2024
 venue: 'ArXiv'
 arxiv: 2402.10491

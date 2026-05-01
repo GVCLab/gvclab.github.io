@@ -3,7 +3,7 @@ title: "CustomTTT: Motion and Appearance Customized Video Generation via Test-Ti
 collection: publications
 permalink: /publication/CustomTTT
 excerpt: 'TODO'
-date: 2024-08-10
+date: 2025-02-01
 year: 2025
 venue: 'ArXiv'
 arxiv: 2412.15646

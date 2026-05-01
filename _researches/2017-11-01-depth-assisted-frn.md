@@ -3,7 +3,7 @@ title: "Depth Assisted Full Resolution Network for Single Image based View Synth
 collection: publications
 permalink: /publication/depth-assisted-frn
 excerpt: 'TODO.'
-date: 2017-11-01
+date: 2018-08-01
 year: 2018
 is_show: Ture
 venue: 'ArXiv'

@@ -3,7 +3,7 @@ title: "LivelySpeaker: Towards Semantic-aware Co-Speech Gesture Generation"
 collection: publications
 permalink: /publication/LivelySpeaker
 excerpt: 'TODO.'
-date: 2023-03-01
+date: 2023-10-01
 year: 2023
 venue: 'ArXiv'
 arxiv: 2306.00926

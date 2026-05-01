@@ -3,7 +3,7 @@ title: "Make-Your-Anchor+: Temporal Consistent 2D Avatar Generation via Video Di
 collection: publications
 permalink: /publication/pusav1
 excerpt: 'TODO'
-date: 2024-09-01
+date: 2026-06-01
 year: 2026
 venue: 'ArXiv'
 arxiv: 2403.16510

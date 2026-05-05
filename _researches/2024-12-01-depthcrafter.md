@@ -16,6 +16,6 @@ authors: Wenbo Hu, Xiangjun Gao, Xiaoyu Li, Sijie Zhao, <b>Xiaodong Cun</b>, Yon
 publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
 ccf: A
 highlight_reason: <b style='color:red'> Best Paper at PixFoundation workshop of CVPR 25.</b>
-scholar_citations: 195
-github_stars: 1544
+scholar_citations: 196
+github_stars: 1545
 ---

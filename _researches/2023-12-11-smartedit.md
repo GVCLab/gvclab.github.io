@@ -14,7 +14,7 @@ is_show: True
 authors: Yuzhou Huang, Liangbin Xie, Xintao Wang, Ziyang Yuan, <b>Xiaodong Cun</b>, Yixiao Ge, Jiantao Zhou, Chao Dong, Rui Huang, Ruimao Zhang, Ying Shan. 
 publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
 ccf: A
-scholar_citations: 20
+scholar_citations: 21
 github_stars: 373
 ---
 

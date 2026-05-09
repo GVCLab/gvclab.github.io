@@ -18,7 +18,7 @@ authors: <b>Xiaodong Cun</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man 
 publication: AAAI Conference on Artificial Intelligence (<b>AAAI</b>)
 ccf: A
 scholar_citations: 272
-github_stars: 319
+github_stars: 320
 ---
 
 

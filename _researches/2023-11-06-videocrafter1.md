@@ -17,5 +17,5 @@ publication: Computer Vision and Pattern Recognition (<b>CVPR</b>) & Technical r
 ccf: A
 highlight_reason: <b style='color:red'> PaperDigest Most Influential Papers of ArXiv 24 (<a href='https://www.paperdigest.org/2024/10/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2024-10/'>paperdigest.org</a>).</b>
 scholar_citations: 548
-github_stars: 5054
+github_stars: 5055
 ---

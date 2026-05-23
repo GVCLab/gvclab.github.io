@@ -17,7 +17,7 @@ authors: <a href='https://zinuoli.github.io/'>Zinuo Li 🧑‍💻</a>, <a href=
 publication: International Conference on Computer Vision (<b>ICCV</b>)
 ccf: A
 scholar_citations: 66
-github_stars: 208
+github_stars: 207
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

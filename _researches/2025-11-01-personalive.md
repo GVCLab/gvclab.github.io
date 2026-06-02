@@ -17,6 +17,6 @@ publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
 highlight_reason: <b style='color:red'>Github 1k Star Club.</b>
 scholar_citations: 2
-github_stars: 3278
+github_stars: 3282
 ---
 

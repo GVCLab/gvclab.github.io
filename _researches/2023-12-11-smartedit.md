@@ -15,7 +15,7 @@ authors: Yuzhou Huang, Liangbin Xie, Xintao Wang, Ziyang Yuan, <b>Xiaodong Cun</
 publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
 ccf: A
 scholar_citations: 21
-github_stars: 374
+github_stars: 375
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

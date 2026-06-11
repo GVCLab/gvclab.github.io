@@ -17,7 +17,7 @@ code: https://github.com/vinthony/s2am
 authors: <b>Xiaodong Cun</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun</a>
 publication: IEEE Trans. on Image Processing (<b>TIP</b>)
 ccf: A
-scholar_citations: 157
+scholar_citations: 158
 github_stars: 59
 ---
 

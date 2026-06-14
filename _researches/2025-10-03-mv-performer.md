@@ -15,7 +15,7 @@ arxiv_url: https://arxiv.org/abs/2510.07190
 authors: Yihao Zhi, Chenghong Li, Hongjie Liao, Xihe Yang, Zhengwentai Sun, Jiahao Chang, <b>Xiaodong Cun</b>, Wensen Feng, Xiaoguang Han
 publication:  <b>SIGGRAPH Asia </b> (Conference Track)  
 ccf: A
-scholar_citations: 4
+scholar_citations: 5
 github_stars: 40
 ---
 

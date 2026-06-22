@@ -16,7 +16,7 @@ authors: Yihao Zhi, Chenghong Li, Hongjie Liao, Xihe Yang, Zhengwentai Sun, Jiah
 publication:  <b>SIGGRAPH Asia </b> (Conference Track)  
 ccf: A
 scholar_citations: 6
-github_stars: 40
+github_stars: 41
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

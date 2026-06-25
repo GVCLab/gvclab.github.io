@@ -17,5 +17,5 @@ publication: Computer Vision and Pattern Recognition (<b>CVPR Highlight</b>)
 ccf: A
 highlight_reason: <b style='color:red'> Best Paper at PixFoundation workshop of CVPR 25.</b>
 scholar_citations: 208
-github_stars: 1559
+github_stars: 1560
 ---

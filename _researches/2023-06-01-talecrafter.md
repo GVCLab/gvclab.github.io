@@ -15,7 +15,7 @@ authors: <a href='https://github.com/yuanygong'>Yuan Gong</a>, <a href='https://
 publication: <b>SIGGRAPH Asia</b> (Conference Track)
 ccf: A
 scholar_citations: 74
-github_stars: 267
+github_stars: 268
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

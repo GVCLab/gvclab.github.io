@@ -15,7 +15,7 @@ is_show: True
 authors: <a href='https://mayuelala.github.io/'>Yue Ma</a>, <b>Xiaodong Cun 📮</b>, <a href='https://github.com/YingqingHe'>Yingqing He</a>, <a href='https://chenyangqiqi.github.io/'>Chenyang Qi</a>, <a href='https://xinntao.github.io/'>Xintao Wang</a>, <a href='https://scholar.google.com/citations?hl=zh-CN&user=4oXBp9UAAAAJ'>Ying Shan</a>, <a href='https://scholar.google.com/citations?user=Xrh1OIUAAAAJ&hl=zh-CN'> Xiu Li </a>, <a href='https://cqf.io'>Qifeng Chen 📮</a>
 publication: IEEE Workshop on Applications of Computer Vision (<b>WACV</b>)
 ccf: C
-scholar_citations: 55
+scholar_citations: 57
 github_stars: 98
 ---
 

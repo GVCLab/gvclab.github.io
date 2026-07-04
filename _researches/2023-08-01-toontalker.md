@@ -14,7 +14,7 @@ authors: <a href='https://github.com/yuanygong'>Yuan Gong</a>, <a href='https://
 publication: International Conference on Computer Vision (<b>ICCV</b>)
 ccf: A
 scholar_citations: 15
-github_stars: 129
+github_stars: 127
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

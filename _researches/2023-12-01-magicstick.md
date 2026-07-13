@@ -16,7 +16,7 @@ authors: <a href='https://mayuelala.github.io/'>Yue Ma</a>, <b>Xiaodong Cun 📮
 publication: IEEE Workshop on Applications of Computer Vision (<b>WACV</b>)
 ccf: C
 scholar_citations: 58
-github_stars: 98
+github_stars: 99
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

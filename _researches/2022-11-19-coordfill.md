@@ -14,7 +14,7 @@ teaser: ./images/coord_fill.png
 authors: Weihuang Liu, <b>Xiaodong Cun 📮</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun 📮</a>, <a href='https://menghanxia.github.io/'>Menghan Xia</a>, <a href='https://yzhang2016.github.io/yongnorriszhang.github.io/'>Yong Zhang</a>, and <a href="https://juewang725.github.io/">Jue Wang</a>
 publication: AAAI Conference on Artificial Intelligence (<b>AAAI, Oral</b>)
 ccf: A
-scholar_citations: 77
+scholar_citations: 78
 github_stars: 102
 ---
 

@@ -15,7 +15,7 @@ authors: Ziyao Huang, Fan Tang, Yong Zhang, <b>Xiaodong Cun</b>, Juan Cao, Jinta
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
 scholar_citations: 37
-github_stars: 357
+github_stars: 356
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

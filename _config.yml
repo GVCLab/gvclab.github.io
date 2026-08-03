@@ -3,9 +3,9 @@ permalink: pretty
 title: 'GVC Lab'
 
 logo:
-  mobile: "images/logo/gbugvc.png"
+  mobile: "images/logo/gvctitle_v3.png"
   mobile_width: "300px"
-  desktop: "images/logo/gbugvc.png"
+  desktop: "images/logo/gvctitle_v3.png"
   desktop_height: "48px"
 
 home: 

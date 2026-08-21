@@ -16,6 +16,6 @@ authors: Ziyao Huang, Fan Tang, Juan Cao, Yong Zhang, <b>Xiaodong Cun</b>, Yihan
 publication: IEEE Transactions on Visualization and Computer Graphics (<b>TVCG</b>)
 ccf: A
 scholar_citations: 38
-github_stars: 356
+github_stars: 355
 ---
 

@@ -13,6 +13,7 @@ bodyClass: "page-teams"
     --gvc-white: #ffffff;
     --gvc-bg: #fdfdfd;       /* 极浅的灰白，护眼 */
     --gvc-text: #1a1a1a;
+    --photo-radius: 16px;
 }
 
 body {
@@ -68,6 +69,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 50px; /* 宽间距 */
     margin-bottom: 100px;
+    align-items: stretch;
 }
 
 .pop-grid-alumni {
@@ -75,6 +77,11 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 50px; /* 宽间距 */
     margin-bottom: 100px;
+    align-items: stretch;
+}
+
+.current-members-grid {
+    margin-bottom: 48px;
 }
 
 .pop-card {
@@ -82,13 +89,17 @@ body {
     cursor: pointer;
     background: transparent;
     z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 照片容器 */
-.photo-frame, .photo-frame-phd, .photo-frame-ms, .photo-frame-alumni, .photo-frame-ra {
+.photo-frame, .photo-frame-phd, .photo-frame-ms, .photo-frame-alumni, .photo-frame-ra, .photo-frame-postdoc, .photo-frame-undergraduate {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1.1; /* 稍微竖长一点 */
+    aspect-ratio: 1 / 1; /* 保持方形 */
+    border-radius: var(--photo-radius);
     margin-bottom: 25px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -137,6 +148,32 @@ body {
 
 
 /* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-postdoc::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #6C4AB6;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* 核心艺术效果：橙色实心阴影块 */
+.photo-frame-undergraduate::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #E9C46A;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* 核心艺术效果：橙色实心阴影块 */
 .photo-frame-ra::after {
     content: '';
     position: absolute;
@@ -164,23 +201,35 @@ body {
 }
 
 
+.photo-frame::after,
+.photo-frame-phd::after,
+.photo-frame-ms::after,
+.photo-frame-postdoc::after,
+.photo-frame-undergraduate::after,
+.photo-frame-ra::after,
+.photo-frame-alumni::after {
+    border-radius: var(--photo-radius);
+}
+
 /* 照片本体 */
 .pop-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: 2px solid var(--gvc-text); /* 黑色描边，增加插画感 */
+    border-radius: var(--photo-radius);
+    box-sizing: border-box;
     background: var(--gvc-white);
     display: block;
     filter: grayscale(0%); /* 保持彩色 */
 }
 
 /* 悬停交互：错位复原 + 颜色突变 */
-.pop-card:hover .photo-frame, .pop-card:hover .photo-frame-phd, .pop-card:hover .photo-frame-ms {
+.pop-card:hover .photo-frame, .pop-card:hover .photo-frame-phd, .pop-card:hover .photo-frame-ms, .pop-card:hover .photo-frame-postdoc, .pop-card:hover .photo-frame-undergraduate {
     transform: translate(5px, 5px); /* 照片向右下移动 */
 }
 
-.pop-card:hover .photo-frame::after , .pop-card:hover .photo-frame-phd::after, .pop-card:hover .photo-frame-ms::after {
+.pop-card:hover .photo-frame::after , .pop-card:hover .photo-frame-phd::after, .pop-card:hover .photo-frame-ms::after, .pop-card:hover .photo-frame-postdoc::after, .pop-card:hover .photo-frame-undergraduate::after {
     transform: translate(-15px, -15px); /* 背景向左上移动 */
     background-color: var(--gvc-blue); /* 橙色变深蓝 */
 }
@@ -189,72 +238,99 @@ body {
    3. 文本排版：粗犷与细腻
    ========================================= */
 .info-box {
-    position: relative;
-    padding-left: 15px;
-    border-left: 3px solid var(--gvc-orange); /* 左侧橙色线条 */
-    transition: border-color 0.3s;
-}
-
-.pop-card:hover .info-box {
-    border-left-color: var(--gvc-blue); /* 悬停变蓝 */
-}
-
-.pop-name {
-    font-size: 1.2rem;
-    font-weight: 800;
     color: var(--gvc-text);
-    margin: 0 0 5px 0;
-    text-transform: uppercase;
-    line-height: 1;
+    min-width: 0;
+    padding: 0 2px 4px;
 }
 
+.pop-name,
 .pop-grid-alumni .pop-name {
-    font-size: 1rem;
-    font-weight: 800;
     color: var(--gvc-text);
-    margin: 0 0 5px 0;
-    text-transform: uppercase;
-    line-height: 1;
+    font-size: 1.12rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.14;
+    margin: 0;
+    overflow-wrap: anywhere;
+    text-transform: none;
 }
 
 .pop-role {
-    font-size: 0.9rem;
+    color: var(--gvc-blue);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    line-height: 1.3;
+    margin: 8px 0 0;
+    text-transform: uppercase;
+}
+
+.pop-position,
+.pop-meta {
+    color: #667587;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin: 5px 0 0;
+    overflow-wrap: anywhere;
+}
+
+.pop-position {
+    color: #435268;
     font-weight: 600;
-    color: var(--gvc-blue); /* 职位用深蓝色 */
-    margin-bottom: 10px;
-    display: inline-block;
-    background: rgba(0, 47, 108, 0.05); /* 淡淡的蓝色背景 */
-    padding: 2px 6px;
 }
 
-.pop-desc {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-/* 社交图标：大圆块 */
+/* 社交链接：平台色图标按钮，仅在存在链接时渲染 */
 .pop-social {
-    margin-top: 15px;
     display: flex;
-    gap: 10px;
+    gap: 6px;
+    margin-top: 12px;
 }
 
 .social-dot {
-    width: 30px;
-    height: 30px;
-    background: var(--gvc-text);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
+    --social-color: var(--gvc-blue);
     align-items: center;
+    color: var(--social-color);
+    display: inline-flex;
+    height: 32px;
     justify-content: center;
     text-decoration: none !important;
-    transition: background 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s, color 0.2s, transform 0.2s;
+    width: 32px;
 }
 
-.social-dot:hover {
-    background: var(--gvc-orange);
+.social-dot--home {
+    --social-color: #006d77;
+}
+
+.social-dot--github {
+    --social-color: #24292f;
+}
+
+.social-dot--scholar {
+    --social-color: #6b21a8;
+}
+
+.social-dot:hover,
+.social-dot:focus-visible {
+    background: var(--social-color);
+    box-shadow: 3px 3px 0 var(--gvc-text);
+    color: var(--gvc-white);
+    transform: translate(-2px, -2px);
+}
+
+.social-dot:focus-visible {
+    outline: 3px solid var(--gvc-text);
+    outline-offset: 3px;
+}
+
+.social-dot svg {
+    fill: currentColor;
+    height: 16px;
+    width: 16px;
+}
+
+.social-dot svg path {
+    fill: currentColor !important;
 }
 
 /* =========================================
@@ -277,11 +353,37 @@ body {
     transform: skewX(10deg); /* 文字正回来 */
 }
 
+.experience-list {
+    list-style: disc;
+    margin: 0 0 72px;
+    padding-left: 24px;
+}
+
+.experience-list li {
+    color: #435268;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+
+.experience-list strong {
+    color: var(--gvc-text);
+}
+
 /* 响应式 */
 @media (max-width: 768px) {
     .big-title { font-size: 3.5rem; }
     .pop-grid { gap: 40px; }
-    .photo-frame::after { top: 10px; left: 10px; }
+    .photo-frame::after,
+    .photo-frame-phd::after,
+    .photo-frame-ms::after,
+    .photo-frame-postdoc::after,
+    .photo-frame-undergraduate::after,
+    .photo-frame-ra::after,
+    .photo-frame-alumni::after {
+        top: 10px;
+        left: 10px;
+    }
 }
 </style>
 
@@ -289,7 +391,7 @@ body {
 
     {% assign promoted = site.team | where: "promoted", true | sort: "weight" %}
     {% if promoted.size > 0 %}
-    <div class="pop-grid">
+    <div class="pop-grid current-members-grid">
         {% for team in promoted %}
         <div class="pop-card">
             <div class="photo-frame">
@@ -299,21 +401,21 @@ body {
                     <div class="pop-photo" style="background:#eee;"></div>
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">Principal Investigator</div>
-                <div class="pop-desc">{{ team.jobtitle }}</div>
-                
-                <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
-                        </a>
-                    {% endif %}
-                </div>
+            {% include team-info.html member=team is_pi=true %}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% assign postdocs = site.team | where: "promoted", false | where: "class", "postdoc" | sort: "weight" %}
+    {% if postdocs.size > 0 %}
+        {% for team in postdocs %}
+        <div class="pop-card">
+            <div class="photo-frame-postdoc">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
             </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     {% endif %}
@@ -327,20 +429,7 @@ body {
                     <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">{{ team.jobtitle }}</div>
-                <div class="pop-desc">{{ team.from }}</div>
-                <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     {% endif %}
@@ -354,20 +443,7 @@ body {
                     <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">{{ team.jobtitle }}</div>
-                <div class="pop-desc">{{ team.from }}</div>
-                <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     {% endif %}
@@ -381,25 +457,30 @@ body {
                     <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">{{ team.jobtitle }}</div>
-                <div class="pop-desc">{{ team.from }}</div>
-                <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     {% endif %}
-    </div>
-     {% assign visitors = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
+
+
+
+    {% assign undergraduate = site.team | where: "promoted", false | where: "class", "undergraduate" | sort: "weight" %}
+        {% if undergraduate.size > 0 %}
+        {% for team in undergraduate %}
+        <div class="pop-card">
+            <div class="photo-frame-postdoc">
+                {% if team.image %}
+                    <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+                {% endif %}
+            </div>
+            {% include team-info.html member=team %}
+        </div>
+            {% endfor %}
+        {% endif %}
+
+
+
+         {% assign visitors = site.team | where: "promoted", false | where: "class", "visiting" | sort: "weight" %}
     {% if visitors.size > 0 %}
     <div class="category-header"><span>Visiting Students</span></div>
     <div class="pop-grid">
@@ -410,24 +491,14 @@ body {
                     <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">{{ team.jobtitle }}</div>
-                <div class="pop-desc">{{ team.from }}</div>
-                 <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg> 
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     </div>
     {% endif %}
+
+    </div>
+
 
     {% assign alumni = site.team | where: "promoted", false | where: "class", "alumni" | sort: "weight" %}
     {% if alumni.size > 0 %}
@@ -440,24 +511,23 @@ body {
                     <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
                 {% endif %}
             </div>
-            <div class="info-box">
-                <h3 class="pop-name">{{ team.title }}</h3>
-                <div class="pop-role">{{ team.jobtitle }}</div>
-                <div class="pop-desc">{{ team.from }}</div>
-                 <div class="pop-social">
-                    {% if team.personal_url %}<a href="{{ team.personal_url }}" class="social-dot" target="_blank"><i class="fa fa-home"></i></a>{% endif %}
-                    {% if team.github_url %}<a href="{{ team.github_url }}" class="social-dot" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
-                    {% if team.scholar_url %}
-                        <a href="{{ team.scholar_url }}" class="social-dot" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 1.00)" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/></svg>
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+            {% include team-info.html member=team %}
         </div>
         {% endfor %}
     </div>
     {% endif %}
 
+    <div class="category-header"><span>Internships &amp; Careers</span></div>
+    <ul class="experience-list">
+        {% for item in site.data.team_experience.internships %}
+        <li><strong>{{ item.name | escape }}</strong> &gt;&gt; Internship: {{ item.destinations | join: ", " | escape }}</li>
+        {% endfor %}
+        {% for item in site.data.team_experience.careers %}
+        <li><strong>{{ item.name | escape }}</strong> &gt;&gt; {{ item.role | escape }}: {% if item.emphasis %}<em>{{ item.destination | escape }}</em>{% else %}{{ item.destination | escape }}{% endif %}</li>
+        {% endfor %}
+        {% for item in site.data.team_experience.further_study %}
+        <li><strong>{{ item.name | escape }}</strong> &gt;&gt; {{ item.role | escape }}: {{ item.destination | escape }}</li>
+        {% endfor %}
+    </ul>
     <br><br>
 </div>

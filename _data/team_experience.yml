@@ -1,0 +1,41 @@
+internships:
+  - name: Xingyilang Yin
+    destinations:
+      - vivo
+      - Tencent ARC Lab
+  - name: Zhiyuan Li
+    destinations:
+      - Seekoo
+      - Meituan (LongCat)
+  - name: Yunkang Tao
+    destinations:
+      - Seekoo
+  - name: Shifang Zhao
+    destinations:
+      - ChatCat
+  - name: Yu Zeng
+    destinations:
+      - Seekoo
+  - name: Jiachen An
+    destinations:
+      - Meituan (LongCat)
+  - name: Sirui Liang
+    destinations:
+      - Intellindust
+
+careers:
+  - name: Liyun Zhu
+    destination: HiThink Research
+    role: Full-time
+    emphasis: true
+  - name: Xuan Wu
+    destination: Baidu
+    role: Full-time
+
+further_study:
+  - name: Yihan Hu
+    destination: Shanghai Jiao Tong University
+    role: PhD
+  - name: Chi Zhang
+    destination: The Hong Kong Polytechnic University
+    role: PhD

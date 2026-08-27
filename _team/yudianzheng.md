@@ -2,8 +2,9 @@
 title: "Yudian Zheng"
 date: 2018-12-20T13:44:55+10:00
 image: "images/team/yudian.png"
-jobtitle: "PHD (2025.1 - )"
-from: "UM(w/ Chi-Man Pun)"
+jobtitle: "PhD Student"
+time: "25 Spring -"
+from: "UM (w/ Prof.Chi-Man Pun)"
 promoted: false
 class: phd
 weight: 1

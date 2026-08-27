@@ -2,10 +2,11 @@
 title: "Jiachen An"
 date: 2018-12-20T13:44:55+10:00
 image: "images/team/jiachen.png"
-jobtitle: "Master (2025.9 - )"
-from: "UM(w/ Chi-Man Pun)"
+jobtitle: "Master"
+time: "25 Fall -"
+from: "UM (w/ Prof.Chi-Man Pun)"
 promoted: false
 class: master
-weight: 1
+weight: 2
 personal_url: https://ddxsg24.github.io/
 ---

@@ -44,6 +44,13 @@ bodyClass: "page-home"
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 20rem;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    padding-right: 0.75rem;
+    scrollbar-color: #c7c7c7 transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
   }
   .news-list li {
     display: flex;
@@ -77,6 +84,27 @@ bodyClass: "page-home"
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 20rem;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    padding-right: 0.75rem;
+    scrollbar-color: #c7c7c7 transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+  }
+
+  .news-list::-webkit-scrollbar,
+  .fundings-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .news-list::-webkit-scrollbar-thumb,
+  .fundings-list::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 999px;
+  }
+  .news-list::-webkit-scrollbar-track,
+  .fundings-list::-webkit-scrollbar-track {
+    background: transparent;
   }
   .fundings-list li {
     display: flex;

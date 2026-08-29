@@ -1,7 +1,7 @@
 ---
 title: "Yisha Lu"
 date: 2018-12-20T13:44:55+10:00
-image: "https://robohash.org/yihanhu?bgset=bg1"
+image: "images/team/yisha_close.jpg"
 jobtitle: "Master"
 time: "26 Fall -"
 from: "SUSTech & GBU"

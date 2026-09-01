@@ -17,8 +17,8 @@ code: https://github.com/vinthony/ghost-free-shadow-removal
 authors: <b>Xiaodong Cun</b>,  <a href="http://www.cis.umac.mo/~cmpun/">Chi-Man Pun</a>, Cheng Shi
 publication: AAAI Conference on Artificial Intelligence (<b>AAAI</b>)
 ccf: A
-scholar_citations: 291
-github_stars: 320
+scholar_citations: 292
+github_stars: 321
 ---
 
 

@@ -16,7 +16,7 @@ authors: Jianrong Zhang 🧑‍💻, Yangsong Zhang 🧑‍💻, <b>Xiaodong Cun
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
 scholar_citations: 745
-github_stars: 775
+github_stars: 777
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

@@ -4,7 +4,7 @@ date: 2018-12-20T13:44:55+10:00
 image: "https://zzsf11.github.io/images/portrait-zsf.jpg"
 jobtitle: "RA"
 type: RA
-time: "25 Fall - 26 Spring"
+time: "26 Fall"
 from: "GBU"
 promoted: false
 class: ra

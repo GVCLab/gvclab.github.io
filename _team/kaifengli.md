@@ -8,5 +8,6 @@ from: "GBU"
 promoted: false
 class: undergraduate
 weight: 2
+personal_url: https://kklullaby.github.io/
 github_url: https://github.com/kkLullaby
 ---

@@ -16,5 +16,5 @@ authors: Lanqing Guo, Yingqing He, Haoxin Chen, Menghan Xia, <b>Xiaodong Cun</b>
 publication: European Conference on Computer Vision (<b>ECCV</b>)
 ccf: B
 scholar_citations: 63
-github_stars: 70
+github_stars: 71
 ---

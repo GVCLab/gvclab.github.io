@@ -15,6 +15,6 @@ teaser: ./images/mofavideo.gif
 authors: Lanqing Guo, Yingqing He, Haoxin Chen, Menghan Xia, <b>Xiaodong Cun</b>, Yufei Wang, Siyu Huang, Yong Zhang, Xintao Wang, Qifeng Chen, Ying Shan, Bihan Wen. 
 publication: European Conference on Computer Vision (<b>ECCV</b>)
 ccf: B
-scholar_citations: 63
+scholar_citations: 64
 github_stars: 71
 ---

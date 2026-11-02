@@ -406,6 +406,18 @@ body {
         {% endfor %}
     {% endif %}
 
+    {% assign staff = site.team | where: "promoted", false | where: "class", "staff" | sort: "weight" %}
+    {% for team in staff %}
+    <div class="pop-card">
+        <div class="photo-frame">
+            {% if team.image %}
+                <img class="pop-photo" src="{{ team.image | relative_url }}" alt="{{ team.title }}">
+            {% endif %}
+        </div>
+        {% include team-info.html member=team %}
+    </div>
+    {% endfor %}
+
     {% assign postdocs = site.team | where: "promoted", false | where: "class", "postdoc" | sort: "weight" %}
     {% if postdocs.size > 0 %}
         {% for team in postdocs %}

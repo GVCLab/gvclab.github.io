@@ -81,7 +81,7 @@ bodyClass: "page-researches"
                    data-index="{{ counter }}">
                 <div class="service-content">
                   <div> 
-                    <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>Preprint, {{service.year}}.
+                    <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>Preprint, {{service.year}}.
                     {% if service.ccf == 'A' %}
                       <span class="ccf-badge ccf-A">CCF-A</span>
                     {% elsif service.ccf == 'B' %}
@@ -125,7 +125,7 @@ bodyClass: "page-researches"
                    data-index="{{ counter }}">
                 <div class="service-content">
                   <div> 
-                    <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> 
+                    <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br>
                     <span class="author-list">{{ service.authors }}</span>
                     {{ service.publication}}, {{service.year}}.
                     {% if service.ccf == 'A' %}
@@ -168,7 +168,7 @@ bodyClass: "page-researches"
                    data-date="{{ service.date | date: '%Y%m%d' }}"
                    data-index="{{ counter }}">
                 <div class="service-content">
-                  <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>{{ service.publication}}, {{service.year}}.
+                  <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>{{ service.publication}}, {{service.year}}.
                     {% if service.ccf == 'A' %}
                       <span class="ccf-badge ccf-A">CCF-A</span>
                     {% elsif service.ccf == 'B' %}

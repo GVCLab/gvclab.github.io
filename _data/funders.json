@@ -1,0 +1,59 @@
+[
+  {
+    "id": "nsfc",
+    "name": "National Natural Science Foundation of China",
+    "url": "https://www.nsfc.gov.cn/",
+    "logo": "images/fundings/nsfc.jpg"
+  },
+  {
+    "id": "gbu",
+    "name": "Great Bay University",
+    "url": "https://www.gbu.edu.cn/",
+    "logo": "images/logo/gbulogo.png"
+  },
+  {
+    "id": "miracleplus",
+    "name": "MiraclePlus · 奇绩创坛",
+    "url": "https://www.miracleplus.com/cn/",
+    "logo": "images/fundings/miracleplus.png"
+  },
+  {
+    "id": "meituan",
+    "name": "Meituan · 美团",
+    "url": "https://www.meituan.com/",
+    "logo": "images/fundings/meituan.png"
+  },
+  {
+    "id": "tencent",
+    "name": "Tencent · 腾讯",
+    "url": "https://www.tencent.com/",
+    "logo": "images/fundings/tencent.png"
+  },
+  {
+    "id": "vivo",
+    "name": "vivo",
+    "url": "https://www.vivo.com/",
+    "logo": "images/fundings/vivo.svg"
+  },
+  {
+    "id": "spatialwalk",
+    "name": "空间漫步 x GVC 联合实验室",
+    "url": "https://www.spatialwalk.cn/",
+    "logo": null,
+    "wordmark": "空间漫步 x GVC 联合实验室"
+  },
+  {
+    "id": "guangdong",
+    "name": "广东省区域联合基金（青年基金项目）",
+    "url": "https://gdstc.gd.gov.cn/",
+    "logo": null,
+    "wordmark": "广东省区域联合基金（青年基金项目）"
+  },
+  {
+    "id": "guangxi",
+    "name": "广西重点研发计划“赋能”行动",
+    "url": "https://kjt.gxzf.gov.cn/",
+    "logo": null,
+    "wordmark": "广西重点研发计划“赋能”行动"
+  }
+]

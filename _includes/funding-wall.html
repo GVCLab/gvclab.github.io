@@ -1,0 +1,31 @@
+{% assign supported_funders = site.data.fundings | map: 'funder' | uniq %}
+<section class="home-section funding-wall" aria-labelledby="funding-wall-title">
+  <h2 class="home-section-title" id="funding-wall-title">Funding &amp; Support</h2>
+  <p class="funding-wall-intro">We gratefully acknowledge the support of our funders and industry partners.</p>
+  <ul class="funding-logos" role="list">
+    {% for funder in site.data.funders %}
+    {% if supported_funders contains funder.id %}
+    {% if funder.logo or funder.wordmark %}
+    <li>
+      <a class="funding-logo funding-logo--{{ funder.id | escape }}" href="{{ funder.url | escape }}" aria-label="{{ funder.name | escape }}">
+        {% if funder.logo %}
+        <img src="{{ funder.logo | relative_url }}" alt="{{ funder.name | escape }}" loading="lazy" decoding="async" />
+        {% else %}
+        <span class="funding-wordmark">{{ funder.wordmark | escape }}</span>
+        {% endif %}
+      </a>
+    </li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <ul class="funding-programs" role="list">
+    {% for funder in site.data.funders %}
+    {% if supported_funders contains funder.id %}
+    {% unless funder.logo or funder.wordmark %}
+    <li><a href="{{ funder.url | escape }}">{{ funder.name | escape }}</a></li>
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>

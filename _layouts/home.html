@@ -184,4 +184,8 @@ bodyClass: "page-home"
 
   </div>
 
+  {% if page.show_fundings %}
+  {% include funding-wall.html %}
+  {% endif %}
+
 </div>

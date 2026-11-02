@@ -2,51 +2,60 @@
   {
     "time": "2026-08-24 to 2029-08-23",
     "link": "gvclab.github.io",
-    "description": "Joint Laboratory for Real-Time Digital Humans with Company S (PI), <b>XXX RMB</b>."
+    "description": "Joint Laboratory for Real-Time Digital Humans with Company S (PI), <b>XXX RMB</b>.",
+    "funder": "spatialwalk"
   },
   {
     "time": "2026-08-30 to 2027-12-31",
     "link": "gvclab.github.io",
-    "description": "奇绩算力 Support (PI), <b>XXX RMB</b>."
+    "description": "奇绩算力 Support (PI), <b>XXX RMB</b>.",
+    "funder": "miracleplus"
   },
   {
     "time": "2026-07-01 to 2027-07-01",
     "link": "gvclab.github.io",
-    "description": "World Model Project with Company M (PI), <b>XXX RMB</b>."
+    "description": "World Model Project with Company M (PI), <b>XXX RMB</b>.",
+    "funder": "meituan"
   },
-   {
+  {
     "time": "2026-01-04 to 2027-12-31",
     "link": "gvclab.github.io",
-    "description": "Agent Project with Company T (PI), <b>XXX RMB</b>."
+    "description": "Agent Project with Company T (PI), <b>XXX RMB</b>.",
+    "funder": "tencent"
   },
   {
     "time": "2026-01-01 to 2028-12-31",
     "link": "gvclab.github.io",
-    "description": "Video Generation Coorperation Project with Company V (PI), <b>XXX RMB</b>."
+    "description": "Video Generation Coorperation Project with Company V (PI), <b>XXX RMB</b>.",
+    "funder": "vivo"
   },
   {
     "time": "2026-01-01 to 2028-12-31",
     "link": "gvclab.github.io",
-    "description": " 'Empowerment' Action Plan (Guangxi Key Research and Development Program) (Co-PI), <b>400k RMB</b>."
+    "description": " 'Empowerment' Action Plan (Guangxi Key Research and Development Program) (Co-PI), <b>400k RMB</b>.",
+    "funder": "guangxi"
   },
   {
     "time": "2026-01-01 to 2028-12-31",
     "link": "gvclab.github.io",
-    "description": "Young Scientists Fund (Type C) of the Natural Science Foundation of China (PI), <b>300k RMB</b>."
+    "description": "Young Scientists Fund (Type C) of the Natural Science Foundation of China (PI), <b>300k RMB</b>.",
+    "funder": "nsfc"
   },
   {
     "time": "2025-01-01 to 2027-12-31",
     "link": "gvclab.github.io",
-    "description": "Guangdong Provincial Regional Joint Fund, Youth Fund Project (PI), <b>100k RMB</b>."
+    "description": "Guangdong Provincial Regional Joint Fund, Youth Fund Project (PI), <b>100k RMB</b>.",
+    "funder": "guangdong"
   },
   {
     "time": "2025-01-01 to 2026-01-01",
     "link": "gvclab.github.io",
     "description": "Video Generation Coorperation Project with Company A (PI), <b>XXX RMB</b>."
   },
-   {
+  {
     "time": "2024-09-23 to 2030-09-23",
     "link": "gvclab.github.io",
-    "description": "Startup Fundings of Great Bay University (PI), <b>XXX RMB</b>."
+    "description": "Startup Fundings of Great Bay University (PI), <b>XXX RMB</b>.",
+    "funder": "gbu"
   }
 ]

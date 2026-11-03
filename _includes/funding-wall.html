@@ -4,7 +4,8 @@
   <p class="funding-wall-intro">We gratefully acknowledge the support of our funders and industry partners.</p>
   <ul class="funding-logos" role="list">
     {% for funder in site.data.funders %}
-    {% if supported_funders contains funder.id %}
+    {% if supported_funders contains funder.id or funder.partner %}
+    {% unless funder.id == "guangdong" or funder.id == "guangxi" %}
     {% if funder.logo or funder.wordmark %}
     <li>
       <a class="funding-logo funding-logo--{{ funder.id | escape }}" href="{{ funder.url | escape }}" aria-label="{{ funder.name | escape }}">
@@ -16,12 +17,22 @@
       </a>
     </li>
     {% endif %}
+    {% endunless %}
     {% endif %}
     {% endfor %}
+    <li class="funding-logo funding-logo--regional">
+      {% for funder in site.data.funders %}
+      {% if funder.id == "guangdong" or funder.id == "guangxi" %}
+      {% if supported_funders contains funder.id %}
+      <a class="funding-wordmark" href="{{ funder.url | escape }}">{{ funder.wordmark | escape }}</a>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </li>
   </ul>
   <ul class="funding-programs" role="list">
     {% for funder in site.data.funders %}
-    {% if supported_funders contains funder.id %}
+    {% if supported_funders contains funder.id or funder.partner %}
     {% unless funder.logo or funder.wordmark %}
     <li><a href="{{ funder.url | escape }}">{{ funder.name | escape }}</a></li>
     {% endunless %}

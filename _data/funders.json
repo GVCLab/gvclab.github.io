@@ -36,6 +36,13 @@
     "logo": "images/fundings/vivo.svg"
   },
   {
+    "id": "agibot",
+    "name": "智元机器人 · AGIBOT",
+    "url": "https://www.agibot.com.cn/",
+    "logo": "images/fundings/agibot.png",
+    "partner": true
+  },
+  {
     "id": "spatialwalk",
     "name": "空间漫步 x GVC 联合实验室",
     "url": "https://www.spatialwalk.cn/",

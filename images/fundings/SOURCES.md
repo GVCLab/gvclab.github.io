@@ -10,3 +10,5 @@
 Company M / T / V are associated with Meituan / Tencent / vivo per the site owner's confirmation. Company S is associated with SpatialWalk. Anonymous Company A is omitted. Provincial programs are displayed as Chinese wordmark cards in the logo grid.
 
 - SpatialWalk: https://www.spatialwalk.cn/ (uses the Chinese text wordmark from its official website header; metadata logo URL returns 404).
+
+- AGIBOT: https://www.agibot.com.cn/public/static/index/images/index2/new-logo.png (official website header). Added as an industry partner; no grant amount or period supplied.

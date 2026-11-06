@@ -12,7 +12,7 @@ code: https://github.com/GVCLab/EditaLive
 project: https://huai-chang.github.io/EditaLive/
 authors: <b class='member'>Zhiyuan Li</b>, Chi-Man Pun📮, Peng-Tao Jiang📮, Bo Li, <b>Xiaodong Cun</b><span title='Project Lead'>🚩</span>
 publication: selected-preprint
-github_stars: 100
+github_stars: 102
 ---
 
 {{ page.authors }}

@@ -15,7 +15,7 @@ authors: <a href='https://doubiiu.github.io/'>Jinbo Xing</a>, <a href='https://m
 publication: Computer Vision and Pattern Recognition (<b>CVPR</b>)
 ccf: A
 scholar_citations: 299
-github_stars: 619
+github_stars: 620
 ---
 
 <!-- This paper is about the number 3. The number 4 is left for future work. -->

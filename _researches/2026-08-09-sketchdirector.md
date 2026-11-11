@@ -8,7 +8,7 @@ authors: "<b class='member'>Yiqi Liang</b>, <b>Xiaodong Cun</b>📮"
 publication: selected-preprint
 code: "https://github.com/GVCLab/SketchDirector"
 project: "https://github.com/GVCLab/SketchDirector"
-github_stars: 15
+github_stars: 16
 ---
 
 {{ page.authors }}

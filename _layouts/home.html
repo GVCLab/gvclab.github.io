@@ -22,6 +22,39 @@ bodyClass: "page-home"
     box-shadow: 0 4px 20px rgba(0,0,0,0.10);
     display: block;
   }
+  .project-showcase { margin:2.3rem 0 2rem; }
+  .project-showcase-top { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:0.9rem; }
+  .project-showcase-top h2 { margin:0; color:#263d3d; font-size:1.2rem; font-weight:700; }
+  .project-showcase-top a { color:#ff4a05; font-size:.85rem; font-weight:600; text-decoration:none; }
+  .project-carousel { border:1px solid #dfe9e5; background:#fbfdfb; box-shadow:4px 4px 0 #eef5f1; }
+  .project-slide { display:grid; grid-template-columns:1.05fr 1fr; min-height:260px; }
+  .project-slide[hidden] { display:none; }
+  .project-slide-image { position:relative; display:block; background:#f4f8f5; min-width:0; overflow:hidden; }
+  .project-slide-image img { width:100%; height:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+  .project-frames { position:absolute; inset:0; background-image:var(--project-frames); background-size:200% 200%; background-repeat:no-repeat; background-position:0 0; pointer-events:none; animation:project-illustration-frames 2.4s steps(1,end) infinite; }
+  @keyframes project-illustration-frames { 0%, 100% { background-position:0 0; } 25% { background-position:100% 0; } 50% { background-position:0 100%; } 75% { background-position:100% 100%; } }
+  .project-carousel.is-paused .project-frames { animation-play-state:paused; }
+  @media (prefers-reduced-motion:reduce) { .project-frames { display:none; } }
+  .project-slide-copy { padding:clamp(1.4rem,3vw,2.5rem); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+  .project-slide-category { color:#ff4a05; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin-bottom:.65rem; }
+  .project-slide-copy h3 { color:#263d3d; font-size:clamp(1.45rem,2.5vw,2rem); letter-spacing:-.025em; line-height:1.15; font-weight:700; margin:0 0 .65rem; }
+  .project-slide-copy p { color:#536763; font-size:.97rem; line-height:1.6; margin:0 0 1.1rem; }
+  .project-slide-link { display:inline-flex; gap:.5rem; align-items:center; color:#ff4a05; font-size:.87rem; font-weight:700; text-decoration:none; }
+  .project-slide-link:hover, .project-showcase-top a:hover { color:#853d29; text-decoration:underline; }
+  .project-carousel-controls { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.7rem 1rem; border-top:1px solid #e8efeb; }
+  .project-carousel-dots { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; }
+  .project-carousel-dots button { width:9px; height:9px; flex:none; padding:0; border:0; border-radius:50%; background:#c7d5ce; cursor:pointer; }
+  .project-carousel-dots button[aria-current="true"] { background:#d76b4c; }
+  .project-carousel-arrows { display:flex; gap:.4rem; }
+  .project-carousel-arrows button { width:32px; height:30px; border:1px solid #d7e4de; background:#fff; color:#45655d; border-radius:4px; cursor:pointer; font-size:1rem; line-height:1; }
+  .project-carousel-arrows button:hover { background:#edf6f0; }
+  .project-carousel .project-carousel-dots button { appearance:none; border:0 !important; border-radius:50% !important; background:#c7d5ce !important; box-shadow:none !important; }
+  .project-carousel .project-carousel-dots button[aria-current="true"] { background:#ff4a05 !important; }
+  .project-carousel .project-carousel-arrows button { appearance:none; border:1px solid #d7e4de !important; border-radius:4px !important; background:#fff !important; color:#45655d !important; box-shadow:none !important; transform:none !important; }
+  .project-carousel .project-carousel-arrows button:hover { background:#edf6f0 !important; }
+  .project-carousel .project-carousel-arrows .project-pause { width:auto; padding:0 9px; font-size:.75rem; font-weight:600; }
+  .project-carousel button:focus-visible, .project-carousel a:focus-visible { outline:2px solid #ff4a05; outline-offset:3px; }
+  @media (max-width:650px) { .project-slide { grid-template-columns:1fr; } .project-slide-image img { height:auto; } .project-slide-copy { padding:1.3rem; } .project-showcase { margin-top:1.7rem; } }
 
   /* Section headings */
   .home-section {
@@ -33,7 +66,7 @@ bodyClass: "page-home"
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #222;
-    border-bottom: 2px solid #e8572a;
+    border-bottom: 2px solid #ff4a05;
     display: inline-block;
     padding-bottom: 2px;
     margin-bottom: 1rem;
@@ -144,6 +177,30 @@ bodyClass: "page-home"
 
   {{ content }}
 
+  {% assign featured_projects = site.researches | where_exp: 'item', 'item.highlight_reason' | sort: 'date' | reverse %}
+  {% if featured_projects.size > 0 %}<section class="project-showcase" aria-labelledby="featured-projects-title">
+    <div class="project-showcase-top"><h2 id="featured-projects-title">Featured Projects</h2><a href="{{ '/research/' | relative_url }}">All research ↗</a></div>
+    <div class="project-carousel" data-project-carousel role="region" aria-roledescription="carousel" aria-label="Featured projects">
+      {% for project in featured_projects %}
+      {% assign project_name = project.title | strip_html | split: ':' | first | strip %}
+      {% assign project_url = project.project | default: project.code | default: project.arxiv_url | default: project.url %}
+      {% assign cover_name = project.path | split: '/' | last | replace: '.md', '.webp' %}
+      {% assign project_year = project.year | plus: 0 %}
+      {% if project_year >= 2022 %}{% assign cover_name = cover_name | replace: '.webp', '-palette.webp' %}{% elsif project.path contains '2020-12-01-wr.md' %}{% assign cover_name = '2020-12-01-wr-ink.webp' %}{% endif %}
+      {% assign project_image = cover_name | prepend: '/assets/images/paper-covers/' %}
+      {% assign animation_name = cover_name | replace: '-palette.webp', '-animation.png' | replace: '.webp', '-animation.png' %}
+      {% assign animation_path = animation_name | prepend: '/assets/images/project-animations/' %}
+      {% assign animation_file = site.static_files | where: 'path', animation_path | first %}
+      {% assign project_highlight = project.highlight_reason | replace: '<br>', ' · ' | replace: '<br/>', ' · ' | strip_html | strip %}
+      <article class="project-slide" data-project-slide aria-label="{{ forloop.index }} of {{ forloop.length }}" {% unless forloop.first %}hidden{% endunless %}>
+        <a class="project-slide-image" href="{{ project_url }}" aria-label="Explore {{ project_name | escape }}"><img src="{{ project_image | relative_url }}" alt="Conceptual illustration for {{ project_name | escape }}" {% unless forloop.first %}loading="lazy"{% endunless %}>{% if animation_file %}<span class="project-frames" aria-hidden="true" style="--project-frames:url('{{ animation_path | relative_url }}')"></span>{% endif %}</a>
+        <div class="project-slide-copy"><span class="project-slide-category">Research Highlight · {{ project.year }}</span><h3>{{ project_name }}</h3><p>{{ project_highlight }}</p><a class="project-slide-link" href="{{ project_url }}">Explore project <span aria-hidden="true">↗</span></a></div>
+      </article>
+      {% endfor %}
+      <div class="project-carousel-controls"><div class="project-carousel-dots" aria-label="Choose a project">{% for project in featured_projects %}<button type="button" data-project-dot aria-label="Show {{ project.title | strip_html | split: ':' | first | escape }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"></button>{% endfor %}</div><div class="project-carousel-arrows"><button type="button" class="project-pause" data-project-pause aria-label="Pause automatic slideshow">Pause</button><button type="button" data-project-prev aria-label="Previous project">←</button><button type="button" data-project-next aria-label="Next project">→</button></div></div>
+    </div>
+  </section>{% endif %}
+
   {% if page.intro_image %}
   <img alt="{{ page.title }}"
        class="intro-image home-intro-img {% if page.intro_image_hide_on_mobile %}intro-image-hide-mobile{% endif %}"
@@ -189,3 +246,4 @@ bodyClass: "page-home"
   {% endif %}
 
 </div>
+<script src="{{ '/assets/js/home-projects.js' | relative_url }}" defer></script>

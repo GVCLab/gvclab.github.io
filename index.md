@@ -55,8 +55,8 @@ show_fundings: true
   height: 3px;
   border-radius: 2px;
 }
-.kw-animation        { color: #e05a3a; }
-.kw-animation::after { background: #e05a3a; }
+.kw-animation        { color: #ff4a05; }
+.kw-animation::after { background: #ff4a05; }
 .kw-light            { color: #e6a817; }
 .kw-light::after     { background: #e6a817; }
 .kw-interactivity        { color: #2e9e5b; }

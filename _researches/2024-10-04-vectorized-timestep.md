@@ -7,7 +7,7 @@ year: 2024
 arxiv_url: "https://arxiv.org/abs/2410.03160"
 authors: "Yaofang Liu, Yumeng Ren, <b>Xiaodong Cun</b>, Aitor Artola, Yang Liu, Tieyong Zeng, Raymond H Chan, Jean-Michel Morel"
 publication: "Preprint"
-scholar_citations: 16
+scholar_citations: 20
 scholar_url: "https://scholar.google.com/citations?view_op=view_citation&user=p42qwXcAAAAJ&citation_for_view=p42qwXcAAAAJ:a0OBvERweLwC"
 scholar_checked_on: "2026-10-09"
 arxiv: "2410.03160"

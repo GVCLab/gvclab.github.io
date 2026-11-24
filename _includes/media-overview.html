@@ -1,0 +1,62 @@
+{% assign media_reports = site.data.media | sort: 'date' | reverse %}
+{% assign featured_reports = media_reports | where: 'featured', true %}
+{% if featured_reports.size > 0 %}
+<style>
+  .home-media-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .home-media-header .home-section-title { margin-bottom: 0; }
+  .home-media-header a { font-size: 0.875rem; }
+  .home-media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .home-media-list li {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #e8ece9;
+  }
+  .home-media-outlet,
+  .home-media-list time {
+    color: #626a6b;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .home-media-list time { white-space: nowrap; }
+  .home-media-list h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
+  .home-media-list h3 a { color: #263d3d; text-decoration: none; overflow-wrap: anywhere; }
+  .home-media-list h3 a:hover { color: #c53b00; text-decoration: underline; }
+  .home-media a:focus-visible { outline: 2px solid #ff4a05; outline-offset: 4px; }
+  @media (max-width: 767px) {
+    .home-media-list li { grid-template-columns: minmax(0, 1fr) auto; gap: 0.3rem 0.75rem; }
+    .home-media-outlet { grid-column: 1; }
+    .home-media-list h3 { grid-column: 1 / -1; grid-row: 2; }
+    .home-media-list time { grid-column: 2; grid-row: 1; }
+  }
+</style>
+<section class="home-section home-media" id="media-coverage" aria-labelledby="home-media-title">
+  <div class="home-media-header">
+    <h2 class="home-section-title" id="home-media-title">媒体报道 / Media Coverage</h2>
+    <a href="{{ '/media/' | relative_url }}">查看全部报道（{{ media_reports.size }}）</a>
+  </div>
+  <ul class="home-media-list" role="list">
+    {% for report in featured_reports limit: 5 %}
+    <li>
+      <span class="home-media-outlet">{{ report.home_outlet | default: report.outlet | escape }}</span>
+      <h3><a href="{{ report.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ report.title | escape }}（在新标签页打开）">{{ report.home_title | default: report.title | escape }}</a></h3>
+      <time datetime="{{ report.date | date: '%Y-%m-%d' }}">{{ report.date | date: '%Y-%m-%d' }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

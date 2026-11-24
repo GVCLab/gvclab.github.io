@@ -19,7 +19,7 @@ main:
     weight: 6
   - name: "Github"
     url: "https://github.com/GVCLab"
-    weight: 6
+    weight: 7
 
 footer:
   - name: "Home"

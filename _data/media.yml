@@ -1,0 +1,178 @@
+# Add coverage entries with title, outlet, date (YYYY-MM-DD), and url.
+# Optional: summary, language (zh/en/ru), category, related_links (label and url).
+# Homepage selection: featured (boolean), home_title, home_outlet.
+- title: 'AI图像是怎样变得越来越真、越来越好的？'
+  featured: true
+  home_outlet: 东莞发布
+  outlet: '东莞发布（视频号）'
+  date: '2026-11-19'
+  language: zh
+  category: 视频报道
+  url: 'https://weixin.qq.com/sph/AK3z5X25Qe'
+  summary: '东莞发布走进东莞科研与产业一线，探访 AI 视觉生成技术的发展与应用。'
+- title: '直播换脸这件事，能做到实时又不崩脸吗？'
+  outlet: 科技行者
+  date: '2026-09-08'
+  language: zh
+  category: 研究解读
+  url: 'https://www.techwalker.com/2026/0908/3198642.shtml'
+  summary: '介绍 EditaLive 面向直播场景的人物视频编辑研究，包括外观编辑、表情保持与流式生成。'
+- title: '科研有意思｜一个人，如何拍出一部好莱坞大片？'
+  featured: true
+  home_title: '一个人，如何拍出一部好莱坞大片？'
+  home_outlet: 大湾区大学
+  outlet: '大湾区大学（微信公众号）'
+  date: '2026-05-26'
+  language: zh
+  category: 学校报道
+  url: 'https://mp.weixin.qq.com/s/VzwDe_GGvxDRjhpAsbi3Vg'
+  summary: '大湾区大学“科研有意思”栏目介绍寸晓东与 GVC Lab，围绕 PersonaLive、FairyGen、LightCtrl 和 CutClaw 展示团队在 AI 视频生成与影视创作方面的研究。'
+- title: '湾大：科学城里“长”出的大学'
+  featured: true
+  outlet: 解放日报
+  date: '2026-05-05'
+  language: zh
+  category: 人才培养
+  url: 'https://www.jfdaily.com/journal/getMobileArticle.htm?id=507932'
+  summary: '报道大湾区大学的科研与人才培养实践，其中介绍了寸晓东指导梁思睿在 GVC Lab 参与视频抠像研究的经历。'
+  related_links:
+    - label: '上观新闻网络版（2026-04-01）'
+      url: 'https://m.jfdaily.com/wx/detail.do?id=1089249'
+- title: '北京交通大学团队推出CutClaw：让AI学会像专业导演一样剪辑视频'
+  outlet: 科技行者
+  date: '2026-04-09'
+  language: zh
+  category: 研究解读
+  url: 'https://www.techwalker.com/2026/0409/3183503.shtml'
+  summary: '报道北京交通大学、腾讯 ARC 实验室与大湾区大学 GVC 实验室合作的 CutClaw 项目，介绍面向长视频素材的智能剪辑与音乐同步。'
+- title: 'PersonaLive 开源项目更新：用于直播与视频的实时人像动画（译题）'
+  outlet: Habr
+  date: '2026-02-23'
+  language: ru
+  category: 项目报道
+  url: 'https://habr.com/ru/articles/1002628/'
+  summary: '俄文科技媒体 Habr 介绍 PersonaLive 的开源更新及其面向直播和视频的人像动画应用，并链接官方项目仓库。'
+- title: '产学研聚力破局！大湾区AIGC热潮涌动，共探技术突破与产业化落地'
+  outlet: 证券时报网
+  date: '2025-11-13'
+  language: zh
+  category: 行业交流
+  url: 'https://stcn.com/article/detail/3493220.html'
+  summary: '报道 AIGC 多模态内容行业交流活动，其中介绍寸晓东分享复杂叙事视频生成与角色风格一致性研究。'
+  related_links:
+    - label: 'CSIG 学会报道（2025-11-17）'
+      url: 'https://mp.weixin.qq.com/s?__biz=MzUxMDE4MzAzOA==&mid=2247846501&idx=2&sn=e244982521beca3eef92c5e58f2d9ff4'
+- title: '【动态】CSIG企业行第43期：走进软牛科技——产学研聚力赋能创新！共探AIGC多模态发展新路径'
+  featured: true
+  home_title: 'CSIG企业行：走进软牛科技，共探AIGC新路径'
+  home_outlet: CSIG
+  outlet: '中国图像图形学会CSIG（微信公众号）'
+  date: '2025-11-17'
+  language: zh
+  category: 学会动态
+  url: 'https://mp.weixin.qq.com/s?__biz=MzUxMDE4MzAzOA==&mid=2247846501&idx=2&sn=e244982521beca3eef92c5e58f2d9ff4'
+  summary: '报道第43期“CSIG企业行”活动，介绍寸晓东以“迈向复杂叙事的视频生成”为题分享研究，探讨视频叙事逻辑与角色风格一致性。'
+  related_links:
+    - label: '证券时报网报道（2025-11-13）'
+      url: 'https://stcn.com/article/detail/3493220.html'
+- title: 'AI in all | 广电运通首场技术沙龙顺利举行'
+  featured: true
+  home_title: 'AI in all：广电运通首场技术沙龙'
+  home_outlet: 广电运通
+  outlet: '广电运通招聘（微信公众号）'
+  date: '2025-11-14'
+  language: zh
+  category: 企业动态
+  url: 'https://mp.weixin.qq.com/s?__biz=MjM5OTA4NjEzOQ==&mid=2649694690&idx=2&sn=fb08074345a62e871ab5cb7e32c5620a'
+  summary: '广电运通报道首场技术沙龙，介绍寸晓东围绕“基于扩散模型的数字人视频生成方法及应用”作主题分享，并与企业技术人员交流数字人生成与应用。'
+- title: 'VIVO携手学界专家共话大模型时代影像技术新趋势'
+  outlet: 'CSIG青年委员（微信公众号）'
+  date: '2025-08-28'
+  language: zh
+  category: 学会动态
+  url: 'https://mp.weixin.qq.com/s?__biz=Mzg2NzUyODExOA==&mid=2247542788&idx=1&sn=18148d944b1423624e6c54d9bea2e10b'
+  summary: '报道 vivo 与学会联合举办的影像技术研讨会，介绍寸晓东关于“基于特征缓存的视频生成模型推理加速”的报告及产学研交流。'
+- title: '数据减少超千倍，500 美金就可训练一流视频模型，港城、华为Pusa来了'
+  outlet: '机器之心Pro（搜狐号）'
+  date: '2025-06-19'
+  language: zh
+  category: 合作成果
+  url: 'https://www.sohu.com/a/905845590_129720'
+  summary: '介绍 FVDM 的向量化时间步方法及其在 Pusa 视频生成项目中的应用，为团队成员参与的合作研究成果报道。'
+- title: '从童画到动画：让孩子涂鸦"活"起来的神奇技术——大湾区大学突破性研究成果'
+  outlet: 科技行者
+  date: '2025-07-01'
+  language: zh
+  category: 研究解读
+  url: 'https://www.techwalker.com/2025/0701/3168379.shtml'
+  summary: '介绍 GVC Lab 的 FairyGen 研究，展示从单个儿童手绘角色生成叙事动画故事的方法。'
+- title: '腾讯出品！StereoCrafter：输入2D视频转3D视频效果'
+  outlet: AIbase
+  date: '2024-12-30'
+  language: zh
+  category: 合作成果
+  url: 'https://news.aibase.com/zh/news/14331'
+  summary: '报道腾讯 AI Lab 与 ARC Lab 的 StereoCrafter 项目，介绍从二维视频生成立体视频的合作研究。'
+- title: '腾讯和香港科技大学合作开源高质量视频生成模型 VideoCrafter'
+  outlet: '站长之家 / AIbase'
+  date: '2023-11-01'
+  language: zh
+  category: 早期代表作
+  url: 'https://www.chinaz.com/ainews/2698.shtml'
+  summary: '报道腾讯与香港科技大学合作开源 VideoCrafter 视频生成模型。该项目属于寸晓东加入大湾区大学前参与的研究工作。'
+- title: "Chinese researchers aim to replicate Open AI's Sora text-to-video capabilities"
+  outlet: "Tom's Hardware"
+  date: '2024-03-05'
+  language: en
+  category: 行业报道提及
+  url: 'https://www.tomshardware.com/tech-industry/artificial-intelligence/chinese-researchers-aim-to-replicate-open-ais-sora-text-to-video-service'
+  summary: '英文行业报道介绍中国视频生成研究进展，其中提及腾讯 VideoCrafter2。这是对早期研究的行业报道提及，并非 GVC Lab 专题报道。'
+- title: '全网首个“中国版Sora”横评！15家企业对决，字节领跑'
+  outlet: 智东西
+  date: '2024-03-01'
+  language: zh
+  category: 行业评测
+  url: 'https://zhidx.com/p/414966.html'
+  summary: '对 VideoCrafter2 等视频生成工具进行横向体验，讨论提示词遵循、运动表现与生成稳定性，属于对早期代表工作的媒体评测。'
+- title: '12家创业公司+4家大厂全景图：谁会成为中国版Sora？｜甲子光年'
+  outlet: '甲子光年（搜狐号）'
+  date: '2024-02-26'
+  language: zh
+  category: 行业报道提及
+  url: 'https://www.sohu.com/a/760252999_100016644'
+  summary: '在国内 AI 视频团队盘点中介绍寸晓东及其参与的 AnimateZero、VideoCrafter2 研究，涉及其加入大湾区大学前的工作。'
+- title: '腾讯发布AnimateZero视频生成模型，效果超越Animatediff'
+  outlet: '站长之家 / AIbase'
+  date: '2023-12-12'
+  language: zh
+  category: 早期代表作
+  url: 'https://www.aibase.com/zh/news/4110'
+  summary: '介绍 AnimateZero 的零样本图像动画与视频生成方法，属于寸晓东加入大湾区大学前参与的研究工作。'
+- title: 'This AI Research Introduces Two Diffusion Models for High-Quality Video Generation: Text-to-Video (T2V) and Image-to-Video (I2V) Models'
+  outlet: MarkTechPost
+  date: '2023-11-08'
+  language: en
+  category: 早期代表作
+  url: 'https://www.marktechpost.com/2023/11/08/this-ai-research-introduces-two-diffusion-models-for-high-quality-video-generation-text-to-video-t2v-and-image-to-video-i2v-models/'
+  summary: '介绍 VideoCrafter1 的文本驱动与图像驱动视频生成模型，以及开源研究资源，属于团队负责人的早期研究报道。'
+- title: 'Meet ScaleCrafter: Unlocking Ultra-High-Resolution Image Synthesis with Pre-trained Diffusion Models'
+  outlet: MarkTechPost
+  date: '2023-10-20'
+  language: en
+  category: 早期代表作
+  url: 'https://www.marktechpost.com/2023/10/20/meet-scalecrafter-unlocking-ultra-high-resolution-image-synthesis-with-pre-trained-diffusion-models/'
+  summary: '解读 ScaleCrafter 利用预训练扩散模型进行高分辨率图像生成的方法，属于寸晓东参与的早期研究报道。'
+- title: 'Hey AI-Pa! Draw Me a Story: TaleCrafter is an AI Method that can Generate Interactive Visuals for Stories'
+  outlet: MarkTechPost
+  date: '2023-06-06'
+  language: en
+  category: 早期代表作
+  url: 'https://www.marktechpost.com/2023/06/06/hey-ai-pa-draw-me-a-story-talecrafter-is-an-ai-method-that-can-generate-interactive-visuals-for-stories/'
+  summary: '介绍 TaleCrafter 的多角色交互式故事可视化系统，属于寸晓东参与的早期研究报道。'
+- title: '图片+音频秒变视频！西交大开源SadTalker：头、唇运动超自然，中英双语全能，还会唱歌'
+  outlet: '新智元（腾讯云同步页）'
+  date: '2023-04-19'
+  language: zh
+  category: 早期代表作
+  url: 'https://cloud.tencent.com/developer/article/2282887'
+  summary: '新智元介绍 SadTalker 的音频驱动人像动画研究与开源工具。该项目属于寸晓东加入大湾区大学前参与的研究工作。'

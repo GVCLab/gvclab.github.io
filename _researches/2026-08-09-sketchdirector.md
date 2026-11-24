@@ -6,6 +6,7 @@ date: "2026-08-09"
 year: 2026
 authors: "<b class='member'>Yiqi Liang</b>, <b>Xiaodong Cun</b>📮"
 publication: selected-preprint
+agent: true
 code: "https://github.com/GVCLab/SketchDirector"
 project: "https://github.com/GVCLab/SketchDirector"
 github_stars: 19

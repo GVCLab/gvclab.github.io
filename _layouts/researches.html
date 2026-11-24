@@ -25,8 +25,12 @@ bodyClass: "page-researches"
 .research-card.highlighted .research-card-content { background:#fff9f3; }
 .research-card.highlighted .research-card-venue { border-color:#f0ded3; }
 .research-highlight-label { display:inline-block; background:#f8ded0; color:#a54d31; padding:3px 7px; margin-left:5px; font-size:10px; line-height:1.2; letter-spacing:.06em; vertical-align:middle; }
-.research-card-image { display:block; overflow:hidden; background:#f4f7f5; }
+.research-card-image { position:relative; display:block; overflow:hidden; background:#f4f7f5; }
 .research-card-image img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
+.research-live-badge { position:absolute; top:10px; right:10px; display:inline-flex; align-items:center; gap:5px; padding:5px 9px; border-radius:4px; background:#e62429; color:#fff; font-size:11px; font-weight:800; line-height:1; letter-spacing:.06em; box-shadow:0 2px 7px rgba(0,0,0,.2); }
+.research-live-badge span { font-size:8px; }
+.research-agent-badge { position:absolute; top:10px; right:10px; display:inline-flex; align-items:center; gap:5px; padding:5px 9px; border:2px solid #183b60; border-radius:5px; background:#ffcf36; color:#183b60; font-size:11px; font-weight:900; line-height:1; letter-spacing:.06em; box-shadow:2px 3px 0 #183b60; }
+.research-agent-badge svg { width:16px; height:16px; flex:none; }
 .research-card-image:hover img { transform:scale(1.025); }
 .research-card-content { display:flex; flex:1; flex-direction:column; padding:18px; }
 .researches .paper-title { display:block; color:#263b3c; font-size:16px; font-weight:700; line-height:1.4; overflow-wrap:anywhere; text-decoration:none; }

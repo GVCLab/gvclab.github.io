@@ -6,7 +6,7 @@ bodyClass: "page-researches"
 .researches { padding-top: 42px; padding-bottom: 90px; font-family: Helvetica, Arial, sans-serif; }
 .research-heading { display:flex; align-items:center; justify-content:space-between; gap:18px 24px; margin-bottom:15px; }
 .research-heading p { color:#53666a; font-size:14px; line-height:1.6; margin:0; }
-.research-heading a { color:#a95339; font-weight:600; text-decoration:none; white-space:nowrap; }
+.research-heading a { color:var(--gvc-orange); font-weight:600; text-decoration:none; white-space:nowrap; }
 .research-heading a:hover { text-decoration:underline; }
 .research-toolbar { display:flex; align-items:center; justify-content:flex-end; gap:14px; flex-wrap:wrap; }
 .research-controls { color:#536476; font-size:13px; white-space:nowrap; }
@@ -21,10 +21,10 @@ bodyClass: "page-researches"
 #research-list .year-section, #research-list #flat-sort-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px 22px; margin:0 0 56px; }
 #research-list .year-header { grid-column:1/-1; margin:0; color:#263d3d; font-size:23px; font-weight:700; letter-spacing:-.02em; line-height:1.25; padding-bottom:11px; border-bottom:1px solid #e3ece8; }
 .research-card { min-width:0; background:#fff; border:1px solid #dfe9e5; display:flex; flex-direction:column; box-shadow:3px 3px 0 #eff5f1; }
-.research-card.highlighted { border-color:#e9bca7; background:#fff9f3; box-shadow:3px 3px 0 #f6e0d4; }
-.research-card.highlighted .research-card-content { background:#fff9f3; }
-.research-card.highlighted .research-card-venue { border-color:#f0ded3; }
-.research-highlight-label { display:inline-block; background:#f8ded0; color:#a54d31; padding:3px 7px; margin-left:5px; font-size:10px; line-height:1.2; letter-spacing:.06em; vertical-align:middle; }
+.research-card.highlighted { border-color:rgba(var(--gvc-orange-rgb),.34); background:rgba(var(--gvc-orange-rgb),.04); box-shadow:3px 3px 0 rgba(var(--gvc-orange-rgb),.12); }
+.research-card.highlighted .research-card-content { background:rgba(var(--gvc-orange-rgb),.04); }
+.research-card.highlighted .research-card-venue { border-color:rgba(var(--gvc-orange-rgb),.15); }
+.research-highlight-label { display:inline-block; background:rgba(var(--gvc-orange-rgb),.14); color:var(--gvc-orange); padding:3px 7px; margin-left:5px; font-size:10px; line-height:1.2; letter-spacing:.06em; vertical-align:middle; }
 .research-card-image { position:relative; display:block; overflow:hidden; background:#f4f7f5; }
 .research-card-image img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
 .research-live-badge { position:absolute; top:10px; right:10px; display:inline-flex; align-items:center; gap:5px; padding:5px 9px; border-radius:4px; background:#e62429; color:#fff; font-size:11px; font-weight:800; line-height:1; letter-spacing:.06em; box-shadow:0 2px 7px rgba(0,0,0,.2); }
@@ -34,13 +34,13 @@ bodyClass: "page-researches"
 .research-card-image:hover img { transform:scale(1.025); }
 .research-card-content { display:flex; flex:1; flex-direction:column; padding:18px; }
 .researches .paper-title { display:block; color:#263b3c; font-size:16px; font-weight:700; line-height:1.4; overflow-wrap:anywhere; text-decoration:none; }
-.researches .paper-title:hover { color:#b6553e; }
+.researches .paper-title:hover { color:var(--gvc-orange); }
 .research-card-venue { margin-top:12px; padding:9px 0; border-top:1px solid #edf2ef; border-bottom:1px solid #edf2ef; font-size:12px; font-weight:600; line-height:1.65; color:#56736d; }
-.ccf-badge { display:inline-block; background:#f5eeeb; color:#a45f4d; border-radius:3px; padding:1px 5px; font-size:10px; font-weight:700; }
+.ccf-badge { display:inline-block; background:rgba(var(--gvc-orange-rgb),.08); color:var(--gvc-orange); border-radius:3px; padding:1px 5px; font-size:10px; font-weight:700; }
 .author-list { color:#252b2d; font-size:13px; line-height:1.6; overflow-wrap:anywhere; margin-top:11px; }
 .researches .author-list a, .researches .author-list b { color:inherit; }
-.researches .author-list .author-xiaodong { color:#df753c; }
-.research-card-highlight { color:#9f503a; font-size:12px; line-height:1.55; margin-top:9px; }
+.researches .author-list .author-xiaodong { color:var(--gvc-orange); }
+.research-card-highlight { color:var(--gvc-orange); font-size:12px; line-height:1.55; margin-top:9px; }
 .research-card-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:17px; }
 .researches .research-card-actions a { --action-color:#386a98; --action-bg:#f0f6fc; --action-border:#c9dff0; flex:1 1 0; min-width:0; min-height:38px; display:flex; align-items:center; justify-content:center; padding:5px 6px; border:1px solid var(--action-border); border-radius:7px; background:var(--action-bg); color:var(--action-color); box-shadow:0 2px 0 var(--action-border); font-size:11px; font-weight:700; letter-spacing:.01em; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
 .research-card-actions .action-label { display:inline-flex; justify-content:center; align-items:center; gap:5px; white-space:nowrap; }
@@ -55,7 +55,7 @@ bodyClass: "page-researches"
 .venue-stars svg { display:block; width:11px; height:11px; flex:none; fill:currentColor; }
 .venue-stars img { display:block; width:auto; height:16px; max-width:100%; }
 .venue-stars:hover { background:#fff4da; border-color:#d9ad59; }
-.sort-metric { display:block; color:#c06a4d; font-size:11px; margin-top:6px; font-weight:700; }
+.sort-metric { display:block; color:var(--gvc-orange); font-size:11px; margin-top:6px; font-weight:700; }
 @media(max-width:900px) { #research-list .year-section, #research-list #flat-sort-row { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:600px) { .researches { padding-top:28px; } .research-heading { display:block; } #research-list .year-section, #research-list #flat-sort-row { grid-template-columns:1fr; gap:20px; } }
 #research-list.list-view .year-section, #research-list.list-view #flat-sort-row { grid-template-columns:minmax(0,1fr); gap:16px; }
@@ -77,14 +77,14 @@ bodyClass: "page-researches"
 <main class="container researches" aria-label="Research publications">
   <div class="research-heading"><p>Explore our work in generative visual computing. <a href="https://scholar.google.com/citations?user=p42qwXcAAAAJ">Google Scholar ↗</a></p>
     <div class="research-toolbar"><label class="research-controls" for="sort-select">Sort by <select id="sort-select"><option value="default">Year</option><option value="citations">Google Scholar Citations</option><option value="stars">GitHub Stars</option></select></label>
-      <div class="research-view-switch" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="true">▦ Grid</button><button type="button" data-layout="list" aria-pressed="false">☰ List</button></div>
+      <div class="research-view-switch" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="false">▦ Grid</button><button type="button" data-layout="list" aria-pressed="true">☰ List</button></div>
     </div>
   </div>
   <p class="research-legend">🧑‍💻 Co-first &nbsp; · &nbsp; 📮 Corresponding &nbsp; · &nbsp; 🚩 Project Lead &nbsp; · &nbsp; <b>Bold names</b>: work done at GVC Lab</p>
   {% assign sorted_items = site.researches | group_by: 'year' | reverse %}
   {% assign hidden_preprints = site.researches | where: 'publication', 'Preprint' | size %}
   {% assign counter = site.researches | size | minus: hidden_preprints %}
-  <div id="research-list">
+  <div id="research-list" class="list-view">
     <section class="year-section" data-section="preprint"><h2 class="year-header">Selected Preprints</h2>
       {% for coll in sorted_items %}{% assign sorted_ser = coll.items | sort: 'date' | reverse %}{% for service in sorted_ser %}
         {% if service.publication == 'selected-preprint' %}{% include research-card.html paper=service number=counter %}{% assign counter = counter | minus: 1 %}{% endif %}

@@ -6,26 +6,37 @@ bodyClass: "page-home"
 <style>
   /* Hero */
   .home-hero {
-    padding: 2.5rem 0 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
   }
-  .home-hero h3 {
-    font-size: 1.45rem;
-    line-height: 1.7;
-    margin-bottom: 1.8rem;
-    font-weight: 400;
+  .home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(2rem, 3.4vw, 3rem);
+    padding: 1.8rem 0 2rem;
+  }
+  .home-intro-copy,
+  .home-intro-visual {
+    min-width: 0;
   }
   .home-intro-img {
     width: 100%;
-    border-radius: 10px;
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    height: auto;
+    margin: 0;
+    background: #fff;
+    filter: brightness(1.02);
     display: block;
+  }
+  @media (max-width: 991px) {
+    .home-intro { grid-template-columns: 1fr; gap: 1.25rem; padding: 0 0 0.75rem; }
+    .home-intro-copy { max-width: 42rem; }
+    .home-intro-visual { width: 100%; max-width: 48rem; }
   }
   .project-showcase { margin:2.3rem 0 2rem; }
   .project-showcase-top { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:0.9rem; }
   .project-showcase-top h2 { margin:0; color:#263d3d; font-size:1.2rem; font-weight:700; }
-  .project-showcase-top a { color:#ff4a05; font-size:.85rem; font-weight:600; text-decoration:none; }
+  .project-showcase-top a { color:var(--gvc-orange); font-size:.85rem; font-weight:600; text-decoration:none; }
   .project-carousel { border:1px solid #dfe9e5; background:#fbfdfb; box-shadow:4px 4px 0 #eef5f1; }
   .project-slide { display:grid; grid-template-columns:1.05fr 1fr; min-height:260px; }
   .project-slide[hidden] { display:none; }
@@ -36,24 +47,24 @@ bodyClass: "page-home"
   .project-carousel.is-paused .project-frames { animation-play-state:paused; }
   @media (prefers-reduced-motion:reduce) { .project-frames { display:none; } }
   .project-slide-copy { padding:clamp(1.4rem,3vw,2.5rem); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
-  .project-slide-category { color:#ff4a05; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin-bottom:.65rem; }
+  .project-slide-category { color:var(--gvc-orange); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin-bottom:.65rem; }
   .project-slide-copy h3 { color:#263d3d; font-size:clamp(1.45rem,2.5vw,2rem); letter-spacing:-.025em; line-height:1.15; font-weight:700; margin:0 0 .65rem; }
   .project-slide-copy p { color:#536763; font-size:.97rem; line-height:1.6; margin:0 0 1.1rem; }
-  .project-slide-link { display:inline-flex; gap:.5rem; align-items:center; color:#ff4a05; font-size:.87rem; font-weight:700; text-decoration:none; }
-  .project-slide-link:hover, .project-showcase-top a:hover { color:#853d29; text-decoration:underline; }
+  .project-slide-link { display:inline-flex; gap:.5rem; align-items:center; color:var(--gvc-orange); font-size:.87rem; font-weight:700; text-decoration:none; }
+  .project-slide-link:hover, .project-showcase-top a:hover { color:var(--gvc-orange); text-decoration:underline; }
   .project-carousel-controls { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.7rem 1rem; border-top:1px solid #e8efeb; }
   .project-carousel-dots { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; }
   .project-carousel-dots button { width:9px; height:9px; flex:none; padding:0; border:0; border-radius:50%; background:#c7d5ce; cursor:pointer; }
-  .project-carousel-dots button[aria-current="true"] { background:#d76b4c; }
+  .project-carousel-dots button[aria-current="true"] { background:var(--gvc-orange); }
   .project-carousel-arrows { display:flex; gap:.4rem; }
   .project-carousel-arrows button { width:32px; height:30px; border:1px solid #d7e4de; background:#fff; color:#45655d; border-radius:4px; cursor:pointer; font-size:1rem; line-height:1; }
   .project-carousel-arrows button:hover { background:#edf6f0; }
   .project-carousel .project-carousel-dots button { appearance:none; border:0 !important; border-radius:50% !important; background:#c7d5ce !important; box-shadow:none !important; }
-  .project-carousel .project-carousel-dots button[aria-current="true"] { background:#ff4a05 !important; }
+  .project-carousel .project-carousel-dots button[aria-current="true"] { background:var(--gvc-orange) !important; }
   .project-carousel .project-carousel-arrows button { appearance:none; border:1px solid #d7e4de !important; border-radius:4px !important; background:#fff !important; color:#45655d !important; box-shadow:none !important; transform:none !important; }
   .project-carousel .project-carousel-arrows button:hover { background:#edf6f0 !important; }
   .project-carousel .project-carousel-arrows .project-pause { width:auto; padding:0 9px; font-size:.75rem; font-weight:600; }
-  .project-carousel button:focus-visible, .project-carousel a:focus-visible { outline:2px solid #ff4a05; outline-offset:3px; }
+  .project-carousel button:focus-visible, .project-carousel a:focus-visible { outline:2px solid var(--gvc-orange); outline-offset:3px; }
   @media (max-width:650px) { .project-slide { grid-template-columns:1fr; } .project-slide-image img { height:auto; } .project-slide-copy { padding:1.3rem; } .project-showcase { margin-top:1.7rem; } }
 
   /* Section headings */
@@ -66,7 +77,7 @@ bodyClass: "page-home"
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #222;
-    border-bottom: 2px solid #ff4a05;
+    border-bottom: 2px solid var(--gvc-orange);
     display: inline-block;
     padding-bottom: 2px;
     margin-bottom: 1rem;
@@ -175,7 +186,17 @@ bodyClass: "page-home"
 
 <div class="container home-hero">
 
-  {{ content }}
+  <section class="home-intro" id="home-intro" aria-label="GVC Lab research and mission">
+    <div class="home-intro-copy">{{ content }}</div>
+    {% if page.intro_image %}
+    <div class="home-intro-visual">
+      <img id="home-illustration" alt="{{ page.intro_image_alt | default: page.title | escape }}"
+           class="intro-image home-intro-img {% if page.intro_image_hide_on_mobile %}intro-image-hide-mobile{% endif %}"
+           {% if page.intro_image_width %}width="{{ page.intro_image_width }}" height="{{ page.intro_image_height }}"{% endif %}
+           src="{{ page.intro_image | relative_url }}" />
+    </div>
+    {% endif %}
+  </section>
 
   {% assign featured_projects = site.researches | where_exp: 'item', 'item.highlight_reason' | sort: 'date' | reverse %}
   {% if featured_projects.size > 0 %}<section class="project-showcase" aria-labelledby="featured-projects-title">
@@ -200,12 +221,6 @@ bodyClass: "page-home"
       <div class="project-carousel-controls"><div class="project-carousel-dots" aria-label="Choose a project">{% for project in featured_projects %}<button type="button" data-project-dot aria-label="Show {{ project.title | strip_html | split: ':' | first | escape }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"></button>{% endfor %}</div><div class="project-carousel-arrows"><button type="button" class="project-pause" data-project-pause aria-label="Pause automatic slideshow">Pause</button><button type="button" data-project-prev aria-label="Previous project">←</button><button type="button" data-project-next aria-label="Next project">→</button></div></div>
     </div>
   </section>{% endif %}
-
-  {% if page.intro_image %}
-  <img alt="{{ page.title }}"
-       class="intro-image home-intro-img {% if page.intro_image_hide_on_mobile %}intro-image-hide-mobile{% endif %}"
-       src="{{ page.intro_image | relURL }}" />
-  {% endif %}
 
   <div class="home-two-col">
 

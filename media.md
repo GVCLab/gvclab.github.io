@@ -18,7 +18,7 @@ permalink: "/media/"
   .media-coverage .media-empty {
     padding: 1.25rem;
     border: 1px solid #e0e0e0;
-    border-left: 4px solid #e8572a;
+    border-left: 4px solid var(--gvc-orange);
     border-radius: 8px;
     background: #fff;
   }
@@ -37,7 +37,7 @@ permalink: "/media/"
     overflow-wrap: anywhere;
   }
   .media-coverage .media-title a:focus-visible {
-    outline: 2px solid #e8572a;
+    outline: 2px solid var(--gvc-orange);
     outline-offset: 4px;
   }
   .media-coverage .media-summary {

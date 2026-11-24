@@ -2,65 +2,67 @@
 title: GVC Lab @ Great Bay University
 layout: home
 description: Generative & intelligent Visual Computing (GVC) Lab @ Great Bay University.
-intro_image: "images/goal.jpg"
+intro_image: "images/robot-film-crew-2023-white-v1.png"
+intro_image_alt: "Hand-drawn robot filmmaking crew in the lab's 2023 illustration style"
+intro_image_width: 1819
+intro_image_height: 865
 intro_image_absolute: true
-intro_image_hide_on_mobile: true
+intro_image_hide_on_mobile: false
 show_call_box: false
 show_news: true
 show_fundings: true
 ---
 
 <div class="hero-tagline">
-  <p class="hero-study">We study
-    <span class="kw kw-animation">Animation</span>,
-    <span class="kw kw-interactivity">Interactivity</span>,
-    <span class="kw kw-intelligence">Intelligence</span>
-    and <span class="kw kw-light">Representation</span>.
-  </p>
-  <p class="hero-mission">Let's Revolutionize <em>Movie &amp; Game Industry</em> with AI&nbsp;🎬</p>
+  <h1 class="hero-mission">
+    <span>Movies &amp; Games.</span>
+    <em>A World Reimagined</em>
+    <span>with AI.</span>
+  </h1>
 </div>
 
 <style>
-.hero-tagline {
-  margin: 0.5rem 0 0 0;
+@font-face {
+  font-family: "GVC Editorial";
+  src: url("{{ '/assets/fonts/playfair-display-normal-latin.woff2' | relative_url }}") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
 }
-.hero-study {
-  font-size: 1.55rem;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #222;
-  margin-bottom: 0.4rem;
-  letter-spacing: -0.01em;
+@font-face {
+  font-family: "GVC Editorial";
+  src: url("{{ '/assets/fonts/playfair-display-italic-latin.woff2' | relative_url }}") format("woff2");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+.hero-tagline {
+  margin: 0;
+  padding: 0.5rem 0;
 }
 .hero-mission {
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: #555;
-  margin-bottom: 0;
+  font-family: "GVC Editorial", Georgia, serif;
+  font-size: clamp(2.5rem, 3.9vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: #263d3d;
+  margin: 0;
+}
+.hero-mission > span,
+.hero-mission > em {
+  display: block;
+  white-space: nowrap;
 }
 .hero-mission em {
-  font-style: normal;
-  font-weight: 600;
-  color: #222;
+  font-style: italic;
+  font-weight: inherit;
+  color: var(--gvc-orange);
 }
-.kw {
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
+@media (max-width: 991px) {
+  .hero-mission { font-size: clamp(2.375rem, 5.7vw, 3.25rem); }
 }
-.kw::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -2px;
-  height: 3px;
-  border-radius: 2px;
+@media (max-width: 420px) {
+  .hero-mission { font-size: clamp(1.375rem, 8.7vw, 2.375rem); }
 }
-.kw-animation        { color: #ff4a05; }
-.kw-animation::after { background: #ff4a05; }
-.kw-light            { color: #e6a817; }
-.kw-light::after     { background: #e6a817; }
-.kw-interactivity        { color: #2e9e5b; }
-.kw-interactivity::after { background: #2e9e5b; }
-.kw-intelligence        { color: #2563eb; }
-.kw-intelligence::after { background: #2563eb; }
 </style>

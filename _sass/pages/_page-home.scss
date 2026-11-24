@@ -29,10 +29,10 @@
     transition: border-color 160ms ease, box-shadow 160ms ease;
     &:hover, &:focus-visible {
       text-decoration: none;
-      border-color: #e8572a;
+      border-color: $primary;
       box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
     }
-    &:focus-visible { outline: 2px solid #e8572a; outline-offset: 3px; }
+    &:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
     img { display: block; max-width: 100%; max-height: 64px; width: auto; height: auto; object-fit: contain; }
   }
   .funding-logo--agibot img { width: 150px; }
@@ -55,7 +55,7 @@
     gap: 8px;
     padding: 12px;
     .funding-wordmark { font-size: 0.875rem; line-height: 1.5; text-decoration: none; }
-    a:hover, a:focus-visible { color: #e8572a; }
+    a:hover, a:focus-visible { color: $primary; }
   }
   .funding-programs:empty { display: none; }
   .funding-programs {

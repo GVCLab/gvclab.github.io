@@ -4,19 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!container || !select) return;
 
   var layoutButtons = Array.prototype.slice.call(document.querySelectorAll('[data-layout]'));
-  function setLayout(layout) {
+  function setLayout(layout, rememberChoice) {
     var isList = layout === 'list';
     container.classList.toggle('list-view', isList);
     layoutButtons.forEach(function (button) {
       button.setAttribute('aria-pressed', String(button.getAttribute('data-layout') === (isList ? 'list' : 'grid')));
     });
-    try { localStorage.setItem('research-layout', isList ? 'list' : 'grid'); } catch (e) { /* Browsing remains usable without storage. */ }
+    if (rememberChoice) {
+      try { localStorage.setItem('research-layout-choice', isList ? 'list' : 'grid'); } catch (e) { /* Browsing remains usable without storage. */ }
+    }
   }
-  var savedLayout = 'grid';
-  try { savedLayout = localStorage.getItem('research-layout') || 'grid'; } catch (e) { /* Use the default layout. */ }
-  setLayout(savedLayout);
+  var savedLayout = 'list';
+  // The legacy key also stored automatic defaults, so only reuse explicit choices.
+  try { if (localStorage.getItem('research-layout-choice') === 'grid') savedLayout = 'grid'; } catch (e) { /* Use the default layout. */ }
+  setLayout(savedLayout, false);
   layoutButtons.forEach(function (button) {
-    button.addEventListener('click', function () { setLayout(button.getAttribute('data-layout')); });
+    button.addEventListener('click', function () { setLayout(button.getAttribute('data-layout'), true); });
   });
 
   var papers = Array.prototype.slice.call(container.querySelectorAll('.paper-item'));

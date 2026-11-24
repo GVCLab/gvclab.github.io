@@ -28,7 +28,7 @@ permalink: "/opening/"
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
   .position-card.available {
-    border-left: 4px solid #e8572a;
+    border-left: 4px solid var(--gvc-orange);
   }
   .position-card.closed {
     opacity: 0.55;
@@ -52,9 +52,9 @@ permalink: "/opening/"
     font-weight: 600;
   }
   .badge-open {
-    background: #fff3e0;
-    color: #e8572a;
-    border: 1px solid #e8572a;
+    background: rgba(var(--gvc-orange-rgb), 0.08);
+    color: var(--gvc-orange);
+    border: 1px solid var(--gvc-orange);
   }
   .badge-closed {
     background: #f0f0f0;

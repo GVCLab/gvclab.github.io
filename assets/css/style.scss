@@ -2,8 +2,8 @@
 ---
 
 // Colors
-$primary: #ff4a05;
-$primary-dark: #a01b16;
+$primary: #fe4a04; // Orange sampled from the GVC header logo.
+$primary-dark: $primary;
 $secondary: #0d00b2;
 $black: #2f2f41;
 $white: #ffffff;
@@ -13,7 +13,7 @@ $steel: #5c5a5a;
 // Links
 $link-color: $primary;
 $link-decoration: none;
-$link-hover-color: lighten($primary, 10%);
+$link-hover-color: $primary;
 $link-hover-decoration: underline;
 
 // Fonts
@@ -23,7 +23,7 @@ $font-family-heading: Roboto, Noto Sans, sans-serif, -apple-system;
 // Footer
 $footer-background-color: $primary;
 $footer-text-color: $white;
-$sub-footer-background-color: darken($primary, 10%);
+$sub-footer-background-color: $primary;
 $sub-footer-text-color: $white;
 
 // Bootstrap 5.3.2
@@ -77,6 +77,11 @@ $sub-footer-text-color: $white;
 // 5. Include Bootstrap helpers and utilities
 @import "bootstrap/helpers";
 @import "bootstrap/utilities/api";
+
+:root {
+  --gvc-orange: #{$primary};
+  --gvc-orange-rgb: #{red($primary)}, #{green($primary)}, #{blue($primary)};
+}
 
 // Libraries
 @import "libraries/hamburgers/hamburgers";

@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var select = document.getElementById('sort-select');
   if (!container || !select) return;
 
+  var layoutButtons = Array.prototype.slice.call(document.querySelectorAll('[data-layout]'));
+  function setLayout(layout) {
+    var isList = layout === 'list';
+    container.classList.toggle('list-view', isList);
+    layoutButtons.forEach(function (button) {
+      button.setAttribute('aria-pressed', String(button.getAttribute('data-layout') === (isList ? 'list' : 'grid')));
+    });
+    try { localStorage.setItem('research-layout', isList ? 'list' : 'grid'); } catch (e) { /* Browsing remains usable without storage. */ }
+  }
+  var savedLayout = 'grid';
+  try { savedLayout = localStorage.getItem('research-layout') || 'grid'; } catch (e) { /* Use the default layout. */ }
+  setLayout(savedLayout);
+  layoutButtons.forEach(function (button) {
+    button.addEventListener('click', function () { setLayout(button.getAttribute('data-layout')); });
+  });
+
   var papers = Array.prototype.slice.call(container.querySelectorAll('.paper-item'));
   var yearSections = Array.prototype.slice.call(container.querySelectorAll('.year-section'));
 
@@ -13,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Flat container for sorted views
   var flatRow = document.createElement('div');
-  flatRow.className = 'row';
+  flatRow.className = 'research-flat-row';
   flatRow.id = 'flat-sort-row';
   flatRow.style.display = 'none';
   container.appendChild(flatRow);
@@ -22,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
     flatRow.style.display = 'none';
     flatRow.innerHTML = '';
     papers.forEach(function (p) {
+      var numSpan = p.querySelector('.paper-number');
+      if (numSpan) numSpan.textContent = p.getAttribute('data-index');
       var metric = p.querySelector('.sort-metric');
       if (metric) metric.remove();
     });
@@ -52,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var existing = paper.querySelector('.sort-metric');
       if (existing) existing.remove();
       var val = parseInt(paper.getAttribute('data-' + attr)) || 0;
-      if (val > 0) {
+      if (val > 0 && attr !== 'stars') {
         var metricSpan = document.createElement('span');
         metricSpan.className = 'sort-metric';
         metricSpan.textContent = label + ': ' + val.toLocaleString();

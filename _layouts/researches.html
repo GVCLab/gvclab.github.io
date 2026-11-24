@@ -3,195 +3,106 @@ layout: default
 bodyClass: "page-researches"
 ---
 <style>
-.researches a.paper-title{
-  color:#0d00b2;
+.researches { padding-top: 42px; padding-bottom: 90px; font-family: Helvetica, Arial, sans-serif; }
+.research-heading { display:flex; align-items:center; justify-content:space-between; gap:18px 24px; margin-bottom:15px; }
+.research-heading p { color:#53666a; font-size:14px; line-height:1.6; margin:0; }
+.research-heading a { color:#a95339; font-weight:600; text-decoration:none; white-space:nowrap; }
+.research-heading a:hover { text-decoration:underline; }
+.research-toolbar { display:flex; align-items:center; justify-content:flex-end; gap:14px; flex-wrap:wrap; }
+.research-controls { color:#536476; font-size:13px; white-space:nowrap; }
+.research-view-switch { display:inline-flex; border:1px solid #d9e3e2; border-radius:4px; overflow:hidden; }
+.research-view-switch button { appearance:none; -webkit-appearance:none; border:0 !important; box-shadow:none !important; padding:8px 10px; background:#fff !important; color:#677986 !important; font:600 12px Helvetica,Arial,sans-serif; cursor:pointer; }
+.research-view-switch button + button { border-left:1px solid #d9e3e2 !important; }
+.research-view-switch button[aria-pressed="true"] { color:#2d665e !important; background:#eaf5f1 !important; }
+.research-view-switch button:focus-visible { outline:2px solid #408a7c; outline-offset:-2px; }
+.research-controls select { margin-left:6px; border:1px solid #d9e3e2; background:#fff; color:#35495a; border-radius:4px; padding:8px; }
+.research-legend { color:#697a7b; font-size:12px; line-height:1.6; padding-bottom:18px; border-bottom:1px solid #e7eeeb; margin:0 0 30px; }
+.research-legend b { color:#394c4d; }
+#research-list .year-section, #research-list #flat-sort-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px 22px; margin:0 0 56px; }
+#research-list .year-header { grid-column:1/-1; margin:0; color:#263d3d; font-size:23px; font-weight:700; letter-spacing:-.02em; line-height:1.25; padding-bottom:11px; border-bottom:1px solid #e3ece8; }
+.research-card { min-width:0; background:#fff; border:1px solid #dfe9e5; display:flex; flex-direction:column; box-shadow:3px 3px 0 #eff5f1; }
+.research-card.highlighted { border-color:#e9bca7; background:#fff9f3; box-shadow:3px 3px 0 #f6e0d4; }
+.research-card.highlighted .research-card-content { background:#fff9f3; }
+.research-card.highlighted .research-card-venue { border-color:#f0ded3; }
+.research-highlight-label { display:inline-block; background:#f8ded0; color:#a54d31; padding:3px 7px; margin-left:5px; font-size:10px; line-height:1.2; letter-spacing:.06em; vertical-align:middle; }
+.research-card-image { display:block; overflow:hidden; background:#f4f7f5; }
+.research-card-image img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; transition:transform .3s ease; }
+.research-card-image:hover img { transform:scale(1.025); }
+.research-card-content { display:flex; flex:1; flex-direction:column; padding:18px; }
+.researches .paper-title { display:block; color:#263b3c; font-size:16px; font-weight:700; line-height:1.4; overflow-wrap:anywhere; text-decoration:none; }
+.researches .paper-title:hover { color:#b6553e; }
+.research-card-venue { margin-top:12px; padding:9px 0; border-top:1px solid #edf2ef; border-bottom:1px solid #edf2ef; font-size:12px; font-weight:600; line-height:1.65; color:#56736d; }
+.ccf-badge { display:inline-block; background:#f5eeeb; color:#a45f4d; border-radius:3px; padding:1px 5px; font-size:10px; font-weight:700; }
+.author-list { color:#252b2d; font-size:13px; line-height:1.6; overflow-wrap:anywhere; margin-top:11px; }
+.researches .author-list a, .researches .author-list b { color:inherit; }
+.researches .author-list .author-xiaodong { color:#df753c; }
+.research-card-highlight { color:#9f503a; font-size:12px; line-height:1.55; margin-top:9px; }
+.research-card-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:17px; }
+.researches .research-card-actions a { --action-color:#386a98; --action-bg:#f0f6fc; --action-border:#c9dff0; flex:1 1 0; min-width:0; min-height:38px; display:flex; align-items:center; justify-content:center; padding:5px 6px; border:1px solid var(--action-border); border-radius:7px; background:var(--action-bg); color:var(--action-color); box-shadow:0 2px 0 var(--action-border); font-size:11px; font-weight:700; letter-spacing:.01em; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.research-card-actions .action-label { display:inline-flex; justify-content:center; align-items:center; gap:5px; white-space:nowrap; }
+.research-card-actions svg { width:21px; height:21px; flex:none; padding:4px; border-radius:50%; background:rgba(255,255,255,.8); }
+.researches .research-card-actions .action-paper { --action-color:#356995; --action-bg:#eef6fc; --action-border:#c8dfef; }
+.researches .research-card-actions .action-project { --action-color:#88609c; --action-bg:#f8f1fa; --action-border:#e5d4ea; }
+.researches .research-card-actions .action-code { --action-color:#39775d; --action-bg:#eef8f1; --action-border:#cce5d4; }
+.researches .research-card-actions a:hover { color:var(--action-color); transform:translateY(-2px); box-shadow:0 4px 0 var(--action-border); filter:none; }
+.researches .research-card-actions a:focus-visible { outline:2px solid var(--action-color); outline-offset:3px; }
+.researches .research-card-actions a:active { transform:translateY(1px); box-shadow:0 1px 0 var(--action-border); }
+.venue-stars { display:inline-flex; align-items:center; gap:0; margin-left:6px; padding:2px 6px; border:1px solid #f2dfb8; border-radius:999px; background:#fff4da; color:#bc832c; vertical-align:middle; text-decoration:none; transition:background .2s, border-color .2s; }
+.venue-stars svg { display:block; width:11px; height:11px; flex:none; fill:currentColor; }
+.venue-stars img { display:block; width:auto; height:16px; max-width:100%; }
+.venue-stars:hover { background:#fff4da; border-color:#d9ad59; }
+.sort-metric { display:block; color:#c06a4d; font-size:11px; margin-top:6px; font-weight:700; }
+@media(max-width:900px) { #research-list .year-section, #research-list #flat-sort-row { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .researches { padding-top:28px; } .research-heading { display:block; } #research-list .year-section, #research-list #flat-sort-row { grid-template-columns:1fr; gap:20px; } }
+#research-list.list-view .year-section, #research-list.list-view #flat-sort-row { grid-template-columns:minmax(0,1fr); gap:16px; }
+#research-list.list-view .year-header { margin-bottom:8px; }
+#research-list.list-view .research-card { flex-direction:row; align-items:stretch; }
+#research-list.list-view .research-card-image { flex:0 0 32%; max-width:320px; align-self:flex-start; }
+#research-list.list-view .research-card-content { min-width:0; padding:18px 20px; }
+#research-list.list-view .research-card-venue { margin-top:9px; padding:7px 0; }
+#research-list.list-view .research-card-actions { justify-content:flex-start; padding-top:12px; }
+#research-list.list-view .research-card-actions a { flex:0 1 auto; min-width:92px; padding:7px 10px; }
+@media(max-width:600px) {
+  .research-toolbar { justify-content:flex-start; margin-top:18px; }
+  .research-controls { margin-top:0; }
+  #research-list.list-view .research-card { flex-direction:column; }
+  #research-list.list-view .research-card-image { flex:none; width:100%; max-width:none; }
+  #research-list.list-view .research-card-content { padding:16px; }
 }
-
-.researches a{
-  color:#333
-}
-
-.researches b{
-  color: #ff4a05
-}
-
-.researches b.member{
-  color: #333
-}
-
-.highlighted {
-    background-color: antiquewhite;
-    border-right: 14px solid #ff4a05;
-}
-
-.ccf-badge {
-  display: inline-block;
-  padding: 1px 6px;
-  border-radius: 3px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #fff;
-  vertical-align: middle;
-  margin-left: 4px;
-  letter-spacing: 0.3px;
-}
-.ccf-A { background-color: #c0392b; }
-.ccf-B { background-color: #2980b9; }
-
-.sort-metric {
-  display: inline-block;
-  font-size: 12px;
-  color: #888;
-  margin-left: 6px;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.author-list {
-  display: block;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 </style>
-
-<div >
-<div class="container pt-12 pb-12 researches" >
-  <br>
-  <b>Full list can be found at <a style="font-size: 16px; font-family: Helvetica, Arial, sans-serif;" href="https://scholar.google.com/citations?user=p42qwXcAAAAJ" > [Google Scholar] </b></a> <span style="color:#333;font-size: 14px; font-family: Helvetica, Arial, sans-serif; "> (🧑‍💻 Co-first, 📮 Corresponding, 🚩 Project Lead, <b style="color:#333">BOLD NAME :</b> Working done at GVC Lab) </span> <span style="font-size: 14px; font-weight: 600; color: #333; font-family: Helvetica, Arial, sans-serif; margin-left: 8px;">Sort by:</span> <select id="sort-select" style="font-size: 14px; font-family: Helvetica, Arial, sans-serif; padding: 4px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #333; cursor: pointer; vertical-align: middle;"><option value="default">Default (by Year)</option><option value="citations">Google Scholar Citations</option><option value="stars">GitHub Stars</option></select>
-
-  {% assign sorted_items = site.researches | group_by: "year" | reverse %}
-  {% assign counter = site.researches | size %}
-  {% assign counter = counter | minus:4 %}
-
-  <div id="research-list">
-    <!-- Selected Preprint section -->
-    <div class="row year-section" data-section="preprint">
-      <div class="year-header" style="font-size: 30px; font-weight: 400;">Selected Preprint</div>
-      <hr class="year-header">
-      {% for coll in sorted_items %}
-          {% assign sorted_ser = coll.items | sort: "date" | reverse %}   
-          {% for service in sorted_ser %}
-              {% if service.publication == 'selected-preprint' %}
-              <div class="service service-summary paper-item {% if service.highlight_reason %}highlighted{% endif %}" style="padding: 8px;"
-                   data-citations="{{ service.scholar_citations | default: 0 }}"
-                   data-stars="{{ service.github_stars | default: 0 }}"
-                   data-year="{{ service.year }}"
-                   data-date="{{ service.date | date: '%Y%m%d' }}"
-                   data-index="{{ counter }}">
-                <div class="service-content">
-                  <div> 
-                    <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>Preprint, {{service.year}}.
-                    {% if service.ccf == 'A' %}
-                      <span class="ccf-badge ccf-A">CCF-A</span>
-                    {% elsif service.ccf == 'B' %}
-                      <span class="ccf-badge ccf-B">CCF-B</span>
-                    {% endif %}
-                    {% if service.code %}
-                          <div style="display: inline;" class="xcode">
-                                <a href="{{service.code}}">
-                                  <img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/>
-                                </a>
-                          </div>
-                          <br>
-                    {{service.highlight_reason}} 
-                  </div>
-                </div>
-              </div>
-              {% endif %}
-              {% assign counter = counter | minus:1 %}
-              {% endif %}
-          {% endfor %}
-      {% endfor %}
-    </div>
-
-    <!-- Year sections (2022+) -->
-    {% for coll in sorted_items %}
-      {% assign my_integer_number = coll.name | to_integer %}
-      {% if my_integer_number > 2021 %}
-        <div class="row year-section" data-section="year-{{coll.name}}">
-          <br>
-          <div class="year-header" style="font-size: 30px; font-weight: 400;"> Year {{coll.name}}</div>
-          <hr class="year-header">
-          {% assign sorted_ser = coll.items | sort: "date" | reverse %}
-          {% for service in sorted_ser %}
-              {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
-              {% else %}
-              <div class="service service-summary paper-item {% if service.highlight_reason %}highlighted{% endif %}" style="padding: 8px;"
-                   data-citations="{{ service.scholar_citations | default: 0 }}"
-                   data-stars="{{ service.github_stars | default: 0 }}"
-                   data-year="{{ service.year }}"
-                   data-date="{{ service.date | date: '%Y%m%d' }}"
-                   data-index="{{ counter }}">
-                <div class="service-content">
-                  <div> 
-                    <a class='paper-title' style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br>
-                    <span class="author-list">{{ service.authors }}</span>
-                    {{ service.publication}}, {{service.year}}.
-                    {% if service.ccf == 'A' %}
-                      <span class="ccf-badge ccf-A">CCF-A</span>
-                    {% elsif service.ccf == 'B' %}
-                      <span class="ccf-badge ccf-B">CCF-B</span>
-                    {% endif %}
-                    {% if service.code%}
-                      <div style="display: inline;" class="xcode">
-                      <a href="{{service.code}}"><img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/></a>
-                      </div>
-                    {% endif %}
-                    <br>
-                    {{service.highlight_reason}} 
-                  </div>
-                </div>
-              </div>
-              {% assign counter = counter | minus:1 %}
-              {% endif %}
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endfor %}
-
-    <!-- Before 2021 section -->
-    <div class="row year-section" data-section="before-2021">
-      <div class="year-header" style="font-size: 30px; font-weight: 400;">Before 2021</div>
-      <hr class="year-header">
-      {% for coll in sorted_items %}
-        {% assign my_integer_number = coll.name | to_integer %}
-        {% if my_integer_number < 2022 %}
-          {% assign sorted_ser = coll.items | sort: "date" | reverse %}
-          {% for service in sorted_ser %}
-              {% if service.publication == 'selected-preprint' or service.publication == 'Preprint' %}
-              {% else %}
-              <div class="service service-summary paper-item" style="padding: 8px;"
-                   data-citations="{{ service.scholar_citations | default: 0 }}"
-                   data-stars="{{ service.github_stars | default: 0 }}"
-                   data-year="{{ service.year }}"
-                   data-date="{{ service.date | date: '%Y%m%d' }}"
-                   data-index="{{ counter }}">
-                <div class="service-content">
-                  <div> <a class='paper-title'  style="font-weight: 700;" href="{{ service.arxiv_url | default: service.project | default: service.code }}"><span class="paper-number">{{counter}}</span>. {{ service.title }}</a><br> <span class="author-list">{{ service.authors }}</span>{{ service.publication}}, {{service.year}}.
-                    {% if service.ccf == 'A' %}
-                      <span class="ccf-badge ccf-A">CCF-A</span>
-                    {% elsif service.ccf == 'B' %}
-                      <span class="ccf-badge ccf-B">CCF-B</span>
-                    {% endif %}
-                    {% if service.code%}
-                    <div style="display: inline;" class="xcode">
-                    <a href="{{service.code}}"><img src="https://img.shields.io/github/stars/{{service.code| replace:'https://github.com/', ''}}?style=social"/></a>
-                    </div>
-                    {% endif %}
-                    <br>
-                    {{service.highlight_reason}} </div>
-                </div>
-              </div>
-              {% assign counter = counter | minus:1 %}
-              {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
+<main class="container researches" aria-label="Research publications">
+  <div class="research-heading"><p>Explore our work in generative visual computing. <a href="https://scholar.google.com/citations?user=p42qwXcAAAAJ">Google Scholar ↗</a></p>
+    <div class="research-toolbar"><label class="research-controls" for="sort-select">Sort by <select id="sort-select"><option value="default">Year</option><option value="citations">Google Scholar Citations</option><option value="stars">GitHub Stars</option></select></label>
+      <div class="research-view-switch" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="true">▦ Grid</button><button type="button" data-layout="list" aria-pressed="false">☰ List</button></div>
     </div>
   </div>
-
-</div>
-</div>
-
-<script src="/assets/js/research-sort.js"></script>
+  <p class="research-legend">🧑‍💻 Co-first &nbsp; · &nbsp; 📮 Corresponding &nbsp; · &nbsp; 🚩 Project Lead &nbsp; · &nbsp; <b>Bold names</b>: work done at GVC Lab</p>
+  {% assign sorted_items = site.researches | group_by: 'year' | reverse %}
+  {% assign hidden_preprints = site.researches | where: 'publication', 'Preprint' | size %}
+  {% assign counter = site.researches | size | minus: hidden_preprints %}
+  <div id="research-list">
+    <section class="year-section" data-section="preprint"><h2 class="year-header">Selected Preprints</h2>
+      {% for coll in sorted_items %}{% assign sorted_ser = coll.items | sort: 'date' | reverse %}{% for service in sorted_ser %}
+        {% if service.publication == 'selected-preprint' %}{% include research-card.html paper=service number=counter %}{% assign counter = counter | minus: 1 %}{% endif %}
+      {% endfor %}{% endfor %}
+    </section>
+    {% for coll in sorted_items %}
+      {% assign year_number = coll.name | plus: 0 %}
+      {% if year_number > 2021 %}
+        {% assign visible_items = coll.items | where_exp: 'item', "item.publication != 'Preprint'" | where_exp: 'item', "item.publication != 'selected-preprint'" %}
+        {% if visible_items.size > 0 %}<section class="year-section" data-section="year-{{ coll.name }}"><h2 class="year-header">{{ coll.name }}</h2>
+          {% assign sorted_ser = visible_items | sort: 'date' | reverse %}{% for service in sorted_ser %}
+            {% include research-card.html paper=service number=counter %}{% assign counter = counter | minus: 1 %}
+          {% endfor %}
+        </section>{% endif %}
+      {% endif %}
+    {% endfor %}
+    <section class="year-section" data-section="2021-and-earlier"><h2 class="year-header">2021 &amp; Earlier</h2>
+      {% for coll in sorted_items %}{% assign year_number = coll.name | plus: 0 %}{% if year_number <= 2021 %}
+        {% assign visible_items = coll.items | where_exp: 'item', "item.publication != 'Preprint'" | where_exp: 'item', "item.publication != 'selected-preprint'" | sort: 'date' | reverse %}
+        {% for service in visible_items %}{% include research-card.html paper=service number=counter %}{% assign counter = counter | minus: 1 %}{% endfor %}
+      {% endif %}{% endfor %}
+    </section>
+  </div>
+</main>
+<script src="{{ '/assets/js/research-sort.js' | relative_url }}"></script>

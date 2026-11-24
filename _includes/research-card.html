@@ -1,0 +1,31 @@
+{% assign paper = include.paper %}
+{% assign cover_name = paper.path | split: '/' | last | replace: '.md', '.webp' %}
+{% assign paper_year = paper.year | plus: 0 %}
+{% if paper_year >= 2022 %}{% assign cover_name = cover_name | replace: '.webp', '-palette.webp' %}{% elsif paper.path contains '2020-12-01-wr.md' %}{% assign cover_name = '2020-12-01-wr-ink.webp' %}{% endif %}
+{% assign cover_path = cover_name | prepend: '/assets/images/paper-covers/' %}
+{% assign paper_link = paper.arxiv_url | default: paper.project | default: paper.code | default: paper.url %}
+<article class="paper-item research-card {% if paper.highlight_reason %}highlighted{% endif %}"
+  data-citations="{{ paper.scholar_citations | default: 0 }}" data-stars="{{ paper.github_stars | default: 0 }}"
+  data-year="{{ paper.year }}" data-date="{{ paper.date | date: '%Y%m%d' }}" data-index="{{ include.number }}">
+  <a class="research-card-image" href="{{ paper_link }}" aria-label="Explore {{ paper.title | strip_html | escape }}">
+    <img src="{{ cover_path | relative_url }}" alt="Conceptual illustration for {{ paper.title | strip_html | escape }}" loading="lazy" decoding="async">
+  </a>
+  <div class="research-card-content">
+    <a class="paper-title" href="{{ paper_link }}">{{ paper.title }}</a>
+    {% if paper.publication == 'selected-preprint' %}
+      {% assign venue_short = 'Preprint' %}
+    {% elsif paper.publication contains '<b>' %}
+      {% assign venue_short = paper.publication | split: '<b>' | last | split: '</b>' | first | strip %}
+    {% else %}
+      {% assign venue_short = paper.publication | strip_html | strip %}
+    {% endif %}
+    <div class="research-card-venue" title="{{ paper.publication | strip_html | escape }}">{{ venue_short }}{% if paper.publication contains 'Conference Track' %} (Conference Track){% endif %}{% if paper.publication contains 'Technical report' %} &amp; Technical report{% endif %} · {{ paper.year }}{% if paper.ccf == 'A' or paper.ccf == 'B' %} <span class="ccf-badge">CCF-{{ paper.ccf }}</span>{% endif %}{% if paper.code contains 'github.com/' %} <a class="venue-stars" href="{{ paper.code }}" aria-label="View GitHub repository and stars"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2.8 2.75 5.58 6.16.9-4.46 4.35 1.05 6.14L12 16.87l-5.5 2.9 1.05-6.14L3.1 9.28l6.15-.9z"/></svg><img src="https://img.shields.io/github/stars/{{ paper.code | replace: 'https://github.com/', '' }}?style=flat-square&amp;label=&amp;color=fff4da" alt="GitHub stars" loading="lazy"></a>{% endif %}{% if paper.highlight_reason %} <span class="research-highlight-label">HIGHLIGHT</span>{% endif %}</div>
+    <div class="author-list">{{ paper.authors | replace: 'Xiaodong Cun', '<span class="author-xiaodong">Xiaodong Cun</span>' }}</div>
+    {% if paper.highlight_reason %}<div class="research-card-highlight">{{ paper.highlight_reason }}</div>{% endif %}
+    <div class="research-card-actions">
+      {% if paper.arxiv_url %}<a class="action-paper" href="{{ paper.arxiv_url }}"><span class="action-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 12h6M9 16h6"/></svg>Paper</span></a>{% endif %}
+      {% if paper.project %}<a class="action-project" href="{{ paper.project }}"><span class="action-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3z"/></svg>Project</span></a>{% endif %}
+      {% if paper.code %}<a class="research-code-link action-code" href="{{ paper.code }}"><span class="action-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></svg>Code</span></a>{% endif %}
+    </div>
+  </div>
+</article>

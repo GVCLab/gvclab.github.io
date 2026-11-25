@@ -6,6 +6,8 @@ date: 2026-11-24
 year: 2026
 publication: selected-preprint
 agent: true
+arxiv: '2611.31974'
+arxiv_url: https://arxiv.org/abs/2611.31974
 project: https://coding4game.github.io/
 code: https://github.com/GVCLab/Coding4Games
 authors: "<b class='member'>Shifang Zhao</b>, Haoyu Wang, Yuyang Yin, Dong Chen, <b class='member'>Xingyilang Yin</b>, <b class='member'>Yunkang Tao</b>, Honghao Chen, Guangzhi Wang, Yiran Wang, Junfu Pu, Cheng Cheng, <b>Xiaodong Cun</b>📮, Ying Shan"
@@ -15,4 +17,4 @@ authors: "<b class='member'>Shifang Zhao</b>, Haoyu Wang, Yuyang Yin, Dong Chen,
 
 Preprint, {{ page.year }}.
 
-[Project Page]({{ page.project }}) · [Code]({{ page.code }})
+[Paper]({{ page.arxiv_url }}) · [Project Page]({{ page.project }}) · [Code]({{ page.code }})

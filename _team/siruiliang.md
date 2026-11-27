@@ -8,4 +8,6 @@ promoted: false
 time: "25 Fall -"
 class: undergraduate
 weight: 1
+personal_url: https://siruuui.github.io/index.html
+github_url: https://github.com/Siruuui
 ---
